@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<!--TESTING WITH ALBUM COVERS-->
+<html>
+    <head>
+        <title>Side-Scroll Function</title>
+        <style>
+
+        body {
+            width: auto;
+        }
+
+        #items {
+            overflow-x: scroll;
+            width: auto;
+            white-space: nowrap;
+        }
+
+        .item {
+            display: inline-block;
+            width: 250px;
+            height: 325px;
+            border:1px solid;
+        }
+
+        img {
+            width: 240px;
+            display: flex;
+            margin: auto;
+            padding: 5px;
+        }
+
+        h2 {
+            margin-left: 5px;
+            font-family: 'Tahoma';
+            line-height: 0px;
+        }
+
+        p {
+            margin-left: 5px; 
+            font-family: 'Tahoma';
+            font-size: 13.5px;
+        }
+
+        </style>
+    </head>
+    <body>
+            <div id="items">
+                <div class="item">
+                    <img src = "rising sun tvxq.jpg"></img>
+                    <h2>Rising Sun</h2>
+                    <p>TVXQ! (동방신기)</p>
+                </div>
+
+                <div class="item">
+                    <img src = "shalala taeyong.jpg"></img>
+                    <h2>Shalala</h2>
+                    <p>TAEYONG</p>
+                </div>
+
+                <div class="item">
+                    <img src = "unforgiven le sserafim.png"></img>
+                    <h2>Unforgiven</h2>
+                    <p>LE SSERAFIM (르세라핌)</p>
+                </div>
+
+                <div class="item">
+                    <img src = "tri-angle tvxq.jpg"></img>
+                    <h2>TRI-ANGLE</h2>
+                    <p>TVXQ! (동방신기)</p>
+                </div>
+
+                <div class="item">
+                    <img src = "dark blood enhypen.jpg"></img>
+                    <h2>DARK BLOOD</h2>
+                    <p>ENHYPEN</p>
+                </div>
+                
+                <div class="item">
+                    <img src = "masterpiece misamo.jpeg"></img>
+                    <h2>Masterpiece</h2>
+                    <p>TWICE-MISAMO</p>
+                </div>
+
+                <div class="item">
+                    <img src = "MiroticTVXQ.png"></img>
+                    <h2>MIROTIC</h2>
+                    <p>TVXQ! (동방신기)</p>
+                </div>
+            </div>
+
+    </body>
+</html>
