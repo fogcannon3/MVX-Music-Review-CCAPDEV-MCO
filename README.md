@@ -2,6 +2,7 @@
 CCAPDEV MCO - Fulcher, Sang, Villamiel
 
 To reiterate:
+
 Fulcher
   - Landing page (pg 1 on canvas) and log-in page
   - Playlist import and export pages
