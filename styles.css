@@ -1,6 +1,13 @@
-body {
+html, body {
     padding: 0;
     margin: 0;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 }
 
 /* header part */
@@ -31,7 +38,7 @@ body {
     align-items: center;
 }
 
-.header_search input[type="text"] {
+.header_search input {
     font-size: 18px;
     padding: 5px 10px;
     border-radius: 5px;
@@ -65,17 +72,82 @@ body {
     color: inherit;
 }
 
-/* container part */
+/* main part */
 
-.container{
-    background-color: #ffffff;
-    margin-left: auto;
-    margin-right: auto;
+.main {
+    flex: 1 1 auto;
     display: flex;
 }
 
 img.picture{
     width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_main {
+    width: 50%;
+    padding: 80px;
+    text-align: left;
+    font-family: sans-serif;
+    align-items: center;
+    justify-content: center;
+}
+
+.login_txt {
+    font-size: 50px;
+}
+
+.email_main {
+    display: flex;
+    margin-top: 40px;
+    flex-direction: column;
+}
+
+.password_main {
+    display: flex;
+    flex-direction: column;
+}
+
+.register_main {
+    display: flex;
+  }
+  
+.register_main p {
+    margin-right: 30px; /* Add margin to create space between the text and button */
+}
+.continue_btn {
+    border-radius: 30px;
+    background-color: #C4A88C;
+    width: 200px;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+  
+.email_main,
+.password_main {
+  margin-bottom: 25px; /* Add margin-bottom for spacing */
+}
+
+.email_main h3,
+.password_main h3 {
+  margin-right: 10px; /* Add margin-right for spacing */
+}
+
+.email_main input,
+.password_main input {
+  font-size: 14px; /* Adjust the font size as needed */
+  background-color: #E6E6E6;
+  border: none;
+  height: 40px;
+}
+
+.register_main {
+  margin-top: 40px; /* Add margin-top for spacing */
+  display: flex;
+  justify-content: space-between;
 }
 
 /* footer part */
@@ -88,6 +160,7 @@ img.picture{
     font-size: 9.5px;
 
     display: flex;
+    justify-content: space-between;
 }
   
   .left_footer {
