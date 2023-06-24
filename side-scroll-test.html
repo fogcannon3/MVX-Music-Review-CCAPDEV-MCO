@@ -10,16 +10,20 @@
             width: auto;
         }
 
-        #items {
+        #items { 
             overflow-x: scroll;
             width: auto;
             white-space: nowrap;
         }
+        <!--The "#items" is the div id that encompasses all items in the scroll-->
+        <!--the given width and white-space values allow the scroll to work properly-->
 
         .item {
             display: inline-block;
             width: 250px;
             height: 325px;
+            <!--the height was pretty brute-forced, there may be a better way to adjust the height
+                so that it automatically adjusts based on the height of the artist name-->
             border:1px solid;
         }
 
