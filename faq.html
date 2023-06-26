@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <title>FAQ - MVX</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        
+        /* header part */
+        .header {
+            display: flex;
+            justify-content: flex-start;
+            padding: 20px 80px;
+            font-family: 'Montserrat', sans-serif;;
+            background-color: #5B5247;
+            color: white;
+            
+        }
+
+        .header_title {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            padding-right: 40px;
+        }
+
+        .header span {
+            font-weight: 700;
+            font-size: 30px;
+        }
+
+        .header_search {
+            display: flex;
+            align-items: center;
+        }
+
+        .header_search input {
+            font-size: 18px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: none; 
+            outline: none; 
+        }
+
+        .header_search input[type="text"]::placeholder {
+            font-size: 12px; 
+        }
+
+        .header_search button {
+            font-size: 18px;
+            padding: 5px 10px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            color: white;
+        }
+
+        .header_navigation {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+
+
+        .header_navigation a{
+            text-decoration: none;
+            margin-left: 30px;
+            color: inherit;
+        }
+        
+        /* container part */
+        
+        .container{
+            background-color: #ffffff;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            /*NEEDS WAY TO ADD PADDING BELOW*/
+        }
+
+        hr {
+            width: 70%;
+        }
+
+        .container p, 
+        .container h1, .container h2, 
+        .container h3, .container h4, 
+        .container h5, .container h6,
+        .container ul, .container ol {
+            font-family: 'Tahoma';
+            margin-left: 15%;
+            width: 70%;
+            text-align: justify;
+            line-height: 1.25em;
+        }
+
+        .container li {
+            font-family: 'Tahoma';
+            margin-left: 0px;
+            width: 94%;
+            text-align: justify;
+            line-height: 1.25em;
+        }
+        
+        /* footer part */
+        .footer {
+            background-color: #545454; /* Set the background color */
+            color: white; /* Set the text color */
+            font-family: sans-serif;
+            font-weight: 100;
+            padding: 30px 80px;
+            font-size: 9.5px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+        
+        .left_footer {
+            text-align: left;
+            margin-right: auto;
+        }
+        
+        .mid_footer {
+            align-items: end;
+            display: flex;
+        }
+        
+        .right_footer {
+            text-align: right;
+            margin-left: auto;
+        }
+        
+        .right_footer a {
+            text-decoration: none; 
+            color: white; 
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h2 class="header_title"><span>MVX</span></h2>
+        <div class="header_search">
+            <input type="text" placeholder="Search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
+        <nav id="header_navigation" class="header_navigation">
+            <i class="fa fa-bell"></i>
+            <a href="#">Home</a>
+            <a href="#">Profile</a>
+        </nav>   
+    </header>
+
+    <div class="container">
+        <h1 style="font-size: 46px">Frequently Asked Questions</h1>
+        <hr>
+        <p><strong>1. How do I create an account?</strong></p>
+        <p>Creating an account is easy! Simply click on the "Sign Up" button when you first open the website and land on the landing page, and the website will guide you through the process of registering for an MVX account.</p>
+      
+        <p><strong>2. How can I reset my password?</strong></p>
+        <p>If you've forgotten your password, you can reset it by clicking on the "Forgot Password" link on the login page. Follow the instructions provided, and an email will be sent to you with a link to reset your password. Make sure to check your spam or junk folder if you don't receive the email in your inbox.</p>
+      
+        <p><strong>3. How do I add songs to my playlist?</strong></p>
+        <p>To add songs to your playlist, navigate to the song you want to add and click on the "Add to Playlist" button next to it. Select the desired playlist or create a new one, and the song will be added to your chosen playlist. You can manage and edit your playlists from your account settings.</p>
+      
+        <p><strong>4. Can I share my playlists with others?</strong></p>
+        <p>Absolutely! Sharing your playlists with others is a great way to discover and recommend music. Each playlist has a unique URL that you can copy and share with friends or on social media platforms. You can also make your playlists public, allowing other users to find and follow them on the MVX platform.</p>
+      
+        <p><strong>5. How can I delete my account?</strong></p>
+        <p>If you wish to delete your account, please contact our support team through the contact form or email provided on our website. They will guide you through the account deletion process and assist you with any concerns or questions you may have.</p>
+      
+        <p><strong>6. Are there mobile apps available for MVX?</strong></p>
+        <p>Currently, MVX is accessible through our website on desktop and mobile devices. However, we are actively working on developing mobile apps for a more seamless and convenient user experience. Stay tuned for updates on our mobile app releases!</p>
+      
+        <p>If you have any additional questions or need further assistance, please don't hesitate to reach out to our support team. We're here to help!</p>
+            <br>
+        
+    </div>
+
+    <footer class="footer">
+        <div class="left_footer">
+            <h3>Get in touch with us</h3>
+            <p>Contact Number: #63 908-888-0011<br>
+                Email: customerservice.mvx@gmail.com
+            </p>
+        </div>
+        <div class="mid_footer">
+            <p style="width: 275px;">MVX Solutions Inc. (c) 2023. All rights reserved.</p>
+        </div>
+        <div class="right_footer">
+            <table>
+                <tr>
+                    <td><a href="#">About Us</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#">Frequently Asked Questions</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#">Privacy Policy</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#">Terms and Condition</a></td>
+                </tr>
+              </table>
+        </div>
+    </footer>
+</body>
+
+</html>
