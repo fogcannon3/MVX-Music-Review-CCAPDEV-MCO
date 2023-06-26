@@ -82,7 +82,10 @@
             background-color: #ffffff;
             margin-left: auto;
             margin-right: auto;
-            display: inline;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            /*NEEDS WAY TO ADD PADDING BELOW*/
         }
 
         hr {
@@ -92,18 +95,29 @@
         img{
             width: 200px;
             border-radius: 50%;
-            padding: 35px;
         }
 
-        .imageShowcase {
+        #imageShowcase {
             display: flex;
-            overflow: hidden;
+            justify-content: space-around;
             width: 70%;
-            align-items: center;
+            margin: auto;
+            padding: 25px;
         }
 
-        .imageShowcase h2 {
-            /*ADD STUFF*/
+        #devShowcase {
+            white-space: nowrap;
+            display: inline-block;
+        }
+
+        #devShowcase p, 
+        #devShowcase h1, #devShowcase h2, 
+        #devShowcase h3, #devShowcase h4, 
+        #devShowcase h5, #devShowcase h6 {
+            font-family: 'Tahoma';
+            display: flex;
+            justify-content: center;
+            line-height: 1.25em;
         }
 
         .container p, 
@@ -121,7 +135,7 @@
         .footer {
             background-color: #545454; /* Set the background color */
             color: white; /* Set the text color */
-            font-family: 'Montserrat', sans-serif;;
+            font-family: sans-serif;
             font-weight: 100;
             padding: 30px 80px;
             font-size: 9.5px;
@@ -169,21 +183,27 @@
     <div class="container">
         <h1 style="font-size: 46px">About Us</h1>
         <hr>
-        <div class="imageShowcase">
-            <img src= "fulcher.jpg" alt= "Lander Fulcher">
-            <h2>Lander Fulcher</h2>
-            <img src= "sang.jpg" alt= "Nathan Sang">
-            <h2>Nathan Sang</h2>
-            <img src= "villamiel.jpg" alt= "Leeroi Villamiel">
-            <h2>Leeroi Villamiel</h2>
+        <div id="imageShowcase">
+            <div id = "devShowcase">
+                <img src= "fulcher.jpg" alt= "Lander Fulcher">
+                <h2>Lander Fulcher</h2>
+            </div>
+            <div id = "devShowcase">
+                <img src= "sang.jpg" alt= "Nathan Sang">
+                <h2>Nathan Sang</h2>
+            </div>
+            <div id = "devShowcase">
+                <img src= "villamiel.jpg" alt= "Leeroi Villamiel">
+                <h2>Leeroi Villamiel</h2>
+            </div>
         </div>
         <hr>
-        <h2>Who are you guys?</h2>
+        <h2>Who are we?</h2>
         <p>Who else would we be but the humble developers of MVX! We are 2nd Year ID 121 Computer Science students at De La Salle University on a mission to connect music better to the listeners around the world.
         </p>
         <hr>
         <h2>What is MVX all about?</h2>
-        <p>Welcome to MVX, the ultimate destination for music enthusiasts! At MVX, we believe that music has the power to transcend boundaries and connect people across the globe. Our platform is designed to be your go-to hub for discovering, sharing, and celebrating your favorite songs, just like the way Letterboxd does for movies.
+        <p>Welcome to MVX, the ultimate destination for music enthusiasts! At MVX, we believe that music has the power to transcend boundaries and connect people across the globe. Our platform is designed to be your go-to hub for discovering, sharing, and celebrating your favorite songs, albums, artists, record labels, and playlists.
 
             <br>At MVX, we strive to create a vibrant community of music lovers who are passionate about exploring diverse genres, discovering hidden gems, and connecting with like-minded individuals. Whether you're an avid collector, a casual listener, or a budding musician, MVX offers a unique space to curate your own musical journey.
             
