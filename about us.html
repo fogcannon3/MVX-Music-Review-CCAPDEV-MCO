@@ -24,36 +24,36 @@
             color: white;
             
         }
-        
+
         .header_title {
             margin: 0;
             display: flex;
             align-items: center;
             padding-right: 40px;
         }
-        
+
         .header span {
             font-weight: 700;
             font-size: 30px;
         }
-        
+
         .header_search {
             display: flex;
             align-items: center;
         }
-        
-        .header_search input[type="text"] {
+
+        .header_search input {
             font-size: 18px;
             padding: 5px 10px;
             border-radius: 5px;
             border: none; 
             outline: none; 
         }
-        
+
         .header_search input[type="text"]::placeholder {
             font-size: 12px; 
         }
-        
+
         .header_search button {
             font-size: 18px;
             padding: 5px 10px;
@@ -62,14 +62,14 @@
             cursor: pointer;
             color: white;
         }
-        
+
         .header_navigation {
             margin-left: auto;
             display: flex;
             align-items: center;
         }
-        
-        
+
+
         .header_navigation a{
             text-decoration: none;
             margin-left: 30px;
@@ -89,11 +89,27 @@
             width: 70%;
         }
         
-        img.picture{
-            width: 50%;
+        img{
+            width: 200px;
+            border-radius: 50%;
+            padding: 35px;
         }
 
-        p, h1, h2, h3, h4, h5, h6 {
+        .imageShowcase {
+            display: flex;
+            overflow: hidden;
+            width: 70%;
+            align-items: center;
+        }
+
+        .imageShowcase h2 {
+            /*ADD STUFF*/
+        }
+
+        .container p, 
+        .container h1, .container h2, 
+        .container h3, .container h4, 
+        .container h5, .container h6 {
             font-family: 'Tahoma';
             margin-left: 15%;
             width: 70%;
@@ -105,32 +121,34 @@
         .footer {
             background-color: #545454; /* Set the background color */
             color: white; /* Set the text color */
-            font-family: sans-serif;;
+            font-family: 'Montserrat', sans-serif;;
             font-weight: 100;
             padding: 30px 80px;
             font-size: 9.5px;
+
             display: flex;
+            justify-content: space-between;
         }
-          
-          .left_footer {
+        
+        .left_footer {
             text-align: left;
             margin-right: auto;
-          }
-          
-          .mid_footer {
+        }
+        
+        .mid_footer {
             align-items: end;
             display: flex;
-          }
-          
-          .right_footer {
+        }
+        
+        .right_footer {
             text-align: right;
             margin-left: auto;
-          }
-          
-          .right_footer a {
+        }
+        
+        .right_footer a {
             text-decoration: none; 
             color: white; 
-          }
+        }
     </style>
 </head>
 
@@ -151,7 +169,14 @@
     <div class="container">
         <h1 style="font-size: 46px">About Us</h1>
         <hr>
-        <p>insert pictures of us here</p>
+        <div class="imageShowcase">
+            <img src= "fulcher.jpg" alt= "Lander Fulcher">
+            <h2>Lander Fulcher</h2>
+            <img src= "sang.jpg" alt= "Nathan Sang">
+            <h2>Nathan Sang</h2>
+            <img src= "villamiel.jpg" alt= "Leeroi Villamiel">
+            <h2>Leeroi Villamiel</h2>
+        </div>
         <hr>
         <h2>Who are you guys?</h2>
         <p>Who else would we be but the humble developers of MVX! We are 2nd Year ID 121 Computer Science students at De La Salle University on a mission to connect music better to the listeners around the world.
