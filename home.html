@@ -112,6 +112,11 @@
             box-sizing: border-box;
         }
 
+        #title {
+            margin-left: 15%;
+            font-size: 46px;
+        }
+
         hr {
             width: 70%;
         }
@@ -122,8 +127,6 @@
         .container h5, .container h6,
         .container ul, .container ol {
             font-family: 'Tahoma';
-            margin-left: 15%;
-            width: 70%;
             text-align: justify;
             line-height: 1.25em;
         }
@@ -133,6 +136,7 @@
             flex-direction: row;
             width: 70%;
             padding-bottom: 15px;
+            margin-left: 15%;
         }
 
         .filter {
@@ -140,7 +144,6 @@
             background-color: #d9d9d9;
             padding: 15px;
             font-size: 16px;
-            
 
             box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
             
@@ -235,19 +238,16 @@
     </header>
 
     <div class="container">
-        <h1 style="font-size: 46px">Home</h1>
+        <h1 id="title">Home</h1>
         <hr>
         <div class = "filters">
             <h2>New Releases</h2>
-            <div class= "filter">
+            <button class= "filter">
                 <p>Following</p>
-            </div>
-            <div class= "filter">
+            <button class= "filter">
                 <p>Philippines</p>
-            </div>
-            <div class= "filter">
+            <button class= "filter">
                 <p>World</p>
-            </div>
         </div>
 
         <div id="items">
