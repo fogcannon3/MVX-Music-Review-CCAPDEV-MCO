@@ -9,6 +9,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
     <title>Home - MVX</title>
     <style>
+
+
+        /* width */
+        ::-webkit-scrollbar {
+            width: 20px;
+        }
+        
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background-color: #e8e8e8;
+            border-radius: 10px;
+        }
+        
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #c9c9c9; 
+            border-radius: 10px;
+        }
+        
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a9a9a9; 
+        }
+
         body {
             padding: 0;
             margin: 0;
@@ -107,13 +131,12 @@
         .filters {
             display: flex;
             align-self: center;
-            justify-content: left;
             width: 70%;
-            overflow-x: scroll;
-            white-space: nowrap;
+            padding: 25px;
         }
 
         .filter {
+            display: flex;
             border-radius: 30px;
             text-align: center;
             text-justify: center;
@@ -121,7 +144,6 @@
             width: auto;
             height: 35px;
             min-width: 100px;
-            min-height: 70px;
             padding: 1%;
         }
 
