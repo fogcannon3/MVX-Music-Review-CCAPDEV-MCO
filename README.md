@@ -19,4 +19,5 @@ To be added soon:
 - Profile page
 - Notification page
 - Search page
-- Connection of content pages to each other
+- Connection of pages to each other
+- Proper content recommendations and filtering
