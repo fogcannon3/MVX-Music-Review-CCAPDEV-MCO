@@ -13,8 +13,10 @@ MCO Phase 1 Features:
 - Playlist Page
 - Playlist Import/Export Pages
 - Legal Pages (ToC, Privacy Policy, About Us, FAQ, etc.)
+  
 
 To be added soon:
 - Profile page
 - Notification page
 - Search page
+- Connection of content pages to each other
