@@ -104,12 +104,12 @@
         
         .container{
             background-color: #ffffff;
-            margin-left: auto;
+            margin-left: 0px;
             margin-right: auto;
+            width: auto;
             display: flex;
             flex-direction: column;
             box-sizing: border-box;
-            /*NEEDS WAY TO ADD PADDING BELOW*/
         }
 
         hr {
@@ -130,21 +130,21 @@
 
         .filters {
             display: flex;
-            align-self: center;
+            flex-direction: row;
             width: 70%;
-            padding: 25px;
+            padding-bottom: 15px;
         }
 
         .filter {
-            display: flex;
-            border-radius: 30px;
-            text-align: center;
-            text-justify: center;
+            border-radius: 25px;
             background-color: #d9d9d9;
-            width: auto;
-            height: 35px;
-            min-width: 100px;
-            padding: 1%;
+            padding: 15px;
+            font-size: 16px;
+            
+
+            box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
+            
+            cursor: pointer;
         }
 
         .filter p {
@@ -158,14 +158,12 @@
             display: block;
             margin: auto;
         }
-        /*The "#items" is the div id that encompasses all items in the scroll*/
-        /*the given width and white-space values allow the scroll to work properly*/
 
         .item {
             display: inline-block;
             width: auto;
-            height: auto; /*the height was pretty brute-forced, there may be a better way 
-                            to adjust the height so that it automatically adjusts*/
+            height: auto;
+            cursor: pointer;
         }
 
         .item p{
@@ -188,8 +186,8 @@
         
         /* footer part */
         .footer {
-            background-color: #545454; /* Set the background color */
-            color: white; /* Set the text color */
+            background-color: #545454;
+            color: white;
             font-family: sans-serif;
             font-weight: 100;
             padding: 30px 80px;
@@ -239,10 +237,16 @@
     <div class="container">
         <h1 style="font-size: 46px">Home</h1>
         <hr>
-        <h2>New Releases</h2>
         <div class = "filters">
+            <h2>New Releases</h2>
             <div class= "filter">
-                <p>asiohndhaoadwsfsdfsdfd</p>
+                <p>Following</p>
+            </div>
+            <div class= "filter">
+                <p>Philippines</p>
+            </div>
+            <div class= "filter">
+                <p>World</p>
             </div>
         </div>
 

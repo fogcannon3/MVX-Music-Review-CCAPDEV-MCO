@@ -24,70 +24,6 @@
             background: #a9a9a9; 
         }
 
-        /* header part */
-        .header {
-            position: sticky;
-            top: 0;
-            z-index: 999;
-            display: flex;
-            justify-content: flex-start;
-            padding: 20px 80px;
-            font-family: 'Montserrat', sans-serif;
-            background-color: #5B5247;
-            color: white;
-        }
-
-        .header_title {
-            margin: 0;
-            display: flex;
-            align-items: center;
-            padding-right: 40px;
-        }
-
-        .header span {
-            font-weight: 700;
-            font-size: 30px;
-        }
-
-        .header_search {
-            display: flex;
-            align-items: center;
-        }
-
-        .header_search input {
-            font-size: 18px;
-            padding: 5px 10px;
-            border-radius: 5px;
-            border: none; 
-            outline: none; 
-        }
-
-        .header_search input[type="text"]::placeholder {
-            font-size: 12px; 
-        }
-
-        .header_search button {
-            font-size: 18px;
-            padding: 5px 10px;
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            color: white;
-        }
-
-        .header_navigation {
-            margin-left: auto;
-            display: flex;
-            align-items: center;
-        }
-
-
-        .header_navigation a{
-            text-decoration: none;
-            margin-left: 30px;
-            color: inherit;
-        }
-
         body {
 
             font-family: 'Tahoma';
@@ -311,16 +247,11 @@
             white-space: nowrap;
         }
 
-        /*The "#items" is the div id that encompasses all items in the scroll*/
-        /*the given width and white-space values allow the scroll to work properly*/
-
         .item {
             display: inline-block;
             width: 250px;
             height: 325px;
-            /*the height was pretty brute-forced, there may be a better way to adjust the height 
-                so that it automatically adjusts based on the height of the artist name*/
-            border:1px solid;
+            
         }
 
         .item-tags{
@@ -332,6 +263,7 @@
             display: inline-block;
             padding: 5px;
             width: auto;
+            padding: 1%;
             margin: 20px;
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
             border-radius: 20px;
@@ -389,54 +321,11 @@
             background-color: white;
             cursor: pointer;
         }
-
-        /* footer part */
-        .footer {
-            background-color: #545454; /* Set the background color */
-            color: white; /* Set the text color */
-            font-family: sans-serif;;
-            font-weight: 100;
-            padding: 30px 80px;
-            font-size: 9.5px;
-
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        .left_footer {
-            text-align: left;
-            margin-right: auto;
-        }
-        
-        .mid_footer {
-            align-items: end;
-            display: flex;
-        }
-        
-        .right_footer {
-            text-align: right;
-            margin-left: auto;
-        }
-        
-        .right_footer a {
-            text-decoration: none; 
-            color: white; 
-        }
         </style>
+        
     </head>
 <body>
-    <header class="header">
-        <h2 class="header_title"><span>MVX</span></h2>
-        <div class="header_search">
-            <input type="text" placeholder="Search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </div>
-        <nav id="header_navigation" class="header_navigation">
-            <i class="fa fa-bell"></i>
-            <a href="#">Home</a>
-            <a href="#">Profile</a>
-        </nav>   
-    </header>
+    <div class="Navbar"></div>
     <div class="Song-Title">
         <h1><b> Rising Sun (순수) </b></h1>
         <p class="title">TVXQ! (동방신기)</p>
@@ -450,7 +339,7 @@
         <div class="Main-content">
             <div class="Main-details">
                 <div class="Song-Details">
-                    <img class="scroll" src="unforgiven le sserafim.png"></img>
+                    <img class="scroll" src="rising sun tvxq.jpg"></img>
                     <div class="deets">
                     <p class="deets">4.98 ⭐</p>
                     <p class="deets"><b>Album:</b> Rising Sun </p>
@@ -830,32 +719,6 @@
         </button>
         <p>Back to Top</p>
     </div>
-    <footer class="footer">
-        <div class="left_footer">
-            <h3>Get in touch with us</h3>
-            <p>Contact Number: #63 908-888-0011<br>
-                Email: customerservice.mvx@gmail.com
-            </p>
-        </div>
-        <div class="mid_footer">
-            <p>MVX Solutions Inc. (c) 2023. All rights reserved.</p>
-        </div>
-        <div class="right_footer">
-            <table>
-                <tr>
-                    <td><a href="#">About Us</a></td>
-                </tr>
-                <tr>
-                    <td><a href="#">Frequently Asked Questions</a></td>
-                </tr>
-                <tr>
-                    <td><a href="#">Privacy Policy</a></td>
-                </tr>
-                <tr>
-                    <td><a href="#">Terms and Condition</a></td>
-                </tr>
-              </table>
-        </div>
-    </footer>
+    <div class="Footer"></div>
 </body>
 </html>
