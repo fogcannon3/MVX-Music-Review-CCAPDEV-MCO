@@ -139,8 +139,8 @@
             padding-bottom: 15px;
         }
 
-        .filterTitle {
-            
+        .filterActual {
+            margin-left: auto;
         }
 
         .filter {
@@ -202,10 +202,41 @@
         }
 
         .update {
-            display: inline-block;
+            display: inline-flex;
+            flex-direction: column;
             padding: 15px;
             border-radius: 25px;
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            width: 250px;
+            min-height: 250px;
+
+        }
+
+        .updateTop {
+            display: flex;
+            margin-right: 100%;
+            max-height: 100px;
+        }
+
+        .updateTop h2 {
+            margin-left: 15px;
+            font-size: 18px;
+        }
+
+        .updateActual {
+            overflow-wrap: normal;
+            white-space: normal;
+        }
+
+        .update img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+        }
+
+        .updateActual p {
+            white-space: normal;
         }
 
         img {
@@ -261,6 +292,12 @@
             text-decoration: none; 
             color: white; 
         }
+
+        button {
+            margin-top: 7px;
+            border: none;
+        }
+
     </style>
 </head>
 
@@ -283,53 +320,55 @@
         <hr>
         <div class = "filters">
             <h2 class="filterTitle">New Releases</h2>
-            <button class= "filter">
-                <p>Following</p>
-            <button class= "filter">
-                <p>Philippines</p>
-            <button class= "filter">
-                <p>World</p>
+            <div class = "filterActual">
+                <button class= "filter">
+                    <p>Following</p>
+                <button class= "filter">
+                    <p>Philippines</p>
+                <button class= "filter">
+                    <p>World</p>
+            </div>
         </div>
 
         <div id="items">
             <div class="item">
-                <img src = "rising sun tvxq.jpg"></img>
+                <img src = "rising sun tvxq.jpg">
                 <h2>Rising Sun</h2>
                 <p>TVXQ! (동방신기)</p>
             </div>
 
             <div class="item">
-                <img src = "shalala taeyong.jpg"></img>
+                <img src = "shalala taeyong.jpg">
                 <h2>Shalala</h2>
                 <p>TAEYONG</p>
             </div>
 
             <div class="item">
-                <img src = "unforgiven le sserafim.png"></img>
+                <img src = "unforgiven le sserafim.png">
                 <h2>Unforgiven</h2>
                 <p>LE SSERAFIM (르세라핌)</p>
             </div>
 
             <div class="item">
-                <img src = "tri-angle tvxq.jpg"></img>
+                <img src = "tri-angle tvxq.jpg">
                 <h2>TRI-ANGLE</h2>
                 <p>TVXQ! (동방신기)</p>
             </div>
 
             <div class="item">
-                <img src = "dark blood enhypen.jpg"></img>
+                <img src = "dark blood enhypen.jpg">
                 <h2>DARK BLOOD</h2>
                 <p>ENHYPEN</p>
             </div>
             
             <div class="item">
-                <img src = "masterpiece misamo.jpeg"></img>
+                <img src = "masterpiece misamo.jpeg">
                 <h2>Masterpiece</h2>
                 <p>TWICE-MISAMO</p>
             </div>
 
             <div class="item">
-                <img src = "MiroticTVXQ.png"></img>
+                <img src = "MiroticTVXQ.png">
                 <h2>MIROTIC</h2>
                 <p>TVXQ! (동방신기)</p>
             </div>
@@ -337,68 +376,111 @@
 
         <br>
 
+
+
+
+
+
+
+
+
+
+        
         <div class = "filters">
-            <h2>Updates</h2>
-            <button class= "filter">
-                <p>Artists</p>
-            <button class= "filter">
-                <p>Users</p>
+            <h2 class="filterTitle">Updates</h2>
+            <div class = "filterActual">
+                <button class= "filter">
+                    <p>Artists</p>
+                <button class= "filter">
+                    <p>Users</p>
+            </div>
         </div>
 
         <div class="updates">
             <div class="update">
-                <img src = "rising sun tvxq.jpg"></img>
-                <h2>Rising Sun</h2>
-                <p>TVXQ! (동방신기)</p>
+                <div class = "updateTop">
+                    <img src = "eminem.jpg">
+                    <h2>Eminem</h2>
+                </div>
+                <div class = "updateActual">
+                    <p>'Sup guys, been a while, gonna release a new EP in a few, keep an eye out. With a collaboration with old friends, this one's for all the ones who were there for me since the beginning.</p>
+                </div>
+                
             </div>
 
             <div class="update">
-                <img src = "shalala taeyong.jpg"></img>
-                <h2>Shalala</h2>
-                <p>TAEYONG</p>
+                <div class = "updateTop">
+                    <img src = "a7x.jpg">
+                    <h2>Avenged Sevenfold</h2>
+                </div>
+                <div class = "updateActual">
+                    <p>We've added an additional show to our world tour! For the first time in 10 years, we'll be going back to Southeast Asia! To our Indonesian, Singaporean, and Filipino fans, keep a look out for our concert dates!</p>
+                </div>
             </div>
 
             <div class="update">
-                <img src = "unforgiven le sserafim.png"></img>
-                <h2>Unforgiven</h2>
-                <p>LE SSERAFIM (르세라핌)</p>
+                <div class = "updateTop">
+                    <img src = "pink guy.png">
+                    <h2>Pink Guy</h2>
+                </div>
+                <div class = "updateActual">
+                    <p>GUESS WHO'S BACK HAHAHAHAHAHAHAHAHAHAHAHA HAHAHAHAHAHAHAHAHAHAHAHA *breathes in* HAHAHAHAHAHAHAHHAHAHAHAH HAHAHAHAHAHAHAHAHAHAHAHA</p>
+                </div>
             </div>
 
             <div class="update">
-                <img src = "tri-angle tvxq.jpg"></img>
-                <h2>TRI-ANGLE</h2>
-                <p>TVXQ! (동방신기)</p>
+                <div class = "updateTop">
+                    <img src = "kanye.jpg">
+                    <h2>Kanye West</h2>
+                </div>
+                <div class = "updateActual">
+                    <p>Kanye. That's the update.</p>
+                </div>
             </div>
 
             <div class="update">
-                <img src = "dark blood enhypen.jpg"></img>
-                <h2>DARK BLOOD</h2>
-                <p>ENHYPEN</p>
+                <div class = "updateTop">
+                    <img src = "linkin park.jpg">
+                    <h2>Linkin Park</h2>
+                </div>
+                <div class = "updateActual">
+                    <p>07/28/2023. We will be releasing never-before-seen and never-before-heard music from the days of Meteora and Hybrid Theory. Just to relive the good times.  - Mike</p>
+                </div>
             </div>
             
             <div class="update">
-                <img src = "masterpiece misamo.jpeg"></img>
-                <h2>Masterpiece</h2>
-                <p>TWICE-MISAMO</p>
-            </div>
-
-            <div class="update">
-                <img src = "MiroticTVXQ.png"></img>
-                <h2>MIROTIC</h2>
-                <p>TVXQ! (동방신기)</p>
+                <div class = "updateTop">
+                    <img src = "rick astley.jpg">
+                    <h2>Rick Astley</h2>
+                </div>
+                <div class = "updateActual">
+                    <p>Keep up the memes and streaming of "Never Gonna Give You Up", fellas! We got to 1 billion YouTube views, who's to say we can't get more than that!? :)</p>
+                </div>
             </div>
         </div>
+
+
+
+
+
+
+
+
+
+
 
         <br>
 
         <div class = "filters">
             <h2>Personalized Recommendations</h2>
-            <button class= "filter">
-                <p>Following</p>
-            <button class= "filter">
-                <p>Philippines</p>
-            <button class= "filter">
-                <p>World</p>
+            <div class = "filterActual">
+                <button class= "filter">
+                    <p>Upbeat</p>
+                <button class= "filter">
+                    <p>Danceable</p>
+                <button class= "filter">
+                    <p>"soty"</p>
+            </div>
         </div>
 
         <div id="items">
@@ -449,12 +531,14 @@
 
         <div class = "filters">
             <h2>Trending</h2>
-            <button class= "filter">
-                <p>Nearby</p>
-            <button class= "filter">
-                <p>Country</p>
-            <button class= "filter">
-                <p>World</p>
+            <div class = "filterActual">
+                <button class= "filter">
+                    <p>City</p>
+                <button class= "filter">
+                    <p>Country</p>
+                <button class= "filter">
+                    <p>World</p>
+            </div>
         </div>
 
         <div id="items">
@@ -506,10 +590,10 @@
     </div>
 
     <div class="Back-To-Top">
-        <button class="BTT"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+        <a href = "#title"><button class="BTT"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
         </svg>
-        </button>
+        </button></a>
         <p>Back to Top</p>
     </div>
 
