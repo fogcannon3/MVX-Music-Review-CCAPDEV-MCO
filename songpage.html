@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Song Page</title>
+        <style>
+        ::-webkit-scrollbar {
+            width: 20px;
+        }
+
+
+        ::-webkit-scrollbar-track {
+            background-color: #e8e8e8;
+            border-radius: 10px;
+        }
+
+
+        ::-webkit-scrollbar-thumb {
+            background: #c9c9c9; 
+            border-radius: 10px;
+        }
+
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a9a9a9; 
+        }
+
+        body {
+
+            font-family: 'Tahoma';
+            margin-top: 0;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .Main-Container{
+            display: flex;
+            margin: auto;
+	        width: 800px;
+	        font-size: 14px;
+	        box-sizing: border-box;
+        }
+
+        div.Song-Title{
+            display: flex;
+            margin: auto;
+            flex-direction: row;
+            align-items: center;
+            align-self: center;
+            justify-content: center;
+            width: 800px;
+            
+        }
+
+        .push-left {
+            margin-left: auto;
+        }
+
+        hr.c1{
+            border: 1px solid black;
+            width: 800px;
+        }
+
+        h2.scroll {
+            margin-left: 5px;
+            font-family: 'Tahoma';
+            line-height: 0px;
+            text-align: 500px;
+        }
+
+        p.title {
+            margin-left: 5px; 
+            font-family: 'Tahoma';
+            font-size: 13.5px;
+        }
+        
+        p.deets{
+            margin-left: 15px; 
+            font-family: 'Tahoma';
+            font-size: 11px;
+        }
+
+        button.heart{
+            color: gray;
+            padding: 0;
+            border: none;
+            background: none;
+            min-height:50px; 
+            min-width: 60px;
+            cursor: pointer;
+        }
+
+        button.heart:hover{
+            padding: 0;
+            border: none;
+            background: none;
+            color: red;
+        }
+
+        button.X{
+            background: none;
+            color: black;
+            border: 1px solid black;
+            border-radius:10px; 
+            padding:5px;
+            min-height:5px; 
+            min-width: 25px;
+            cursor: pointer;
+        }
+
+        button.X:hover{
+            background-color: red;
+            color: white;
+            outline: 1px solid black;
+        }
+
+        div.Main-content{
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+	        width: 550px;
+	        font-size: 14px;
+	        box-sizing: border-box;
+        }
+        
+        div.Song-Details{
+            display: flex;
+            flex-direction: row;
+        }
+
+        div.deets{
+            width: 85%;
+        }
+
+        img.send{
+            width:120px;
+            height:auto;
+            padding: 7px;
+        }
+
+        button.send{
+            padding: 5px;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        div.Popular-Tag-Button{
+            display: flex;
+            flex-direction: row;
+        }
+
+        button.addTags{
+            color: black;
+            background-color:#C4A88C;
+            border-radius: 36px;
+            margin-left: auto;
+            padding:15px;
+            height: 50%;
+            border:none;
+            cursor: pointer;
+            align-self: flex-end;
+        }
+
+        button.tags{
+            color: white;
+            background-color:#ABABAB;
+            border-radius: 36px;
+            margin-left: auto;
+            padding:15px;
+            height: 50%;
+            border:none;
+            cursor: pointer;
+        }
+
+        div.Rate-Review{
+            display: flex;
+            flex-direction: row;
+        }
+
+        button.rate-review{
+            color: white;
+            background-color:#5C4021;
+            border-radius: 36px;
+            padding:15px;
+            height: 50%;
+            width: 50%;
+            font-size: 25px;
+            border:none;
+            cursor: pointer;
+        }
+
+        div.Most-Upvoted-Review { 
+            display: flex;
+            flex-direction: column;
+            width: 518px;
+            height: 200px;
+            background-color:#E6E6E6;
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        div.MUR-container{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .push-center{
+            align-self: center;
+        }
+
+        div.Criteria-Rating{
+            display: flex;
+            flex-direction: column;
+            margin-right: auto;
+        }
+
+        img.user_icon {
+            margin-right: 5px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            vertical-align: baseline;
+            border: 1px solid #f3f3f3;
+            width: 32px;
+            height: 32px;
+        }
+        .username {
+            font-size: inherit;
+            font-family: 'Tahoma';
+            font-weight: 700;
+            vertical-align: baseline;
+            margin: 0;
+            padding: 0;
+        }
+
+        div.space {
+            display: inline;
+            color: #262626;
+            margin-left: 4px;
+            margin-right: 4px;
+            align-self: center;
+        }
+
+        #items { 
+            overflow-x: scroll;
+            width: 100%;
+            height: 50%;
+            white-space: nowrap;
+        }
+
+        /*The "#items" is the div id that encompasses all items in the scroll*/
+        /*the given width and white-space values allow the scroll to work properly*/
+
+        .item {
+            display: inline-block;
+            width: 250px;
+            height: 325px;
+            /*the height was pretty brute-forced, there may be a better way to adjust the height 
+                so that it automatically adjusts based on the height of the artist name*/
+            border:1px solid;
+        }
+
+        .item-tags{
+            display: inline-block;
+            padding: 5px;
+        }
+
+        .item-review{
+            display: inline-block;
+            padding: 5px;
+            width: auto;
+            margin: 20px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 20px;
+        }
+
+        img.scroll {
+            width: 240px;
+            display: flex;
+            margin: auto;
+            padding: 5px;
+        }
+
+        div.Reviews-and-Comments{
+            display: flex;
+            flex-direction: column;
+        }
+
+        div.RC-F{
+            display: flex;
+            flex-direction: row;
+        }
+
+        button.VM{
+            background-color:#C4A88C;
+            border-radius: 36px;
+            padding:15px;
+            height: 50%;
+            width: 25%;
+            font-size: 16px;
+            align-self: center;
+            border:none;
+            cursor: pointer;
+        }
+
+        div.Lyrics{
+            width: 200px;
+            height: 0%;
+	        font-size: 14px;
+	        box-sizing: border-box;
+            border-radius: 16px;
+            background-color: #E6E6E6;
+            padding: 10px;
+            text-align: justify;
+        }
+
+        div.Back-To-Top{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 30px;
+        }
+        
+        button.BTT{
+            border: none;
+            background-color: white;
+            cursor: pointer;
+        }
+        </style>
+        
+    </head>
+<body>
+    <div class="Navbar"></div>
+    <div class="Song-Title">
+        <h1><b> Rising Sun (순수) </b></h1>
+        <p class="title">TVXQ! (동방신기)</p>
+        <div class=push-left>
+        <button class="heart">❤</button></div>
+        <button class="X">x</button>
+    </div>
+    <hr class="c1">
+
+    <div class="Main-Container">
+        <div class="Main-content">
+            <div class="Main-details">
+                <div class="Song-Details">
+                    <img class="scroll" src="unforgiven le sserafim.png"></img>
+                    <div class="deets">
+                    <p class="deets">4.98 ⭐</p>
+                    <p class="deets"><b>Album:</b> Rising Sun </p>
+                    <p class="deets"><b>Year:</b> 2005</p>
+                    <p class="deets"><b>Genre:</b> K-Pop, Pop, Dance</p>
+                    <p class="deets"><b>Lyrics:</b> Juan dela Cruz</p>
+                    <p class="deets"><b>Composers:</b> Juan dela Cruz</p>
+                    <p class="deets"><b>Publisher:</b> SM Entertainment</p>
+                    <p class="deets"><b>No. of unique listeners:</b> 678,944</p>
+                    <button class="send"><img class="send" src="Youtube1.png"></img></button>
+                    <button class="send"><img class="send" src="Spotify1.png"></img></button>
+                    </div>
+                </div>
+                <hr>
+                
+                <div class="Popular-Tags">
+                    <div class="Popular-Tag-Button">
+                        <h1>Popular Tags</h1>
+                        <button class="addTags">Add Tags</button>
+                    </div>
+                    <div id="items">
+                        <div class="item-tags">
+                            <button class="tags">k-pop</button>
+                        </div>
+
+                        <div class="item-tags">
+                            <button class="tags">2nd gen</button>
+                        </div>
+
+                        <div class="item-tags">
+                            <button class="tags">db5k</button>
+                        </div>
+
+                        <div class="item-tags">
+                            <button class="tags">2000s</button>
+                        </div>
+
+                        <div class="item-tags">
+                            <button class="tags">good ol' days</button>
+                        </div>
+                        
+                        <div class="item-tags">
+                            <button class="tags">famous</button>
+                        </div>
+
+                        <div class="item-tags">
+                            <button class="tags">pop</button>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="Rate-Review">
+                    <button class="rate-review">RATE</button>
+                    <div class="space">•</div>
+                    <button class="rate-review">REVIEW</button>
+                </div>
+                <hr>
+
+                <h1>Most Upvoted Review</h1>
+                <div class="Most-Upvoted-Review">
+                    <div class="MUR-container">
+                    <img class="user_icon push-center" src="profilepicture.jpg"></img>
+                    <h2 class="username push-center">@juandela.c</h2>
+                    <h2 class="push-left">⭐⭐⭐⭐⭐</h2>
+                    </div>
+                    <h1>The absolute best of 2000's K-Pop.</h1>
+                    <p>This song is without a doubt, the best song that DB5K (TVXQ! when they were 5 members huhu pls come back h...</p>
+                </div>
+                <hr>
+
+                <div class="Criteria-Rating">
+                    <h1>Criteria Rating</h1>
+                    <h3><em>Danceability</em></h3>
+                    <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    </div>
+
+                    <h3><em>Upbeat</em></h3>
+                    <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                    </svg>
+                    </div>
+
+                    <h3><em>Catchiness</em></h3>
+                    <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-half" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z"/>
+                    </svg>
+                    </div>
+
+                    <h3><em>Vocals</em></h3>
+                    <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-half" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z"/>
+                    </svg>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="Reviews-and-Comments">
+                    <div class="RC-F">
+                        <h1>Reviews & Comments</h1>
+                        <button class="VM push-left">View More</button>
+                    </div>
+                    <div id="items">
+                        <div class="item-review">
+                            <div class="MUR-container">
+                                <img class="user_icon push-center" src="profilepicture.jpg"></img>
+                                <h2 class="username push-center">@try-bal2</h2>
+                                <h2 class="push-left">5⭐</h2>
+                            </div>
+                                <h2>I luv this song!</h2>
+                                <p>I am a pre-break Cassiopeia and let <br>
+                                me tell you that even after almost a <br>
+                                decade and a half, this song still hi...</p>
+                            </div>
+
+                        <div class="item-review">
+                            <div class="MUR-container">
+                                <img class="user_icon push-center" src="profilepicture.jpg"></img>
+                                <h2 class="username push-center">@db5k.fvr</h2>
+                                <h2 class="push-left">5⭐</h2>
+                            </div>
+                            <div>
+                                <h2>You're not a rea...</h2>
+                                <p>Of course people know about <br>
+                                Mirotic, it's TVXQ's most popular <br>
+                                song, but IMO this is still their bes...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Similiar-Songs">
+                <h1>Similar to this</h1>
+                    <div id="items">
+                        <div class="item">
+                            <img class="scroll" src = "rising sun tvxq.jpg"></img>
+                            <h2 class="scroll">Rising Sun</h2>
+                            <p>TVXQ! (동방신기)</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "shalala taeyong.jpg"></img>
+                            <h2 class="scroll">Shalala</h2>
+                            <p>TAEYONG</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "unforgiven le sserafim.png"></img>
+                            <h2 class="scroll">Unforgiven</h2>
+                            <p>LE SSERAFIM (르세라핌)</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "tri-angle tvxq.jpg"></img>
+                            <h2 class="scroll">TRI-ANGLE</h2>
+                            <p>TVXQ! (동방신기)</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "dark blood enhypen.jpg"></img>
+                            <h2 class="scroll">DARK BLOOD</h2>
+                            <p>ENHYPEN</p>
+                        </div>
+                        
+                        <div class="item">
+                            <img class="scroll" src = "masterpiece misamo.jpeg"></img>
+                            <h2 class="scroll">Masterpiece</h2>
+                            <p>TWICE-MISAMO</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "MiroticTVXQ.png"></img>
+                            <h2 class="scroll">MIROTIC</h2>
+                            <p>TVXQ! (동방신기)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="Same-Artist">
+                    <h1>From the same artist</h1>
+                    <div id="items">
+                        <div class="item">
+                            <img class="scroll" src = "rising sun tvxq.jpg"></img>
+                            <h2 class="scroll">Rising Sun</h2>
+                            <p>TVXQ! (동방신기)</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "shalala taeyong.jpg"></img>
+                            <h2 class="scroll">Shalala</h2>
+                            <p>TAEYONG</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "unforgiven le sserafim.png"></img>
+                            <h2 class="scroll">Unforgiven</h2>
+                            <p>LE SSERAFIM (르세라핌)</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "tri-angle tvxq.jpg"></img>
+                            <h2 class="scroll">TRI-ANGLE</h2>
+                            <p>TVXQ! (동방신기)</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "dark blood enhypen.jpg"></img>
+                            <h2 class="scroll">DARK BLOOD</h2>
+                            <p>ENHYPEN</p>
+                        </div>
+                        
+                        <div class="item">
+                            <img class="scroll" src = "masterpiece misamo.jpeg"></img>
+                            <h2 class="scroll">Masterpiece</h2>
+                            <p>TWICE-MISAMO</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "MiroticTVXQ.png"></img>
+                            <h2 class="scroll">MIROTIC</h2>
+                            <p>TVXQ! (동방신기)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        <div class="Lyrics">
+            <h2>Lyrics</h2>
+            <p>Now, I cry under my skin.
+                하늘을 향해 간 나의 눈물로 만든 비가
+                대지에 내려도 세월에 박힌
+                내 아픔을 씻어가도
+                No! 용서, 내겐 절대적인 사치
+                No! 표적 없이 날아간 길을 잃은 분노
+                No! 나, 미련 같은 말로 기도하는 속죄
+                No! Here I go, Come back!
+                <br>
+                <br>
+                <br>
+                힘을 잃어버린 날개,
+                재가 되어 버릴 것만 같은 날들
+                비상하리란 꿈의 파편들로
+                맞은 나의 아침엔 반짝임이 없는데
+                
+                진실은 누구라도 갖고 있는 것
+                하지만 보여준 얼굴엔 거짓뿐인걸
+                영원에 남겨진 나를 찾는가?
+                <br>
+                <br>
+                <br>
+                나를 닮아
+                가슴 안에 가득 차 커져가는 Innocent
+                불꽃은 밝게 타오르게,
+                마지막이 찬란한 노을처럼
+                (I’m) waiting for Rising sun…
+                <br>
+                <br>
+                <br>
+                Now, burn my eyes.
+                Sun comes up, blowing the fog
+                Never lies, to be your mind.
+                Got to be a true
+                내 갈 길이 101 깨달음에 깨달음에
+                도달할 수가 없는 게 현실인걸
+                나의 태양 앞에 부끄럽지 않게,
+                I just try me..and now
+                <br>
+                <br>
+                <br>
+                정말, 혼돈에 끝은 어딜까?
+                Somebody talks 매일 같은 답은 아냐
+                절망, 행복의 밑그림 일까?
+                Somebody talks 시간만이 아는 해답
+                <br>
+                <br>
+                <br>
+                인생은 마치 끝없는
+                궤도를 달리는 별 같아
+                마치 수많은 질문과 해답을 찾아가,
+                미완성의 그림을 그려가는 것
+                (Do) you know why?
+                <br>
+                <br>
+                <br>
+                이 시간은 언제나 흘러가,
+                돌아오지 않는다는 것을 잘 알아
+                하루하루 후회를 남겨 두지마..
+                고독이 낳은 분노마저 삼켜봐
+                고단해진 슬픔의 눈물에서
+                실현되는 행복의 가치를 믿어봐
+                <br>
+                <br>
+                <br>
+                시련들이 내민 손에 작은 입맞춤,
+                고난의 뜰에 핀 나의 순수함
+                아무것도 정한 건 없겠지만,
+                매일 새로운 날이 계속 될 테니까
+                <br>
+                <br>
+                <br>
+                나를 닮아
+                가슴 안에 가득 차 커져가는 Innocent
+                불꽃은 밝게 타오르게,
+                마지막이 찬란한 노을처럼
+                (I’m) waiting for Rising sun…
+                <br>
+                <br>
+                <br>
+                정말, 혼돈에 끝은 어딜까?
+                Somebody talks 매일 같은 답은 아냐
+                절망, 행복의 밑그림 일까?
+                Somebody talks 시간만이 아는 해답
+                Rise up, rise up
+                </p>
+        </div>
+        
+    </div>
+    <div class="Back-To-Top">
+        <button class="BTT"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+        </svg>
+        </button>
+        <p>Back to Top</p>
+    </div>
+    <div class="Footer"></div>
+</body>
+</html>
