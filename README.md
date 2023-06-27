@@ -1,15 +1,23 @@
 # MVX-MCO
 CCAPDEV MCO - Fulcher, Sang, Villamiel
 
-To reiterate:
+MCO Phase 1 Features:
 
-Fulcher
-  - Landing page (pg 1 on canvas) and log-in page
-  - Playlist import and export pages
-    
-Villamiel
-  - Home page
-  - report + about us + faq page + privacy policy etc.
+- Landing Page
+- Log-In/Register Page
+- Home Page
+- Song Page
+- Album Page
+- Artist Page
+- Record Label Page
+- Playlist Page
+- Playlist Import/Export Pages
+- Legal Pages (ToC, Privacy Policy, About Us, FAQ, etc.)
+  
 
-Sang
-  - Song page (will be the same layout used for album, artist, publisher, and playlist pages)
+To be added soon:
+- Profile page
+- Notification page
+- Search page
+- Connection of pages to each other
+- Proper content recommendations and filtering
