@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
-    <title>About Us - MVX</title>
+    <title>FAQ - MVX</title>
     <style>
         body {
             padding: 0;
@@ -85,49 +85,29 @@
             display: flex;
             flex-direction: column;
             box-sizing: border-box;
-            
             /*NEEDS WAY TO ADD PADDING BELOW*/
         }
 
         hr {
             width: 70%;
         }
-        
-        img{
-            width: 200px;
-            border-radius: 50%;
-        }
-
-        #imageShowcase {
-            display: flex;
-            justify-content: space-around;
-            width: 70%;
-            margin: auto;
-            padding: 25px;
-        }
-
-        #devShowcase {
-            white-space: nowrap;
-            display: inline-block;
-        }
-
-        #devShowcase p, 
-        #devShowcase h1, #devShowcase h2, 
-        #devShowcase h3, #devShowcase h4, 
-        #devShowcase h5, #devShowcase h6 {
-            font-family: 'Tahoma';
-            display: flex;
-            justify-content: center;
-            line-height: 1.25em;
-        }
 
         .container p, 
         .container h1, .container h2, 
         .container h3, .container h4, 
-        .container h5, .container h6 {
+        .container h5, .container h6,
+        .container ul, .container ol {
             font-family: 'Tahoma';
             margin-left: 15%;
             width: 70%;
+            text-align: justify;
+            line-height: 1.25em;
+        }
+
+        .container li {
+            font-family: 'Tahoma';
+            margin-left: 0px;
+            width: 94%;
             text-align: justify;
             line-height: 1.25em;
         }
@@ -183,34 +163,41 @@
     </header>
 
     <div class="container">
-        <h1 style="font-size: 46px">About Us</h1>
+        <h1 style="font-size: 46px">Frequently Asked Questions</h1>
         <hr>
-        <div id="imageShowcase">
-            <div id = "devShowcase">
-                <img src= "fulcher.jpg" alt= "Lander Fulcher">
-                <h2>Lander Fulcher</h2>
-            </div>
-            <div id = "devShowcase">
-                <img src= "sang.jpg" alt= "Nathan Sang">
-                <h2>Nathan Sang</h2>
-            </div>
-            <div id = "devShowcase">
-                <img src= "villamiel.jpg" alt= "Leeroi Villamiel">
-                <h2>Leeroi Villamiel</h2>
-            </div>
-        </div>
-        <hr>
-        <h2>Who are we?</h2>
-        <p>Who else would we be but the humble developers of MVX! We are 2nd Year ID 121 Computer Science students at De La Salle University on a mission to connect music better to the listeners around the world.
-        </p>
-        <hr>
-        <h2>What is MVX all about?</h2>
-        <p>Welcome to MVX, the ultimate destination for music enthusiasts! At MVX, we believe that music has the power to transcend boundaries and connect people across the globe. Our platform is designed to be your go-to hub for discovering, sharing, and celebrating your favorite songs, albums, artists, record labels, and playlists.
+        <p><strong>1. How do I create an account?</strong></p>
+        <p>Creating an account is easy! Simply click on the "Sign Up" button when you first open the website and land on the landing page, and the website will guide you through the process of registering for an MVX account.</p>
+      
+        <p><strong>2. How can I reset my password?</strong></p>
+        <p>If you've forgotten your password, you can reset it by clicking on the "Forgot Password" link on the login page. Follow the instructions provided, and an email will be sent to you with a link to reset your password. Make sure to check your spam or junk folder if you don't receive the email in your inbox.</p>
+      
+        <p><strong>3. How do I add songs to my playlist?</strong></p>
+        <p>To add songs to your playlist, navigate to the song you want to add and click on the "Add to Playlist" button next to it. Select the desired playlist or create a new one, and the song will be added to your chosen playlist. You can manage and edit your playlists from your account settings.</p>
+      
+        <p><strong>4. Can I share my playlists with others?</strong></p>
+        <p>Absolutely! Sharing your playlists with others is a great way to discover and recommend music. Each playlist has a unique URL that you can copy and share with friends or on social media platforms. You can also make your playlists public, allowing other users to find and follow them on the MVX platform.</p>
+      
+        <p><strong>5. How can I delete my account?</strong></p>
+        <p>If you wish to delete your account, please contact our support team through the contact form or email provided on our website. They will guide you through the account deletion process and assist you with any concerns or questions you may have.</p>
+      
+        <p><strong>6. Are there mobile apps available for MVX?</strong></p>
+        <p>Currently, MVX is accessible through our website on desktop and mobile devices. A mobile app is not available at this time, but we will make sure to update the MVX community on any future news about potential mobile app releases!</p>
+      
+        <p><strong>7. How can I discover new music on MVX?</strong></p>
+        <p>Discovering new music on MVX is easy! You can explore trending songs, browse through different genres, check out curated playlists, and follow other users with similar music tastes. Additionally, our recommendation algorithms suggest personalized song recommendations based on your listening history and preferences.</p>
 
-            <br>At MVX, we strive to create a vibrant community of music lovers who are passionate about exploring diverse genres, discovering hidden gems, and connecting with like-minded individuals. Whether you're an avid collector, a casual listener, or a budding musician, MVX offers a unique space to curate your own musical journey.
-            
-            <br>With our intuitive interface, personalized recommendations, and interactive features, you can easily create playlists, rate songs, leave reviews, and engage in meaningful discussions with fellow music aficionados. Unleash your creativity by sharing your favorite tracks, albums, and artists, and let MVX be the soundtrack to your musical adventures. Join us today and immerse yourself in the world of MVX, where music knows no boundaries.
-        </p>
+        <p><strong>8. Can I collaborate with others on playlists?</strong></p>
+        <p>Yes, you can collaborate with others on playlists! Simply create a playlist and invite your friends or other MVX users to contribute to it. Collaborative playlists allow multiple people to add, remove, and rearrange songs, making it a fun way to create a collective music collection.</p>
+
+        <p><strong>9. How can I report a song or user on MVX?</strong></p>
+        <p>If you come across any inappropriate content or have concerns about a specific song or user on MVX, please report it to our support team.
+        <br>    
+        <br>
+        <br>
+        <hr>
+        <p>If you have any additional questions or need further assistance, please don't hesitate to reach out to our support team. We're always here to help!</p>
+            <br>
+        
     </div>
 
     <footer class="footer">

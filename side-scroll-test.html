@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <!--TESTING WITH ALBUM COVERS-->
-<!--Additional comment for testing-->
 <html>
     <head>
         <title>Side-Scroll Function</title>
@@ -13,8 +12,10 @@
 
         #items { 
             overflow-x: scroll;
-            width: auto;
+            width: 70%;
             white-space: nowrap;
+            display: block;
+            margin: auto;
         }
         /*The "#items" is the div id that encompasses all items in the scroll*/
         /*the given width and white-space values allow the scroll to work properly*/
@@ -25,7 +26,7 @@
             height: 325px;
             /*the height was pretty brute-forced, there may be a better way to adjust the height 
                 so that it automatically adjusts based on the height of the artist name*/
-            border: 1px solid;
+            border:1px solid;
         }
 
         img {

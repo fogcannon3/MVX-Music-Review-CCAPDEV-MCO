@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <title>Home - MVX</title>
+    <style>
+
+
+        /* width */
+        ::-webkit-scrollbar {
+            width: 20px;
+        }
+        
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background-color: #e8e8e8;
+            border-radius: 10px;
+        }
+        
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #c9c9c9; 
+            border-radius: 10px;
+        }
+        
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a9a9a9; 
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        
+        /* header part */
+        .header {
+            display: flex;
+            justify-content: flex-start;
+            padding: 20px 80px;
+            font-family: 'Montserrat', sans-serif;;
+            background-color: #5B5247;
+            color: white;
+            
+        }
+
+        .header_title {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            padding-right: 40px;
+        }
+
+        .header span {
+            font-weight: 700;
+            font-size: 30px;
+        }
+
+        .header_search {
+            display: flex;
+            align-items: center;
+        }
+
+        .header_search input {
+            font-size: 18px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: none; 
+            outline: none; 
+        }
+
+        .header_search input[type="text"]::placeholder {
+            font-size: 12px; 
+        }
+
+        .header_search button {
+            font-size: 18px;
+            padding: 5px 10px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            color: white;
+        }
+
+        .header_navigation {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+
+
+        .header_navigation a{
+            text-decoration: none;
+            margin-left: 30px;
+            color: inherit;
+        }
+        
+        /* container part */
+        
+        .container{
+            background-color: #ffffff;
+            margin-left: 0px;
+            margin-right: auto;
+            width: auto;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+        }
+
+        #title {
+            margin-left: 15%;
+            font-size: 46px;
+        }
+
+        hr {
+            width: 70%;
+        }
+
+        .container p, 
+        .container h1, .container h2, 
+        .container h3, .container h4, 
+        .container h5, .container h6,
+        .container ul, .container ol {
+            font-family: 'Tahoma';
+            text-align: justify;
+            line-height: 1.25em;
+        }
+
+        .filters {
+            display: flex;
+            flex-direction: row;
+            width: 70%;
+            align-self: center;
+            padding-bottom: 15px;
+        }
+
+        .filterActual {
+            margin-left: auto;
+        }
+
+        .filter {
+            border-radius: 25px;
+            background-color: #d9d9d9;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-size: 16px;
+            margin-left: auto;
+
+            cursor: pointer;
+        }
+
+        .filter:hover {
+            background-color: #c9c9c9;
+        }
+
+        .filter:click {
+            background-color: #c4a88c;
+        }
+
+        .filter p {
+            margin-left: 0%;
+        }
+
+        #items { 
+            overflow-x: scroll;
+            width: 70%;
+            white-space: nowrap;
+            display: block;
+            margin: auto;
+        }
+
+        .item {
+            display: inline-block;
+            width: auto;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .item p{
+            margin-left: 0px;
+            font-family: 'Tahoma';
+            font-size: 13.5px;
+        } 
+        
+        .item h2 {
+            margin-left: 0px;
+            font-family: 'Tahoma';
+            line-height: 0px;
+        }
+
+        .updates {
+            overflow-x: scroll;
+            width: 70%;
+            align-self: center;
+            white-space: nowrap;
+            justify-content: space-between;
+        }
+
+        .update {
+            display: inline-flex;
+            flex-direction: column;
+            padding: 15px;
+            border-radius: 25px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            width: 250px;
+            min-height: 250px;
+
+        }
+
+        .updateTop {
+            display: flex;
+            margin-right: 100%;
+            max-height: 100px;
+        }
+
+        .updateTop h2 {
+            margin-left: 15px;
+            font-size: 18px;
+        }
+
+        .updateActual {
+            overflow-wrap: normal;
+            white-space: normal;
+        }
+
+        .update img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+        }
+
+        .updateActual p {
+            white-space: normal;
+        }
+
+        img {
+            width: 220px;
+            display: flex;
+            margin: auto;
+        }
+
+        div.Back-To-Top{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 30px;
+            font-family: 'Tahoma';
+        }
+        
+        button.BTT{
+            border: none;
+            background-color: white;
+            cursor: pointer;
+        }
+        
+        /* footer part */
+        .footer {
+            background-color: #545454;
+            color: white;
+            font-family: sans-serif;
+            font-weight: 100;
+            padding: 30px 80px;
+            font-size: 9.5px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+        
+        .left_footer {
+            text-align: left;
+            margin-right: auto;
+        }
+        
+        .mid_footer {
+            align-items: end;
+            display: flex;
+        }
+        
+        .right_footer {
+            text-align: right;
+            margin-left: auto;
+        }
+        
+        .right_footer a {
+            text-decoration: none; 
+            color: white; 
+        }
+
+        button {
+            margin-top: 7px;
+            border: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h2 class="header_title"><span>MVX</span></h2>
+        <div class="header_search">
+            <input type="text" placeholder="Search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
+        <nav id="header_navigation" class="header_navigation">
+            <i class="fa fa-bell"></i>
+            <a href="#">Home</a>
+            <a href="#">Profile</a>
+        </nav>   
+    </header>
+
+    <div class="container">
+        <h1 id="title">Home</h1>
+        <hr>
+        <div class = "filters">
+            <h2 class="filterTitle">New Releases</h2>
+            <div class = "filterActual">
+                <button class= "filter">
+                    <p>Following</p>
+                <button class= "filter">
+                    <p>Philippines</p>
+                <button class= "filter">
+                    <p>World</p>
+            </div>
+        </div>
+
+        <div id="items">
+            <div class="item">
+                <img src = "rising sun tvxq.jpg">
+                <h2>Rising Sun</h2>
+                <p>TVXQ! (동방신기)</p>
+            </div>
+
+            <div class="item">
+                <img src = "shalala taeyong.jpg">
+                <h2>Shalala</h2>
+                <p>TAEYONG</p>
+            </div>
+
+            <div class="item">
+                <img src = "unforgiven le sserafim.png">
+                <h2>Unforgiven</h2>
+                <p>LE SSERAFIM (르세라핌)</p>
+            </div>
+
+            <div class="item">
+                <img src = "tri-angle tvxq.jpg">
+                <h2>TRI-ANGLE</h2>
+                <p>TVXQ! (동방신기)</p>
+            </div>
+
+            <div class="item">
+                <img src = "dark blood enhypen.jpg">
+                <h2>DARK BLOOD</h2>
+                <p>ENHYPEN</p>
+            </div>
+            
+            <div class="item">
+                <img src = "masterpiece misamo.jpeg">
+                <h2>Masterpiece</h2>
+                <p>TWICE-MISAMO</p>
+            </div>
+
+            <div class="item">
+                <img src = "MiroticTVXQ.png">
+                <h2>MIROTIC</h2>
+                <p>TVXQ! (동방신기)</p>
+            </div>
+        </div>
+
+        <br>
+
+
+
+
+
+
+
+
+
+
+        
+        <div class = "filters">
+            <h2 class="filterTitle">Updates</h2>
+            <div class = "filterActual">
+                <button class= "filter">
+                    <p>Artists</p>
+                <button class= "filter">
+                    <p>Users</p>
+            </div>
+        </div>
+
+        <div class="updates">
+            <div class="update">
+                <div class = "updateTop">
+                    <img src = "eminem.jpg">
+                    <h2>Eminem</h2>
+                </div>
+                <div class = "updateActual">
+                    <p>'Sup guys, been a while, gonna release a new EP in a few, keep an eye out. With a collaboration with old friends, this one's for all the ones who were there for me since the beginning.</p>
+                </div>
+                
+            </div>
+
+            <div class="update">
+                <div class = "updateTop">
+                    <img src = "a7x.jpg">
+                    <h2>Avenged Sevenfold</h2>
+                </div>
+                <div class = "updateActual">
+                    <p>We've added an additional show to our world tour! For the first time in 10 years, we'll be going back to Southeast Asia! To our Indonesian, Singaporean, and Filipino fans, keep a look out for our concert dates!</p>
+                </div>
+            </div>
+
+            <div class="update">
+                <div class = "updateTop">
+                    <img src = "pink guy.png">
+                    <h2>Pink Guy</h2>
+                </div>
+                <div class = "updateActual">
+                    <p>GUESS WHO'S BACK HAHAHAHAHAHAHAHAHAHAHAHA HAHAHAHAHAHAHAHAHAHAHAHA *breathes in* HAHAHAHAHAHAHAHHAHAHAHAH HAHAHAHAHAHAHAHAHAHAHAHA</p>
+                </div>
+            </div>
+
+            <div class="update">
+                <div class = "updateTop">
+                    <img src = "kanye.jpg">
+                    <h2>Kanye West</h2>
+                </div>
+                <div class = "updateActual">
+                    <p>Kanye. That's the update.</p>
+                </div>
+            </div>
+
+            <div class="update">
+                <div class = "updateTop">
+                    <img src = "linkin park.jpg">
+                    <h2>Linkin Park</h2>
+                </div>
+                <div class = "updateActual">
+                    <p>07/28/2023. We will be releasing never-before-seen and never-before-heard music from the days of Meteora and Hybrid Theory. Just to relive the good times.  - Mike</p>
+                </div>
+            </div>
+            
+            <div class="update">
+                <div class = "updateTop">
+                    <img src = "rick astley.jpg">
+                    <h2>Rick Astley</h2>
+                </div>
+                <div class = "updateActual">
+                    <p>Keep up the memes and streaming of "Never Gonna Give You Up", fellas! We got to 1 billion YouTube views, who's to say we can't get more than that!? :)</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <br>
+
+        <div class = "filters">
+            <h2>Personalized Recommendations</h2>
+            <div class = "filterActual">
+                <button class= "filter">
+                    <p>Upbeat</p>
+                <button class= "filter">
+                    <p>Danceable</p>
+                <button class= "filter">
+                    <p>"soty"</p>
+            </div>
+        </div>
+
+        <div id="items">
+            <div class="item">
+                <img src = "rising sun tvxq.jpg"></img>
+                <h2>Rising Sun</h2>
+                <p>TVXQ! (동방신기)</p>
+            </div>
+
+            <div class="item">
+                <img src = "shalala taeyong.jpg"></img>
+                <h2>Shalala</h2>
+                <p>TAEYONG</p>
+            </div>
+
+            <div class="item">
+                <img src = "unforgiven le sserafim.png"></img>
+                <h2>Unforgiven</h2>
+                <p>LE SSERAFIM (르세라핌)</p>
+            </div>
+
+            <div class="item">
+                <img src = "tri-angle tvxq.jpg"></img>
+                <h2>TRI-ANGLE</h2>
+                <p>TVXQ! (동방신기)</p>
+            </div>
+
+            <div class="item">
+                <img src = "dark blood enhypen.jpg"></img>
+                <h2>DARK BLOOD</h2>
+                <p>ENHYPEN</p>
+            </div>
+            
+            <div class="item">
+                <img src = "masterpiece misamo.jpeg"></img>
+                <h2>Masterpiece</h2>
+                <p>TWICE-MISAMO</p>
+            </div>
+
+            <div class="item">
+                <img src = "MiroticTVXQ.png"></img>
+                <h2>MIROTIC</h2>
+                <p>TVXQ! (동방신기)</p>
+            </div>
+        </div>
+
+        <br>
+
+        <div class = "filters">
+            <h2>Trending</h2>
+            <div class = "filterActual">
+                <button class= "filter">
+                    <p>City</p>
+                <button class= "filter">
+                    <p>Country</p>
+                <button class= "filter">
+                    <p>World</p>
+            </div>
+        </div>
+
+        <div id="items">
+            <div class="item">
+                <img src = "rising sun tvxq.jpg"></img>
+                <h2>Rising Sun</h2>
+                <p>TVXQ! (동방신기)</p>
+            </div>
+
+            <div class="item">
+                <img src = "shalala taeyong.jpg"></img>
+                <h2>Shalala</h2>
+                <p>TAEYONG</p>
+            </div>
+
+            <div class="item">
+                <img src = "unforgiven le sserafim.png"></img>
+                <h2>Unforgiven</h2>
+                <p>LE SSERAFIM (르세라핌)</p>
+            </div>
+
+            <div class="item">
+                <img src = "tri-angle tvxq.jpg"></img>
+                <h2>TRI-ANGLE</h2>
+                <p>TVXQ! (동방신기)</p>
+            </div>
+
+            <div class="item">
+                <img src = "dark blood enhypen.jpg"></img>
+                <h2>DARK BLOOD</h2>
+                <p>ENHYPEN</p>
+            </div>
+            
+            <div class="item">
+                <img src = "masterpiece misamo.jpeg"></img>
+                <h2>Masterpiece</h2>
+                <p>TWICE-MISAMO</p>
+            </div>
+
+            <div class="item">
+                <img src = "MiroticTVXQ.png"></img>
+                <h2>MIROTIC</h2>
+                <p>TVXQ! (동방신기)</p>
+            </div>
+        </div>
+
+        <br>
+
+    </div>
+
+    <div class="Back-To-Top">
+        <a href = "#title"><button class="BTT"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+        </svg>
+        </button></a>
+        <p>Back to Top</p>
+    </div>
+
+    <footer class="footer">
+        <div class="left_footer">
+            <h3>Get in touch with us</h3>
+            <p>Contact Number: #63 908-888-0011<br>
+                Email: customerservice.mvx@gmail.com
+            </p>
+        </div>
+        <div class="mid_footer">
+            <p style="width: 275px;">MVX Solutions Inc. (c) 2023. All rights reserved.</p>
+        </div>
+        <div class="right_footer">
+            <table>
+                <tr>
+                    <td><a href="about us.html">About Us</a></td>
+                </tr>
+                <tr>
+                    <td><a href="faq.html">Frequently Asked Questions</a></td>
+                </tr>
+                <tr>
+                    <td><a href="privacy policy.html">Privacy Policy</a></td>
+                </tr>
+                <tr>
+                    <td><a href="terms and conditions.html">Terms and Condition</a></td>
+                </tr>
+              </table>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Song Page</title>
+        <style>
+        ::-webkit-scrollbar {
+            width: 20px;
+        }
+
+
+        ::-webkit-scrollbar-track {
+            background-color: #e8e8e8;
+            border-radius: 10px;
+        }
+
+
+        ::-webkit-scrollbar-thumb {
+            background: #c9c9c9; 
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a9a9a9; 
+        }
+
+        body {
+
+            font-family: 'Tahoma';
+            margin-top: 0;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .Main-Container{
+            display: flex;
+            margin: auto;
+	        width: 800px;
+	        font-size: 14px;
+	        box-sizing: border-box;
+        }
+
+        div.Song-Title{
+            display: flex;
+            margin: auto;
+            flex-direction: row;
+            align-items: center;
+            align-self: center;
+            justify-content: center;
+            width: 800px;
+            
+        }
+
+        .push-left {
+            margin-left: auto;
+        }
+
+        hr.c1{
+            border: 1px solid black;
+            width: 800px;
+        }
+
+        h2.scroll {
+            margin-left: 5px;
+            font-family: 'Tahoma';
+            line-height: 0px;
+            text-align: 500px;
+        }
+
+        p.title {
+            margin-left: 5px; 
+            font-family: 'Tahoma';
+            font-size: 13.5px;
+        }
+        
+        p.deets{
+            margin-left: 15px; 
+            font-family: 'Tahoma';
+            font-size: 11px;
+        }
+
+        button.heart{
+            color: gray;
+            padding: 0;
+            border: none;
+            background: none;
+            min-height:50px; 
+            min-width: 60px;
+            cursor: pointer;
+        }
+
+        button.heart:hover{
+            padding: 0;
+            border: none;
+            background: none;
+            color: red;
+        }
+
+        button.X{
+            background: none;
+            color: black;
+            border: 1px solid black;
+            border-radius:10px; 
+            padding:5px;
+            min-height:5px; 
+            min-width: 25px;
+            cursor: pointer;
+        }
+
+        button.X:hover{
+            background-color: red;
+            color: white;
+            outline: 1px solid black;
+        }
+
+        div.Main-content{
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+	        width: 550px;
+	        font-size: 14px;
+	        box-sizing: border-box;
+        }
+        
+        div.Song-Details{
+            display: flex;
+            flex-direction: row;
+        }
+
+        div.deets{
+            width: 85%;
+        }
+
+        img.send{
+            width:120px;
+            height:auto;
+            padding: 7px;
+        }
+
+        button.send{
+            padding: 5px;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        div.Popular-Tag-Button{
+            display: flex;
+            flex-direction: row;
+        }
+
+        button.addTags{
+            color: black;
+            background-color:#C4A88C;
+            border-radius: 36px;
+            margin-left: auto;
+            padding:15px;
+            height: 50%;
+            border:none;
+            cursor: pointer;
+            align-self: flex-end;
+        }
+
+        button.tags{
+            color: white;
+            background-color:#ABABAB;
+            border-radius: 36px;
+            margin-left: auto;
+            padding:15px;
+            height: 50%;
+            border:none;
+            cursor: pointer;
+        }
+
+        div.Rate-Review{
+            display: flex;
+            flex-direction: row;
+        }
+
+        button.rate-review{
+            color: white;
+            background-color:#5C4021;
+            border-radius: 36px;
+            padding:15px;
+            height: 50%;
+            width: 50%;
+            font-size: 25px;
+            border:none;
+            cursor: pointer;
+        }
+
+        div.Most-Upvoted-Review { 
+            display: flex;
+            flex-direction: column;
+            width: 518px;
+            height: 200px;
+            background-color:#E6E6E6;
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        div.MUR-container{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .push-center{
+            align-self: center;
+        }
+
+        div.Criteria-Rating{
+            display: flex;
+            flex-direction: column;
+            margin-right: auto;
+        }
+
+        img.user_icon {
+            margin-right: 5px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            vertical-align: baseline;
+            border: 1px solid #f3f3f3;
+            width: 32px;
+            height: 32px;
+        }
+        .username {
+            font-size: inherit;
+            font-family: 'Tahoma';
+            font-weight: 700;
+            vertical-align: baseline;
+            margin: 0;
+            padding: 0;
+        }
+
+        div.space {
+            display: inline;
+            color: #262626;
+            margin-left: 4px;
+            margin-right: 4px;
+            align-self: center;
+        }
+
+        #items { 
+            overflow-x: scroll;
+            width: 100%;
+            height: 50%;
+            white-space: nowrap;
+        }
+
+        .item {
+            display: inline-block;
+            width: 250px;
+            height: 325px;
+        }
+        .item p {
+            margin-left: 5px;
+        }
+
+        .item-tags{
+            display: inline-block;
+            padding: 5px;
+        }
+
+        .item-review{
+            display: inline-block;
+            padding: 5px;
+            width: auto;
+            padding: 1%;
+            margin: 20px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 20px;
+        }
+
+        img.scroll {
+            width: 240px;
+            display: flex;
+            margin: auto;
+            padding: 5px;
+        }
+
+        div.Reviews-and-Comments{
+            display: flex;
+            flex-direction: column;
+        }
+
+        div.RC-F{
+            display: flex;
+            flex-direction: row;
+        }
+
+        button.VM{
+            background-color:#C4A88C;
+            border-radius: 36px;
+            padding:15px;
+            height: 50%;
+            width: 25%;
+            font-size: 16px;
+            align-self: center;
+            border:none;
+            cursor: pointer;
+        }
+
+        div.Lyrics{
+            width: 200px;
+            height: 0%;
+	        font-size: 14px;
+	        box-sizing: border-box;
+            border-radius: 16px;
+            background-color: #E6E6E6;
+            padding: 10px;
+            text-align: justify;
+        }
+
+        div.Back-To-Top{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 30px;
+        }
+        
+        button.BTT{
+            border: none;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            display: flex;
+            justify-content: flex-start;
+            padding: 20px 80px;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #5B5247;
+            color: white;
+        }
+
+        .header_title {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            padding-right: 40px;
+        }
+
+        .header span {
+            font-weight: 700;
+            font-size: 30px;
+        }
+
+        .header_search {
+            display: flex;
+            align-items: center;
+        }
+
+        .header_search input {
+            font-size: 18px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: none; 
+            outline: none; 
+        }
+
+        .header_search input[type="text"]::placeholder {
+            font-size: 12px; 
+        }
+
+        .header_search button {
+            font-size: 18px;
+            padding: 5px 10px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            color: white;
+        }
+
+        .header_navigation {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+
+
+        .header_navigation a{
+            text-decoration: none;
+            margin-left: 30px;
+            color: inherit;
+        }
+
+        /* footer part */
+        .footer {
+            background-color: #545454; /* Set the background color */
+            color: white; /* Set the text color */
+            font-family: sans-serif;;
+            font-weight: 100;
+            padding: 30px 80px;
+            font-size: 9.5px;
+
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .left_footer {
+            text-align: left;
+            margin-right: auto;
+        }
+        
+        .mid_footer {
+            align-items: end;
+            display: flex;
+        }
+        
+        .right_footer {
+            text-align: right;
+            margin-left: auto;
+        }
+        
+        .right_footer a {
+            text-decoration: none; 
+            color: white; 
+        }
+        </style>
+        
+    </head>
+<body>
+    <header class="header">
+        <h2 class="header_title"><span>MVX</span></h2>
+        <div class="header_search">
+            <input type="text" placeholder="Search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
+        <nav id="header_navigation" class="header_navigation">
+            <i class="fa fa-bell"></i>
+            <a href="home.html">Home</a>
+            <a href="#">Profile</a>
+        </nav>   
+    </header>
+    <div class="Song-Title">
+        <h1 id="back"><b> Sony Music Entertainment</b></h1>
+        <p class="title">Sony</p>
+        <div class=push-left>
+        <button class="heart">❤</button></div>
+        <button class="X">x</button>
+    </div>
+    <hr class="c1">
+
+    <div class="Main-Container">
+        <div class="Main-content">
+            <div class="Main-details">
+                <div class="Song-Details">
+                    <img class="scroll" src="sony.jpeg"></img>
+                    <div class="deets">
+                    <p class="deets">5.0 ⭐</p>
+                    <p class="deets"><b>Year:</b> 2014</p>
+                    <p class="deets"><b>Genre:</b> All Kinds</p>
+                    <p class="deets"><b>Founders:</b>  Edward Wallerstein and Arthur Judson. American Record Corporation</p>
+                    <button class="send"><img class="send" src="Youtube1.png"></img></button>
+                    <button class="send"><img class="send" src="Spotify1.png"></img></button>
+                    </div>
+                </div>
+                <hr>
+                
+                <div class="Popular-Tags">
+                    <div class="Popular-Tag-Button">
+                        <h1>Popular Tags</h1>
+                        <button class="addTags">Add Tags</button>
+                    </div>
+                    <div id="items">
+                        <div class="item-tags">
+                            <button class="tags">famous</button>
+                        </div>
+
+                        <div class="item-tags">
+                            <button class="tags">pop</button>
+                        </div>
+                        <div class="item-tags">
+                            <button class="tags">indie</button>
+                        </div>
+                        <div class="item-tags">
+                            <button class="tags">feel-good</button>
+                        </div>
+                        <div class="item-tags">
+                            <button class="tags">soundtrack</button>
+                        </div>
+                        <div class="item-tags">
+                            <button class="tags">party</button>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="Rate-Review">
+                    <button class="rate-review">RATE</button>
+                    <div class="space">•</div>
+                    <button class="rate-review">REVIEW</button>
+                </div>
+                <hr>
+
+                <h1>Most Upvoted Review</h1>
+                <div class="Most-Upvoted-Review">
+                    <div class="MUR-container">
+                    <img class="user_icon push-center" src="profilepicture.jpg"></img>
+                    <h2 class="username push-center">@juandela.c</h2>
+                    <h2 class="push-left">⭐⭐⭐⭐⭐</h2>
+                    </div>
+                    <h1>Best Record Label Ever</h1>
+                    <p>This is the best one that handles artists. They prioritize and help them craft their arts and music and also listens to them. Overall, they are worth signing to when you are an aspiring artist</p>
+                </div>
+                <hr>
+
+                <div class="Criteria-Rating">
+                    <h1>Criteria Rating</h1>
+                    <h3><em>Danceability</em></h3>
+                    <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    </div>
+
+                    <h3><em>Upbeat</em></h3>
+                    <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                    </svg>
+                    </div>
+
+                    <h3><em>Catchiness</em></h3>
+                    <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-half" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z"/>
+                    </svg>
+                    </div>
+
+                    <h3><em>Vocals</em></h3>
+                    <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-half" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z"/>
+                    </svg>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="Reviews-and-Comments">
+                    <div class="RC-F">
+                        <h1>Reviews & Comments</h1>
+                        <button class="VM push-left">View More</button>
+                    </div>
+                    <div id="items">
+                        <div class="item-review">
+                            <div class="MUR-container">
+                                <img class="user_icon push-center" src="profilepicture.jpg"></img>
+                                <h2 class="username push-center">@try-bal2</h2>
+                                <h2 class="push-left">5⭐</h2>
+                            </div>
+                                <h2>Just Wow!</h2>
+                                <p>Truly Fantastic<br>
+                                they are the best ones out here <br>
+                                They are the dream of the artists..</p>
+                            </div>
+
+                        <div class="item-review">
+                            <div class="MUR-container">
+                                <img class="user_icon push-center" src="profilepicture.jpg"></img>
+                                <h2 class="username push-center">@db5k.fvr</h2>
+                                <h2 class="push-left">5⭐</h2>
+                            </div>
+                            <div>
+                                <h2>Very Good</h2>
+                                <p>Of course people know about <br>
+                                Sony Music, but this label is so good <br>
+                                that it deserve an award for making a...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Similar-Songs">
+                <h1>Similar to this</h1>
+                    <div id="items">
+                        <div class="item">
+                            <img class="scroll" src = "rising sun tvxq.jpg"></img>
+                                <h2 class="scroll">Rising Sun</h2>
+                                <p>TVXQ! (동방신기)</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "shalala taeyong.jpg"></img>
+                            <h2 class="scroll">Shalala</h2>
+                            <p>TAEYONG</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "unforgiven le sserafim.png"></img>
+                            <h2 class="scroll">Unforgiven</h2>
+                            <p>LE SSERAFIM (르세라핌)</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "tri-angle tvxq.jpg"></img>
+                            <h2 class="scroll">TRI-ANGLE</h2>
+                            <p>TVXQ! (동방신기)</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "dark blood enhypen.jpg"></img>
+                            <h2 class="scroll">DARK BLOOD</h2>
+                            <p>ENHYPEN</p>
+                        </div>
+                        
+                        <div class="item">
+                            <img class="scroll" src = "masterpiece misamo.jpeg"></img>
+                            <h2 class="scroll">Masterpiece</h2>
+                            <p>TWICE-MISAMO</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "MiroticTVXQ.png"></img>
+                            <h2 class="scroll">MIROTIC</h2>
+                            <p>TVXQ! (동방신기)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="Same-Artist">
+                    <h1>From the same artist</h1>
+                    <div id="items">
+                        <div class="item">
+                            <img class="scroll" src = "rising sun tvxq.jpg"></img>
+                            <h2 class="scroll">Rising Sun</h2>
+                            <p>TVXQ! (동방신기)</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "shalala taeyong.jpg"></img>
+                            <h2 class="scroll">Shalala</h2>
+                            <p>TAEYONG</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "unforgiven le sserafim.png"></img>
+                            <h2 class="scroll">Unforgiven</h2>
+                            <p>LE SSERAFIM (르세라핌)</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "tri-angle tvxq.jpg"></img>
+                            <h2 class="scroll">TRI-ANGLE</h2>
+                            <p>TVXQ! (동방신기)</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "dark blood enhypen.jpg"></img>
+                            <h2 class="scroll">DARK BLOOD</h2>
+                            <p>ENHYPEN</p>
+                        </div>
+                        
+                        <div class="item">
+                            <img class="scroll" src = "masterpiece misamo.jpeg"></img>
+                            <h2 class="scroll">Masterpiece</h2>
+                            <p>TWICE-MISAMO</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "MiroticTVXQ.png">
+                            <h2 class="scroll">MIROTIC</h2>
+                            <p>TVXQ! (동방신기)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<div class="Lyrics">
+    <h2>About the Label</h2>
+    <p>
+        Sony Music Entertainment is a renowned global music label and one of the largest music conglomerates in the world. Founded in 1929 as American Record Corporation and later renamed Columbia Records, it became a part of the Sony Corporation in 1988, forming what is now known as Sony Music Entertainment.<br><br>
+        Sony Music Entertainment operates as a full-service music company, encompassing various labels and divisions that cater to different genres and markets. They have a vast and diverse roster of artists spanning multiple genres, including pop, rock, hip-hop, R&amp;B, country, classical, and more. Some notable artists signed to Sony Music Entertainment include Beyoncé, Adele, Taylor Swift, Travis Scott, Bruce Springsteen, and many others.<br><br>
+        As a major label, Sony Music Entertainment provides a wide range of services to its artists, including recording, marketing, promotion, distribution, and licensing of music. They have a global presence with offices and operations in numerous countries, allowing them to reach audiences worldwide.<br><br>
+        Sony Music Entertainment has a rich history and has played a significant role in shaping the music industry. They have been at the forefront of technological advancements, such as the introduction of the compact disc (CD) format, digital music distribution, and streaming platforms. They continue to adapt to the evolving music landscape, embracing new technologies and business models to connect artists with fans and deliver music to a global audience.<br><br>
+        Overall, Sony Music Entertainment is recognized as a powerhouse in the music industry, known for its extensive artist roster, successful releases, and influential contributions to the world of music.
+    </p>
+</div>
+        
+        
+    </div>
+    <div class="Back-To-Top">
+        <a href="#back"><button class="BTT"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+        </svg>
+        </button></a>
+        <p>Back to Top</p>
+    </div>
+    <footer class="footer">
+        <div class="left_footer">
+            <h3>Get in touch with us</h3>
+            <p>Contact Number: #63 908-888-0011<br>
+                Email: customerservice.mvx@gmail.com
+            </p>
+        </div>
+        <div class="mid_footer">
+            <p>MVX Solutions Inc. (c) 2023. All rights reserved.</p>
+        </div>
+        <div class="right_footer">
+            <table>
+                <tr>
+                    <td><a href="about us.html">About Us</a></td>
+                </tr>
+                <tr>
+                    <td><a href="faq.html">Frequently Asked Questions</a></td>
+                </tr>
+                <tr>
+                    <td><a href="privacy policy.html">Privacy Policy</a></td>
+                </tr>
+                <tr>
+                    <td><a href="terms and conditions.html">Terms and Condition</a></td>
+                </tr>
+              </table>
+        </div>
+    </footer>
+</body>
+</html>

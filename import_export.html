@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
-    <title>Log-In Page</title>
+    <title>Import/Export</title>
 </head>
 <style>
 html, body {
@@ -89,80 +89,85 @@ html, body {
 /* main part */
 
 .main {
-    flex: 1 1 auto;
-    display: flex;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 25px;
+  flex: 1;
+  font-family: sans-serif;
 }
 
-img.picture{
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.main_header {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 35px;
 }
 
-.login_main {
-    width: 50%;
-    padding: 80px;
-    text-align: left;
-    font-family: sans-serif;
-    align-items: center;
-    justify-content: center;
-}
-
-.login_txt {
-    font-size: 50px;
-}
-
-.email_main {
-    display: flex;
-    margin-top: 40px;
-    flex-direction: column;
-}
-
-.password_main {
-    display: flex;
-    flex-direction: column;
-}
-
-.register_main {
-    display: flex;
-  }
-  
-.register_main p {
-    margin-right: 30px; /* Add margin to create space between the text and button */
-}
-.continue_btn {
-    border-radius: 30px;
-    background-color: #C4A88C;
-    width: 200px;
-    border: none;
-    font-size: 20px;
-    font-weight: bold;
-}
-  
-.email_main,
-.password_main {
-  margin-bottom: 25px; /* Add margin-bottom for spacing */
-}
-
-.email_main h3,
-.password_main h3 {
-  margin-right: 10px; /* Add margin-right for spacing */
-}
-
-.email_main input,
-.password_main input {
-  font-size: 14px; /* Adjust the font size as needed */
-  background-color: #E6E6E6;
+.main_header hr {
   border: none;
-  height: 40px;
+  border-top: 3px solid #000;
+  margin-top: 10px;
 }
 
-.register_main {
-  margin-top: 40px; /* Add margin-top for spacing */
+.main_body {
   display: flex;
-  justify-content: space-between;
 }
+
+.main_left {
+  flex: 0 0 70%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.main_left .cell {
+  display: flex;
+  align-items: center;
+}
+
+.main_left .cell img {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+.main_left .cell p {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+
+.main_right {
+  flex: 0 0 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main_right button {
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: none;
+  padding: 40px;
+  font-size: 40px;
+  font-weight: bold;
+  background-color: #ababab;
+  font-style: italic;
+}
+
+/* for vertical line*/
+.main_left,
+.main_right {
+  border-right: 3px solid #ababab;
+  padding-right: 20px;
+}
+
+.main_left:last-child,
+.main_right:last-child {
+  border-right: none;
+}
+
+
 
 /* footer part */
 .footer {
@@ -216,23 +221,45 @@ img.picture{
         </header>
     
         <div class="main">
-            <img class="picture" src="mvx_bg.png">
-            <div class="login_main">
-                <h1><span class="login_txt">Log-In</span></h1>
-                <div class="email_main">
-                    <h3>Email:</h3>
-                    <input type="email" id="email" name="email">
-                </div>
-                <div class="password_main">
-                    <h3>Password:</h3>
-                    <input type="password" id="password" name="password">
-                </div>
-                <div class="register_main">
-                    <p>Haven't Join? <a href="#">Register here</a></p>
-                    <button class="continue_btn">Continue</button>
-                </div>
+            <div class="main_header">
+              <span>Playlist Import & Export</span>
+              <hr>
             </div>
-        </div>
+            <p>Choose a Platform</p><br>
+            <div class="main_body">
+              <div class="main_left">
+                <div class="cell">
+                  <img src="spotify.png" alt="Image 1">
+                  <p>Spotify</p>
+                </div>
+                <div class="cell">
+                  <img src="itunes.png" alt="Image 2">
+                  <p>Itunes</p>
+                </div>
+                <div class="cell">
+                  <img src="youtube.png" alt="Image 3">
+                  <p>Youtube</p>
+                </div>
+                <div class="cell">
+                  <img src="tidal.png" alt="Image 4">
+                  <p>Tidal</p>
+                </div>
+                <div class="cell">
+                  <img src="amazon.png" alt="Image 5">
+                  <p>Amazon</p>
+                </div>
+                <div class="cell">
+                  <img src="deezer.png" alt="Image 6">
+                  <p>Deezer</p>
+                </div>
+              </div>
+              <div class="main_right">
+                <button>IMPORT</button>
+                <button>EXPORT</button>
+              </div>
+            </div>
+          </div>
+          
     
         <footer class="footer">
             <div class="left_footer">
