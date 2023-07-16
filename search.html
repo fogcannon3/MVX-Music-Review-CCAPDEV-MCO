@@ -9,6 +9,26 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
         <title>Search - MVX</title>
         <style>
+            
+            /* scrollbar part */
+            ::-webkit-scrollbar {
+                width: 20px;
+            }
+            
+            ::-webkit-scrollbar-track {
+                background-color: #e8e8e8;
+                border-radius: 10px;
+            }
+            
+            ::-webkit-scrollbar-thumb {
+                background: #c9c9c9; 
+                border-radius: 10px;
+            }
+            
+            ::-webkit-scrollbar-thumb:hover {
+                background: #a9a9a9; 
+            }
+
             body {
                 padding: 0;
                 margin: 0;
@@ -145,12 +165,13 @@
             }
 
             #items { 
-                overflow-x: scroll;
+                overflow-x: auto;
                 width: 70%;
                 white-space: nowrap;
-                display: block;
+                display: auto;
                 margin: auto;
             }
+            /*^^^NEED TO CHANGE TO BECOME GRID, NOT SCROLL*/
     
             .item_square {
                 display: inline-block;
@@ -189,10 +210,6 @@
                 width: 220px;
                 display: flex;
                 margin: auto;
-            }
-
-            .search_grid {
-                width: 70%;
             }
 
             div.Back-To-Top{
