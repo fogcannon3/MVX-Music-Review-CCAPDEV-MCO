@@ -1,0 +1,10 @@
+.container_aboutUs{
+    background-color: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    
+    /*NEEDS WAY TO ADD PADDING BELOW*/
+}

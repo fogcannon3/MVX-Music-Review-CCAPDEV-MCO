@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--This is what gets the title field from the locals variable from main.js-->
+    <title><%- locals.title%></title>
+
+    <!--This is what gets the description field from the locals variable from main.js-->
+    <meta name="description" content="<%= locals.description%>">
+
+    <!--This is what allows the site to get css styling-->
+    <link rel="stylesheet" href="/css/about us.css">
+
+    <!--This is what allows JavaScript functionality to manipulate the page-->
+    <script type="text/javascript" defer src="/js/script.js"></script>
+</head>
+
+
+<body>
+    <!--This is what gets the file inside partials. In this case, it's used for the header-->
+    <%- include('../partials/header.ejs') %>
+
+    <main class = "main"> <!--just used to separate the body from the header and footer-->
+
+        <!--This is what gets the code inside whatever .ejs file is being called-->
+        <!--Which means the .ejs files should only contain body code, no need head-->
+        <%- body %> 
+
+    </main>
+
+    <!--This is what gets the file inside partials. In this case, it's used for the footer-->
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>
