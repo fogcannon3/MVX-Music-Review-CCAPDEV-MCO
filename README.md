@@ -14,10 +14,9 @@ MCO Phase 1 Features:
 - Playlist Import/Export Pages
 - Legal Pages (ToC, Privacy Policy, About Us, FAQ, etc.)
   
-
-To be added soon:
-- Profile page
-- Notification page
+MCO Phase 2 Features:
+- Database using MongoDB
+- JavaScript functionality
 - Search page
 - Connection of pages to each other
-- Proper content recommendations and filtering
+- Proper content recommendations and filtering (tentative)
