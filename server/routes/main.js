@@ -13,23 +13,25 @@ const Post = require('../models/Post');
 /*
 GET/HOME Route
 */
-    router.get('', async (req, res) => {
-    const locals = {
-        title: "MVX - Get Started", //according to the 2nd video, 5:43
-        description: "Landing page for MVX"
-    }
-});
-
 //getting data from db and putting it in the home page vid 5 (3:45)
 //first make sure that the function in the route is async
 //data is what stores all the stuff in the db, 
 //Post.find() finds all data in the db related to Post
-try{
-    const data = await Post.find()
-    res.render('index', {locals, data});
-} catch (error){
-    console.log(error);
-}
+router.get('', async (req, res) => {
+    const locals = {
+        title: "MVX - Get Started", //according to the 2nd video, 5:43
+        description: "Landing page for MVX"
+    }
+    
+    // try{
+    //     const data = await Post.find();
+    //     res.render('index', {locals, data});
+    // } catch (error){
+    //   console.log(error);
+    // }
+});
+
+
 
 /*vid 5 (5:07)
 For example for the ejs part (go to the home page)
