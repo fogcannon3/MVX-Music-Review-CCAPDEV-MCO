@@ -12,24 +12,30 @@ const Schema = mongoose.Schema; /* Schema - database field/s */
   lowercase: true/false (converts to lowercase before saving to the db)
   trim: true/false (removese leading and trailing whitespace before saving to the db)
 */
-const PostSchema = new Schema({
-    title:{
+const UserSchema = new Schema({
+    user_username:{
         type:String,
-        required: true
+        required: true,
+        trim: true
     },
-    body:{
-        type:String,
-        required: true
-    },
-    createdAt:{
+    user_joined:{
         type:Date,
-        default:Date.now
+        required: true
     },
-    updatedAt:{
+    user_followers:{
+        type: int64, //NOT SURE WHICH TYPE OF INT
+        required: false
+    },
+    user_img:{
+        type: media, //NOT SURE
+        required: false
+    },
+    //Feels empty here sa user page, will definitely add stuff pag may time
+    user_updatedAt:{
         type:Date,
         required: Date.now
     }
 })
 
 /*format is in (name, schemaName) */
-module.exports = mongoose.model('Post', PostSchema);
+module.exports = mongoose.model('User', UserSchema);

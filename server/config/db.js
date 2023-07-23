@@ -1,4 +1,5 @@
-/*DB connection requires mongoose, connection will require the thingy is .env vid 4 (8:30) */
+/*DB connection requires mongoose, connection will require the thingy is .env - Vid 4 (8:30) */
+/*This allows the entire website package to connect to MongoDB*/
 const mongoose = require('mongoose');
 const connectDB = async () => {
 
