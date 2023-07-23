@@ -82,21 +82,18 @@
             /* main parts */
             .container{
                 background-color: #ffffff;
-                /* margin-left: 0px;
-                margin-right: auto; */
                 width: auto;
                 display: flex;
                 flex-direction: column;
                 box-sizing: border-box;
                 justify-content: center; 
-                /* margin: 20px auto; */
                 margin-right: 150px;
                 margin-left: 150px;
             }
     
             #title {
-                /* margin-left: 15%; */
                 font-size: 46px;
+                margin-bottom: 10px;
             }
     
             hr {
@@ -117,14 +114,9 @@
             .filters {
                 display: flex;
                 flex-direction: row;
-                /* width: 70%; */
-                /* align-self: center; */
                 padding-bottom: 15px;
                 justify-content: center;
-            }
-    
-            .filterActual {
-                /* margin-left: auto; */
+                align-items: center;
             }
     
             .filter {
@@ -154,8 +146,6 @@
                 display: grid;
                 grid-template-columns: repeat(5, 1fr);
                 gap: 20px;
-                /* justify-content: center;
-                margin: 20px auto; */
                 max-width: 1200px;
             }
 
@@ -244,11 +234,9 @@
         <div class="container">
             <h1 id="title"> "TVXQ!" </h1>
             <hr>
-                    <!--^^^NEED TO FIND WAY TO MAKE SEARCH QUERY APPEAR HERE^^^-->
-
                 <div class = "filters">
                     <h2 class="filterTitle">Top Results</h2>
-                    <div class = "filterActual">
+                    <div>
                         <button class= "filter">
                             <p>Song</p>
                         <button class= "filter">
