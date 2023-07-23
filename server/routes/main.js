@@ -6,6 +6,8 @@ const router = express.Router();
 //doing so would make u able to insert/retrieve data to and from the db
 //vid 5, 0:46
 const Post = require('../models/Post');
+const Song = require('../models/Song');
+const Home = require('../models/Home');
 
 //Routes
 //These are what allow the overall site to gain access to separate pages
@@ -27,7 +29,35 @@ router.get('', async (req, res) => {
         const data = await Post.find();
         res.render('index', {locals, data});
     } catch (error){
-      console.log(error);
+        console.log(error);
+    }
+});
+
+router.get('/home', async (req, res) => {
+    const locals = {
+        title: "MVX - Home", //according to the 2nd video, 5:43
+        description: "Home page for MVX"
+    }
+    
+    try{
+        const data = await Home.find();
+        res.render('home', {locals, data});
+    } catch (error){
+        console.log(error);
+    }
+});
+
+router.get('/song', async (req, res) => {
+    const locals = {
+        title: "MVX - Song", //according to the 2nd video, 5:43
+        description: "Song page for MVX"
+    }
+    
+    try{
+        const data = await Song.find();
+        res.render('song', {locals, data});
+    } catch (error){
+        console.log(error);
     }
 });
 
@@ -52,26 +82,30 @@ having an unordered list:
 </ul>
 */
 
+
+
+// function to encode file data to base64 encoded string
+var fs = require('fs');
+
+//for some reason, will require a separate variable for EACH image
+var bitmap_i = fs.readFileSync('./public/img/jaejoong_i.jpg', 'base64');
+var bitmap_risingSun = fs.readFileSync('./public/img/rising sun tvxq.jpg', 'base64');
+
+
+
 //create a onetime function to insert dummy data
-//1:07 vid 5
-// function insertPostData(){
-//     Post.insertMany([
+//1:07 vid 
+// function insertHomeData(){
+//     Home.insertMany([
 //         {
-//             title: "hello this is a title",
-//             body: "title says hi"
+//             home_new_releases:["Bite Me", "Shalala", "Unforgiven", "Picture Of You"],
+//             home_following:["Eminem", "Avenged Sevenfold", "Kanye West", "Rick Astley", "Linkin Park"],
+//             home_personalized_recommendations:["Rising Sun", "Stadium Arcadium", "I Believe", "American Idiot", "Mine"],
+//             home_trending:["Tri-Angle", "Mirotic", "Ruby", "I'll Be There"]
 //         },
-//         {
-//             title: "hello this is a title1",
-//             body: "title says hi1"
-//         },
-//         {
-//             title: "hello this is a title2",
-//             body: "title says hi2"
-//         }
 //     ])
 // }
-// insertPostData();
-
+// insertHomeData();
 
 
 

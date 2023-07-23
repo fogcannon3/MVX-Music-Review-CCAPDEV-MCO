@@ -33,7 +33,7 @@ const SongSchema = new Schema({
         required: true
     },
     song_genre:{
-        type:String, //NOT SURE
+        type:String,
         required: true,
         trim: true
     },
@@ -52,45 +52,47 @@ const SongSchema = new Schema({
         required: true,
         trim: true
     },
-    song_listeners:{
-        type: int, //NOT SURE WHICH TYPE OF INT
-        required: false
-    },
+    // song_listeners:{
+    //     type: Int8Array,
+    //     required: false
+    // },
     song_lyrics:{
         type:String,
         required: true,
         trim: true
     },
-    song_rating:{
-        type: float, //NOT SURE WHICH TYPE OF FLOAT
-        required: false
-    },
+    // song_rating:{
+    //     type: Float32Array,
+    //     required: false
+    // },
     song_img:{
-        type: media, //NOT SURE
+        type: String,
         required: true
     },
     song_tags:{
-        type: array, //NOT SURE
+        type: Array,
         required: true
     },
     song_similar_to_this:{
-        type: array, //NOT SURE
+        type: Array,
         required: true
     },
     song_from_the_same_artist:{
-        type: array, //NOT SURE
+        type: Array,
         required: true
     },
-    song_top_user_img:{
-        required: false
-    },
+    // song_top_user_img:{
+    //     type: Image,
+    //     required: false
+    // },
     song_top_user_username:{
         type: String,
         required: false
     },
-    song_top_user_rating:{
-        required: false
-    },
+    // song_top_user_rating:{
+    //     type: Float32Array,
+    //     required: false
+    // },
     song_top_user_review_title:{
         type: String,
         required: false
@@ -99,31 +101,28 @@ const SongSchema = new Schema({
         type: String,
         required: false
     },
-    song_rating_danceability:{
-        required: false
-    },
-    song_rating_upbeat:{
-        required: false
-    },
-    song_rating_catchiness:{
-        required: false
-    },
-    song_rating_vocals:{
-        required: false
-    },
+    // song_rating_danceability:{
+    //     type: Float32Array,
+    //     required: false
+    // },
+    // song_rating_upbeat:{
+    //     type: Float32Array,
+    //     required: false
+    // },
+    // song_rating_catchiness:{
+    //     type: Float32Array,
+    //     required: false
+    // },
+    // song_rating_vocals:{
+    //     type: Float32Array,
+    //     required: false
+    // },
     
 
     //NOTE: im not sure how to move forward with the reviews here
     //kasi we're gonna be showing the other top 5 aside from the highlighted top review
     //then the rest will be visible from the "see more" button nalang
     //so yea not sure how to implement
-
-
-
-    song_updatedAt:{
-        type:Date,
-        required: Date.now
-    }
 })
 
 /*format is in (name, schemaName) */
