@@ -17,4 +17,8 @@ router.get('/aboutUs', (req, res) => {
     res.render('aboutUs');
 });
 
+router.get('/profile', (req, res) => {
+    res.render('profile');
+});
+
 module.exports = router;
