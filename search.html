@@ -9,25 +9,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
         <title>Search - MVX</title>
         <style>
-            
-            /* scrollbar part */
-            ::-webkit-scrollbar {
-                width: 20px;
-            }
-            
-            ::-webkit-scrollbar-track {
-                background-color: #e8e8e8;
-                border-radius: 10px;
-            }
-            
-            ::-webkit-scrollbar-thumb {
-                background: #c9c9c9; 
-                border-radius: 10px;
-            }
-            
-            ::-webkit-scrollbar-thumb:hover {
-                background: #a9a9a9; 
-            }
 
             body {
                 padding: 0;
@@ -101,21 +82,25 @@
             /* main parts */
             .container{
                 background-color: #ffffff;
-                margin-left: 0px;
-                margin-right: auto;
+                /* margin-left: 0px;
+                margin-right: auto; */
                 width: auto;
                 display: flex;
                 flex-direction: column;
                 box-sizing: border-box;
+                justify-content: center; 
+                /* margin: 20px auto; */
+                margin-right: 150px;
+                margin-left: 150px;
             }
     
             #title {
-                margin-left: 15%;
+                /* margin-left: 15%; */
                 font-size: 46px;
             }
     
             hr {
-                width: 70%;
+                width: 100%;
             }
             
             div.search_string{
@@ -132,13 +117,14 @@
             .filters {
                 display: flex;
                 flex-direction: row;
-                width: 70%;
-                align-self: center;
+                /* width: 70%; */
+                /* align-self: center; */
                 padding-bottom: 15px;
+                justify-content: center;
             }
     
             .filterActual {
-                margin-left: auto;
+                /* margin-left: auto; */
             }
     
             .filter {
@@ -146,9 +132,9 @@
                 background-color: #d9d9d9;
                 padding-left: 20px;
                 padding-right: 20px;
-                font-size: 16px;
-                margin-left: auto;
-    
+                font-size: 12px;
+                margin-left: 10px;
+                width: 150px;
                 cursor: pointer;
             }
     
@@ -164,53 +150,29 @@
                 margin-left: 0%;
             }
 
-            #items { 
-                display: auto;
-                overflow-x: auto;
-                width: 70%;
-                white-space: nowrap;
-                margin: auto;
-            }
-            /*^^^NEED TO CHANGE TO BECOME GRID, NOT SCROLL*/
-    
-            .item_square {
-                display: inline-block;
-                width: auto;
-                height: auto;
-                cursor: pointer;
-            }
-    
-            .item_square p{
-                margin-left: 0px;
-                font-family: 'Tahoma';
-                font-size: 13.5px;
-            } 
-            
-            .item_square h2 {
-                margin-left: 0px;
-                font-family: 'Tahoma';
-                line-height: 0px;
+            #items {
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                gap: 20px;
+                /* justify-content: center;
+                margin: 20px auto; */
+                max-width: 1200px;
             }
 
-            .item_circle {
-                display: inline-block;
-                width: auto;
-                height: auto;
-                cursor: pointer;
-            }
-    
-            .item_circle h2 {
-                margin-left: 0px;
-                font-family: 'Tahoma';
-                line-height: 0px;
+            .item {
                 text-align: center;
             }
 
-            img {
-                width: 220px;
-                display: flex;
-                margin: auto;
+            .item img {
+                max-width: 100%;
+                height: auto;
             }
+
+            .item h2,
+            .item p {
+                margin: 5px 0;
+            }
+    
 
             div.Back-To-Top{
                 display: flex;
@@ -301,48 +263,157 @@
                 </div>
 
                 <div id="items">
-                    <div class="item_square">
-                        <img src = "rising sun tvxq.jpg">
+                    <div class="item">
+                        <img src = "public/img/rising sun tvxq.jpg">
                         <h2>Rising Sun</h2>
                         <p>TVXQ! (동방신기)</p>
                     </div>
         
-                    <div class="item_square">
-                        <img src = "shalala taeyong.jpg">
+                    <div class="item">
+                        <img src = "public/img/shalala taeyong.jpg">
                         <h2>Shalala</h2>
                         <p>TAEYONG</p>
                     </div>
         
-                    <div class="item_square">
-                        <img src = "unforgiven le sserafim.png">
+                    <div class="item">
+                        <img src = "public/img/unforgiven le sserafim.png">
                         <h2>Unforgiven</h2>
                         <p>LE SSERAFIM (르세라핌)</p>
                     </div>
         
-                    <div class="item_square">
-                        <img src = "tri-angle tvxq.jpg">
+                    <div class="item">
+                        <img src = "public/img/tri-angle tvxq.jpg">
                         <h2>TRI-ANGLE</h2>
                         <p>TVXQ! (동방신기)</p>
                     </div>
         
-                    <div class="item_square">
-                        <img src = "dark blood enhypen.jpg">
+                    <div class="item">
+                        <img src = "public/img/dark blood enhypen.jpg">
                         <h2>DARK BLOOD</h2>
                         <p>ENHYPEN</p>
                     </div>
-                    
-                    <div class="item_square">
-                        <img src = "masterpiece misamo.jpeg">
-                        <h2>Masterpiece</h2>
-                        <p>TWICE-MISAMO</p>
-                    </div>
-        
-                    <div class="item_square">
-                        <img src = "MiroticTVXQ.png">
-                        <h2>MIROTIC</h2>
+
+                    <div class="item">
+                        <img src = "public/img/rising sun tvxq.jpg">
+                        <h2>Rising Sun</h2>
                         <p>TVXQ! (동방신기)</p>
                     </div>
+        
+                    <div class="item">
+                        <img src = "public/img/shalala taeyong.jpg">
+                        <h2>Shalala</h2>
+                        <p>TAEYONG</p>
+                    </div>
+        
+                    <div class="item">
+                        <img src = "public/img/unforgiven le sserafim.png">
+                        <h2>Unforgiven</h2>
+                        <p>LE SSERAFIM (르세라핌)</p>
+                    </div>
+        
+                    <div class="item">
+                        <img src = "public/img/tri-angle tvxq.jpg">
+                        <h2>TRI-ANGLE</h2>
+                        <p>TVXQ! (동방신기)</p>
+                    </div>
+        
+                    <div class="item">
+                        <img src = "public/img/dark blood enhypen.jpg">
+                        <h2>DARK BLOOD</h2>
+                        <p>ENHYPEN</p>
+                    </div>
+
+                    <div class="item">
+                        <img src = "public/img/rising sun tvxq.jpg">
+                        <h2>Rising Sun</h2>
+                        <p>TVXQ! (동방신기)</p>
+                    </div>
+        
+                    <div class="item">
+                        <img src = "public/img/shalala taeyong.jpg">
+                        <h2>Shalala</h2>
+                        <p>TAEYONG</p>
+                    </div>
+        
+                    <div class="item">
+                        <img src = "public/img/unforgiven le sserafim.png">
+                        <h2>Unforgiven</h2>
+                        <p>LE SSERAFIM (르세라핌)</p>
+                    </div>
+        
+                    <div class="item">
+                        <img src = "public/img/tri-angle tvxq.jpg">
+                        <h2>TRI-ANGLE</h2>
+                        <p>TVXQ! (동방신기)</p>
+                    </div>
+        
+                    <div class="item">
+                        <img src = "public/img/dark blood enhypen.jpg">
+                        <h2>DARK BLOOD</h2>
+                        <p>ENHYPEN</p>
+                    </div>
+
+                    <div class="item">
+                        <img src = "public/img/rising sun tvxq.jpg">
+                        <h2>Rising Sun</h2>
+                        <p>TVXQ! (동방신기)</p>
+                    </div>
+        
+                    <div class="item">
+                        <img src = "public/img/shalala taeyong.jpg">
+                        <h2>Shalala</h2>
+                        <p>TAEYONG</p>
+                    </div>
+        
+                    <div class="item">
+                        <img src = "public/img/unforgiven le sserafim.png">
+                        <h2>Unforgiven</h2>
+                        <p>LE SSERAFIM (르세라핌)</p>
+                    </div>
+        
+                    <div class="item">
+                        <img src = "public/img/tri-angle tvxq.jpg">
+                        <h2>TRI-ANGLE</h2>
+                        <p>TVXQ! (동방신기)</p>
+                    </div>
+        
+                    <div class="item">
+                        <img src = "public/img/dark blood enhypen.jpg">
+                        <h2>DARK BLOOD</h2>
+                        <p>ENHYPEN</p>
+                    </div>
+
+                    <div class="item">
+                        <img src = "public/img/rising sun tvxq.jpg">
+                        <h2>Rising Sun</h2>
+                        <p>TVXQ! (동방신기)</p>
+                    </div>
+        
+                    <div class="item">
+                        <img src = "public/img/shalala taeyong.jpg">
+                        <h2>Shalala</h2>
+                        <p>TAEYONG</p>
+                    </div>
+        
+                    <div class="item">
+                        <img src = "public/img/unforgiven le sserafim.png">
+                        <h2>Unforgiven</h2>
+                        <p>LE SSERAFIM (르세라핌)</p>
+                    </div>
+        
+                    <div class="item">
+                        <img src = "public/img/tri-angle tvxq.jpg">
+                        <h2>TRI-ANGLE</h2>
+                        <p>TVXQ! (동방신기)</p>
+                    </div>
+        
+                    <div class="item">
+                        <img src = "public/img/dark blood enhypen.jpg">
+                        <h2>DARK BLOOD</h2>
+                        <p>ENHYPEN</p>
+                    </div>
                 </div>
+
         </div>
 
         <div class="Back-To-Top">
