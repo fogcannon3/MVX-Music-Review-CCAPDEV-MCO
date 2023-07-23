@@ -37,7 +37,7 @@ const SongSchema = new Schema({
         required: true,
         trim: true
     },
-    song_lyrics:{
+    song_writer:{
         type:String,
         required: true,
         trim: true
@@ -55,6 +55,11 @@ const SongSchema = new Schema({
     song_listeners:{
         type: int, //NOT SURE WHICH TYPE OF INT
         required: false
+    },
+    song_lyrics:{
+        type:String,
+        required: true,
+        trim: true
     },
     song_rating:{
         type: float, //NOT SURE WHICH TYPE OF FLOAT
@@ -80,15 +85,18 @@ const SongSchema = new Schema({
         required: false
     },
     song_top_user_username:{
+        type: String,
         required: false
     },
     song_top_user_rating:{
         required: false
     },
     song_top_user_review_title:{
+        type: String,
         required: false
     },
     song_top_user_review_body:{
+        type: String,
         required: false
     },
     song_rating_danceability:{
