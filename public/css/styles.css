@@ -1037,5 +1037,31 @@ img.picture{
     }
 }
 
+/*searchbar 1:49 vid 4 (idk if to be replaced with header_search*/
+.searchBar{
+    visibility: hidden;
+    transform: translateY(-100px);
+    background-color: var(--black);
+    padding: 4px 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
 
+.searchBar.open{
+    transform: translateY(0);
+    transition: transform 0.1s;
+}
 
+.searchBar input{
+    margin: 0;
+    padding: 0;
+}
+
+#searchClose{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--gray-light);
+    padding: 15px;
+}
