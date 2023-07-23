@@ -23,12 +23,12 @@ router.get('', async (req, res) => {
         description: "Landing page for MVX"
     }
     
-    // try{
-    //     const data = await Post.find();
-    //     res.render('index', {locals, data});
-    // } catch (error){
-    //   console.log(error);
-    // }
+    try{
+        const data = await Post.find();
+        res.render('index', {locals, data});
+    } catch (error){
+      console.log(error);
+    }
 });
 
 
