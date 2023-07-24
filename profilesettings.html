@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,189 +7,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/profilesettings.css">
     <title>Profile Settings</title>
-    <style>
-        html, body {
-            padding: 0;
-            margin: 0;
-            height: 100%;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            min-height: 100%;
-        }
-
-        /* header part */
-        .header {
-            position: sticky;
-            top: 0;
-            z-index: 999;
-            display: flex;
-            justify-content: flex-start;
-            padding: 20px 80px;
-            font-family: 'Montserrat', sans-serif;
-            background-color: #5B5247;
-            color: white;
-        }
-
-        .header_title {
-            margin: 0;
-            display: flex;
-            align-items: center;
-            padding-right: 40px;
-        }
-
-        .header span {
-            font-weight: 700;
-            font-size: 30px;
-        }
-
-        .header_search {
-            display: flex;
-            align-items: center;
-        }
-
-        .header_search input {
-            font-size: 18px;
-            padding: 5px 10px;
-            border-radius: 5px;
-            border: none;
-            outline: none;
-        }
-
-        .header_search input[type="text"]::placeholder {
-            font-size: 12px;
-        }
-
-        .header_search button {
-            font-size: 18px;
-            padding: 5px 10px;
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            color: white;
-        }
-
-        .header_navigation {
-            margin-left: auto;
-            display: flex;
-            align-items: center;
-        }
-
-
-        .header_navigation a {
-            text-decoration: none;
-            margin-left: 30px;
-            color: inherit;
-        }
-
-        /* main part */
-
-        .main {
-            padding-left: 100px;
-            padding-right: 100px;
-            padding-top: 25px;
-            flex: 1;
-            font-family: sans-serif;
-        }
-
-        .main_header {
-            margin-bottom: 20px;
-            font-weight: bold;
-            font-size: 35px;
-        }
-
-        .main_header hr {
-            border: none;
-            border-top: 3px solid #000;
-            margin-top: 10px;
-        }
-
-        .profile-pic {
-            display: flex;
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            justify-content: center;
-            margin-bottom: 10px;
-            background-color: #ccc; 
-        }
-
-        .username {
-            font-size: 15px;
-            font-weight: bold;
-        }
-
-        .profile-options {
-            display: flex;
-            align-items: center;
-            margin-top: 30px;
-        }
-
-        .options-left {
-    
-            padding-right: 60px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .options-right {
-            flex: 1;
-            padding-left: 30px;
-            border-left: 2px solid #000;
-
-        }
-
-        .options-left a,
-        .options-right a {
-            display: block;
-            margin-bottom: 10px;
-            color: #000;
-            text-decoration: none;
-        }
-
-        /* footer part */
-        .footer {
-            background-color: #545454;
-            
-            color: white;
-      
-            font-family: sans-serif;
-            ;
-            font-weight: 100;
-            padding: 30px 80px;
-            font-size: 9.5px;
-
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .left_footer {
-            text-align: left;
-            margin-right: auto;
-        }
-
-        .mid_footer {
-            align-items: end;
-            display: flex;
-        }
-
-        .right_footer {
-            text-align: right;
-            margin-left: auto;
-        }
-
-        .right_footer a {
-            text-decoration: none;
-            color: white;
-        }
-    </style>
 </head>
-
 <body>
     <div class="container">
         <header class="header">
@@ -203,25 +22,21 @@
                 <i class="fa fa-bell"></i>
                 <a href="#">Home</a>
                 <a href="#">Profile</a>
-            </nav>
+            </nav>   
         </header>
-
+    
         <div class="main">
             <div class="main_header">
-                <span>Profile Settings</span>
-                <hr>
+              <span>Profile Settings</span>
+              <hr>
             </div>
-
-           
-
-            <div class="profile-options">
-                <div class="options-left">
-                    <div class="profile-pic"></div>
-                    <div class="username">@Username</div>
+            <div class="main_body">
+                <div class="lhs">
+                    <img class="profile-image" src="public/img/tvxq5.jpg" alt="Profile Picture">
+                    <h4>@username</h4>
                 </div>
-                <div class="options-right">
-                    <br>
-                    <br>
+
+                <div class="rhs">
                     <a href="#">Update Public Information</a>
                     <a href="#">Change Password</a>
                     <a href="#">Connect Account to Streaming Platforms</a>
@@ -229,13 +44,10 @@
                     <a href="#">Manage Blocked Users</a>
                     <a href="#">Manage Notification Settings</a>
                     <a href="#">Delete Account</a>
-                    <br>
-                    <br>
                 </div>
             </div>
-     
         </div>
-
+            
         <footer class="footer">
             <div class="left_footer">
                 <h3>Get in touch with us</h3>
@@ -260,10 +72,9 @@
                     <tr>
                         <td><a href="#">Terms and Condition</a></td>
                     </tr>
-                </table>
+                  </table>
             </div>
         </footer>
     </div>
 </body>
-
 </html>
