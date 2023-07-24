@@ -1,0 +1,171 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+/* header part */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px 80px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #5B5247;
+    color: white;
+}
+
+.header_title {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    padding-right: 40px;
+}
+
+.header span {
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.header_search {
+    display: flex;
+    align-items: center;
+}
+
+.header_search input {
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none; 
+    outline: none; 
+}
+
+.header_search input[type="text"]::placeholder {
+    font-size: 12px; 
+}
+
+.header_search button {
+    font-size: 18px;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.header_navigation {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+
+.header_navigation a{
+    text-decoration: none;
+    margin-left: 30px;
+    color: inherit;
+}
+
+/* main part */
+
+.main {
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 25px;
+  flex: 1;
+  font-family: sans-serif;
+}
+
+.main_header {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 35px;
+  justify-content: center;
+}
+
+.main_header hr {
+  border: none;
+  border-top: 3px solid #000;
+  margin-top: 10px;
+}
+
+/* Add styles for the lhs and rhs */
+.lhs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 30px;
+}
+/* Remove text decoration from anchor tags */
+.rhs a {
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 12px;
+}
+
+/* Add visible border on the left of the rhs */
+.rhs {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid #ccc; /* Add the desired border style */
+    padding-left: 30px; /* Add some padding to separate the links from the border */
+}
+
+/* Add styles for the profile image */
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #5B5247; /* Add your desired background color or image */
+}
+
+/* Adjust the main_body layout */
+.main_body {
+    display: flex;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* footer part */
+.footer {
+    background-color: #545454; /* Set the background color */
+    color: white; /* Set the text color */
+    font-family: sans-serif;;
+    font-weight: 100;
+    padding: 30px 80px;
+    font-size: 9.5px;
+
+    display: flex;
+    justify-content: space-between;
+}
+  
+.left_footer {
+    text-align: left;
+    margin-right: auto;
+}
+  
+.mid_footer {
+    align-items: end;
+    display: flex;
+}
+  
+.right_footer {
+    text-align: right;
+    margin-left: auto;
+}
+  
+.right_footer a {
+    text-decoration: none; 
+    color: white; 
+}
