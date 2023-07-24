@@ -59,13 +59,19 @@ router.get('/song/:id', async (req, res) => {
 
         const songdata = await Song.findById({_id: slug});
 
+        if (!songdata) {
+            // If no song is found for the provided slug (404 page)
+            return res.status(404).send('Song not found');
+        }
+
         const locals = {
             title: "MVX - Song", //according to the 2nd video, 5:43
-            song_title: data.song_title,
+            song_title: songdata.song_title,
             description: "Song page for MVX"
         }
 
-        res.render('song', {locals, songdata});
+        res.render('song', {locals, songdata: songdata});
+        res.redirect('/song/${id}');
     } catch (error){
         console.log(error);
     }
@@ -138,6 +144,11 @@ having an unordered list:
 // }
 // insertSongData();
 
+// function updateAlbumData(){
+//     Album.updateOne({album_title: "Stadium Arcadium"}, {$set:{album_img:"https://i.imgur.com/d1PxQ92.jpeg"}})
+// }
+// updateAlbumData();
+
 // function insertAlbumData(){
 //     Album.insertMany([
 //         {
@@ -148,11 +159,56 @@ having an unordered list:
 //             album_genre:"K-Pop",
 //             album_record_label:"Source Music, a HYBE company",
 //             album_listeners:92035621,
-//             album_img: bitmap_unforgiven,
+//             album_img: "https://i.imgur.com/emnHuPv.png",
 //             album_rating: 4.3,
 //             album_tags:["new", "catchy", "hype", "girl group", "4th gen", "kpop"],
 //             album_from_the_same_artist:["Antifragile", "Fearless"],
 //             album_similar_to_this:["Rising Sun", "Stadium Arcadium", "I Believe", "Mine", "Midnight Guest", "Unlock My World"],
+//         },
+//         {
+//             album_title: "MIROTIC",
+//             album_artist:"TVXQ!",
+//             album_tracklist: [
+//                 "Mirotic",
+//                 "Wrong Number",
+//                 "Picture of You",
+//                 "Crazy Love",
+//                 "Hey! (Don't Bring Me Down)",
+//                 "You're My Melody",
+//                 "Rainbow",
+//                 "Paradise",
+//                 "Are You A Good Girl",
+//                 "Flower Lady",
+//                 "Don't Say Goodbye",
+//                 "Forgotten Season",
+//                 "Love In The Ice"
+//               ],
+//             album_release:"2008-09-19",
+//             album_genre:"K-Pop",
+//             album_record_label:"SM Entertainment",
+//             album_listeners:17102846,
+//             album_img: "https://i.imgur.com/pzaqV0x.png",
+//             album_rating: 4.7,
+//             album_tags:["kpop", "2nd gen", "last", "aktf", "boy group", "db5k", "sm", "catchy", "hype", "legendary"],
+//             album_from_the_same_artist: [
+//                 "Whatever They Say",
+//                 "Tri-Angle",
+//                 "Rising Sun",
+//                 "'O' Jung.Ban.Hap",
+//                 "Mirotic",
+//                 "The Secret Code",
+//                 "TONE",
+//                 "WITH",
+//                 "Catch Me",
+//                 "Humanoids",
+//                 "TIME",
+//                 "Spellbound",
+//                 "TENSE",
+//                 "New Chapter #1: The Chance of Love",
+//                 "New Chapter #2: The Truth of Love",
+//                 "Rise As God"
+//               ],
+//             album_similar_to_this:["Sorry Sorry", "Girls' Generation", "Ring Ding Dong", "Stand Up", "Hands Up"],
 //         },
 //     ])
 // }
@@ -168,12 +224,24 @@ having an unordered list:
 //             artist_record_label: "SM Entertainment",
 //             artist_listeners:651342,
 //             artist_rating: 4.3,
-//             artist_img: bitmap_db5k,
+//             artist_img: "https://i.imgur.com/rIDkdLZ.jpeg",
 //             artist_tags: ["2nd gen", "boy group", "legendary", "gods", "db5k", "aktf"],
 //             artist_similar_to_this:["SHINee", "Super Junior", "H.O.T", "SHINHWA", "EXO", "Girls' Generation", "BIGBANG", "2PM"]
 
 //         },
+//         {
+//             artist_name: "LE SSERAFIM",
+//             artist_debut: 2004-1-14,
+//             artist_discography:["FEARLESS", "ANTIFRAGILE", "UNFORGIVEN"],
+//             artist_genre: "K-Pop",
+//             artist_record_label: "SOURCE MUSIC",
+//             artist_listeners:10169447,
+//             artist_rating: 4.6,
+//             artist_img: "https://i.imgur.com/Lol2BTC.png",
+//             artist_tags: ["4th gen", "girl group", "hybe", "ot6", "legendary", "catchy", "visual"],
+//             artist_similar_to_this:["IVE", "NewJeans", "NMIXX", "Kep1er", "IZ*ONE", "STAYC", "aespa", "ITZY"]
 
+//         },
 //     ])
 // }
 // insertArtistData();

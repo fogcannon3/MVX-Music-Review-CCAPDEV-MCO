@@ -168,6 +168,18 @@ hr {
     cursor: pointer;
 }
 
+img {
+    width: 220px;
+    height: 220px;
+    display: flex;
+    margin: auto;
+    object-fit: cover;
+}
+
+img:hover {
+    opacity: 0.8;
+}
+
 .item p{
     margin-left: 0px;
     font-family: 'Tahoma';
@@ -178,6 +190,7 @@ hr {
     margin-left: 0px;
     font-family: 'Tahoma';
     line-height: 0px;
+    font-size: 20px;
 }
 
 .updates {
@@ -230,6 +243,11 @@ img {
     width: 220px;
     display: flex;
     margin: auto;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
 }
 
 div.Back-To-Top{

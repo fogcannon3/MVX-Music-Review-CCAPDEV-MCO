@@ -18,11 +18,9 @@
         </nav>   
     </header>
     <div class="Song-Title">
-        <h1 id="back"><b> <%=  %> </b></h1>
-        <p class="title">TVXQ! (동방신기)</p>
+        <h1 id="back"><b> <%= songdata.song_title%> </b></h1>
+        <p class="title"><%= songdata.song_artist %></p>
         <div class=push-left>
-        <button class="heart">❤</button></div>
-        <button class="X">x</button>
     </div>
     <hr class="c1">
     <div class="Main-Container">
@@ -32,13 +30,13 @@
                     <img class="scroll" src="public/img/rising sun tvxq.jpg"></img>
                     <div class="deets">
                     <p class="deets">4.98 ⭐</p>
-                    <p class="deets"><b>Album:</b> Rising Sun </p>
-                    <p class="deets"><b>Year:</b> 2005</p>
-                    <p class="deets"><b>Genre:</b> K-Pop, Pop, Dance</p>
-                    <p class="deets"><b>Lyrics:</b> Juan dela Cruz</p>
-                    <p class="deets"><b>Composers:</b> Juan dela Cruz</p>
-                    <p class="deets"><b>Publisher:</b> SM Entertainment</p>
-                    <p class="deets"><b>No. of unique listeners:</b> 678,944</p>
+                    <p class="deets"><b>Album:</b> <%= songdata.song_album %> </p>
+                    <p class="deets"><b>Release Date:</b> <%= songdata.release %></p>
+                    <p class="deets"><b>Genre:</b> <%= songdata.song_genre %></p>
+                    <p class="deets"><b>Lyrics:</b> <%= songdata.song_writer%></p>
+                    <p class="deets"><b>Composers:</b> <%= songdata.song_composers %></p>
+                    <p class="deets"><b>Publisher:</b> <%= songdata.song_record_label %></p>
+                    <p class="deets"><b>No. of unique listeners:</b> <%= songdata.song_listeners %></p>
                     <button class="send"><img class="send" src="public/img/Youtube1.png"></img></button>
                     <button class="send"><img class="send" src="public/img/Spotify1.png"></img></button>
                     </div>
@@ -51,33 +49,11 @@
                         <button class="addTags">Add Tags</button>
                     </div>
                     <div id="items">
-                        <div class="item-tags">
-                            <button class="tags">k-pop</button>
-                        </div>
-
-                        <div class="item-tags">
-                            <button class="tags">2nd gen</button>
-                        </div>
-
-                        <div class="item-tags">
-                            <button class="tags">db5k</button>
-                        </div>
-
-                        <div class="item-tags">
-                            <button class="tags">2000s</button>
-                        </div>
-
-                        <div class="item-tags">
-                            <button class="tags">good ol' days</button>
-                        </div>
-                        
-                        <div class="item-tags">
-                            <button class="tags">famous</button>
-                        </div>
-
-                        <div class="item-tags">
-                            <button class="tags">pop</button>
-                        </div>
+                        <% songdata.forEach(element => { %>
+                            <div class="item">< href="/song/.id">
+                                <button class = "tags"><%= element.song_tags%></button>
+                            </div>
+                        <% }) %>
                     </div>
                 </div>
                 <hr>

@@ -31,100 +31,13 @@
     <!-- TESTING WITH SONGS ONLY FOR NOW -->
     <div id="items">
         <% songdata.forEach(element => { %>
-            <div class="item">
+            <div class="item"><a href="/song/:id">
                 <img src = <%= element.song_img%>>
                 <h2><%= element.song_title %></h2>
                 <p><%= element.song_artist %></p>
-            </div>
+            </a></div>
         <% }) %>
     </div>
-
-    <!--<br>-->
-
-
-
-
-
-
-
-
-
-
-    
-    <!-- <div class = "filters">
-        <h2 class="filterTitle">Updates</h2>
-        <div class = "filterActual">
-            <button class= "filter">
-                <p>Artists</p>
-            <button class= "filter">
-                <p>Users</p>
-        </div>
-    </div>
-
-    <div class="updates">
-        <div class="update">
-            <div class = "updateTop">
-                <img src = "public/img/eminem.jpg">
-                <h2>Eminem</h2>
-            </div>
-            <div class = "updateActual">
-                <p>'Sup guys, been a while, gonna release a new EP in a few, keep an eye out. With a collaboration with old friends, this one's for all the ones who were there for me since the beginning.</p>
-            </div>
-            
-        </div>
-
-        <div class="update">
-            <div class = "updateTop">
-                <img src = "public/img/a7x.jpg">
-                <h2>Avenged Sevenfold</h2>
-            </div>
-            <div class = "updateActual">
-                <p>We've added an additional show to our world tour! For the first time in 10 years, we'll be going back to Southeast Asia! To our Indonesian, Singaporean, and Filipino fans, keep a look out for our concert dates!</p>
-            </div>
-        </div>
-
-        <div class="update">
-            <div class = "updateTop">
-                <img src = "public/img/pink guy.png">
-                <h2>Pink Guy</h2>
-            </div>
-            <div class = "updateActual">
-                <p>GUESS WHO'S BACK HAHAHAHAHAHAHAHAHAHAHAHA HAHAHAHAHAHAHAHAHAHAHAHA *breathes in* HAHAHAHAHAHAHAHHAHAHAHAH HAHAHAHAHAHAHAHAHAHAHAHA</p>
-            </div>
-        </div>
-
-        <div class="update">
-            <div class = "updateTop">
-                <img src = "public/img/kanye.jpg">
-                <h2>Kanye West</h2>
-            </div>
-            <div class = "updateActual">
-                <p>Kanye. That's the update.</p>
-            </div>
-        </div>
-
-        <div class="update">
-            <div class = "updateTop">
-                <img src = "public/img/linkin park.jpg">
-                <h2>Linkin Park</h2>
-            </div>
-            <div class = "updateActual">
-                <p>07/28/2023. We will be releasing never-before-seen and never-before-heard music from the days of Meteora and Hybrid Theory. Just to relive the good times.  - Mike</p>
-            </div>
-        </div>
-        
-        <div class="update">
-            <div class = "updateTop">
-                <img src = "public/img/rick astley.jpg">
-                <h2>Rick Astley</h2>
-            </div>
-            <div class = "updateActual">
-                <p>Keep up the memes and streaming of "Never Gonna Give You Up", fellas! We got to 1 billion YouTube views, who's to say we can't get more than that!? :)</p>
-            </div>
-        </div>
-    </div> -->
-
-
 
     <br>
 
@@ -142,11 +55,11 @@
 
     <div id="items">
         <% albumdata.forEach(element => { %>
-            <div class="item">
+            <div class="item"><a href="/album/:id">
                 <img src = <%= element.album_img%>>
                 <h2><%= element.album_title %></h2>
                 <p><%= element.album_artist %></p>
-            </div>
+            </a></div>
         <% }) %>
     </div>
 
@@ -167,10 +80,10 @@
 
     <div id="items">
         <% artistdata.forEach(element => { %>
-            <div class="item">
+            <div class="item"><a href="/artist/:id">
                 <img src = <%= element.artist_img%>>
                 <h2><%= element.artist_name %></h2>
-            </div>
+            </a></div>
         <% }) %>
     </div>
 
