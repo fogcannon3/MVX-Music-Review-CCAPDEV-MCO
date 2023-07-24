@@ -18,17 +18,17 @@ const ArtistSchema = new Schema({
         required: true,
         trim: true
     },
-    album_debut:{
-        type:Date,
+    artist_debut:{
+        type: Date,
         required: true
     },
     artist_discography:{
-        type:array, //NOT SURE
+        type:Array,
         required: true,
         trim: true
     },
     artist_genre:{
-        type:String, //NOT SURE
+        type:String,
         required: true,
         trim: true
     },
@@ -38,57 +38,48 @@ const ArtistSchema = new Schema({
         trim: true
     },
     artist_listeners:{
-        type: int64, //NOT SURE WHICH TYPE OF INT
-        required: false
+        type: Number,
     },
     artist_rating:{
-        type: float, //NOT SURE WHICH TYPE OF FLOAT
-        required: false
+        type: Number,
     },
     artist_img:{
-        type: media, //NOT SURE
-        required: false
+        type: String,
     },
     artist_tags:{
-        type: array, //NOT SURE
-        required: false
+        type: Array,
     },
     artist_similar_to_this:{
-        type: array, //NOT SURE
-        required: false
+        type: Array,
+        required: true
     },
-    artist_top_user_img:{
-        required: false
-    },
-    artist_top_user_username:{
-        required: false
-    },
-    artist_top_user_rating:{
-        required: false
-    },
-    artist_top_user_review_title:{
-        required: false
-    },
-    artist_top_user_review_body:{
-        required: false
-    },
-    artist_rating_danceability:{
-        required: false
-    },
-    artist_rating_upbeat:{
-        required: false
-    },
-    artist_rating_catchiness:{
-        required: false
-    },
-    artist_rating_vocals:{
-        required: false
-    },
-
-    artist_updatedAt:{
-        type:Date,
-        required: Date.now
-    }
+    // artist_top_user_img:{
+    //     required: false
+    // },
+    // artist_top_user_username:{
+    //     required: false
+    // },
+    // artist_top_user_rating:{
+    //     required: false
+    // },
+    // artist_top_user_review_title:{
+    //     required: false
+    // },
+    // artist_top_user_review_body:{
+    //     required: false
+    // },
+    // artist_rating_danceability:{
+    //     required: false
+    // },
+    // artist_rating_upbeat:{
+    //     required: false
+    // },
+    // artist_rating_catchiness:{
+    //     required: false
+    // },
+    // artist_rating_vocals:{
+    //     required: false
+    // },
 })
 
 /*format is in (name, schemaName) */

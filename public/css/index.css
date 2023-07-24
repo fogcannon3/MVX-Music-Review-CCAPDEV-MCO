@@ -72,6 +72,17 @@ html, body {
     height: 30px;
 }
 
+<<<<<<< Updated upstream
+=======
+/*aboutusspecials + general use*/
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+/* footer part */
+>>>>>>> Stashed changes
 .footer {
     background-color: #545454; /* Set the background color */
     color: white; /* Set the text color */
@@ -103,4 +114,31 @@ html, body {
 .right_footer a {
     text-decoration: none; 
     color: white; 
+<<<<<<< Updated upstream
+=======
+}
+
+
+
+/*scrollbar-related styling*/
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: #e8e8e8;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #c9c9c9; 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #a9a9a9; 
+>>>>>>> Stashed changes
 }
