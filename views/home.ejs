@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="/css/home.css">
+
 <header class="header">
     <h2 class="header_title"><span>MVX</span></h2>
     <div class="header_search">
@@ -26,18 +28,18 @@
         </div>
     </div>
 
+    <!-- TESTING WITH SONGS ONLY FOR NOW -->
     <div id="items">
-        <% data.forEach(element => { %>
+        <% songdata.forEach(element => { %>
             <div class="item">
-                <%= element.home_new_releases %>
-                <%= element.home_following%>
-                <%= element.home_personalized_recommendations%>
-                <%= element.home_trending%>
+                <img src = <%= element.song_img%>>
+                <h2><%= element.song_title %></h2>
+                <p><%= element.song_artist %></p>
             </div>
         <% }) %>
     </div>
 
-    <br>
+    <!--<br>-->
 
 
 
@@ -49,7 +51,7 @@
 
 
     
-    <div class = "filters">
+    <!-- <div class = "filters">
         <h2 class="filterTitle">Updates</h2>
         <div class = "filterActual">
             <button class= "filter">
@@ -120,7 +122,7 @@
                 <p>Keep up the memes and streaming of "Never Gonna Give You Up", fellas! We got to 1 billion YouTube views, who's to say we can't get more than that!? :)</p>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
 

@@ -40,8 +40,9 @@ router.get('/home', async (req, res) => {
     }
     
     try{
-        const data = await Home.find();
-        res.render('home', {locals, data});
+        const homedata = await Home.find();
+        const songdata = await Song.find();
+        res.render('home', {locals, homedata, songdata});
     } catch (error){
         console.log(error);
     }
@@ -51,15 +52,15 @@ router.get('/song/:id', async (req, res) => {
     try{
         let slug = req.params.id;
 
-        const data = await Song.findById({_id: slug});
+        const songdata = await Song.findById({_id: slug});
 
         const locals = {
-            //title: "MVX - Song", //according to the 2nd video, 5:43
+            title: "MVX - Song", //according to the 2nd video, 5:43
             song_title: data.song_title,
             description: "Song page for MVX"
         }
 
-        res.render('song', {locals, data});
+        res.render('song', {locals, songdata});
     } catch (error){
         console.log(error);
     }
@@ -94,7 +95,9 @@ var fs = require('fs');
 //for some reason, will require a separate variable for EACH image
 var bitmap_i = fs.readFileSync('./public/img/jaejoong_i.jpg', 'base64');
 var bitmap_risingSun = fs.readFileSync('./public/img/rising sun tvxq.jpg', 'base64');
-
+var bitmap_hug = fs.readFileSync('./public/img/hug_tvxq.jpg', 'base64');
+var bitmap_unforgiven = fs.readFileSync('./public/img/unforgiven le sserafim.png', 'base64');
+var bitmap_dark_blood = fs.readFileSync('./public/img/dark blood enhypen.jpg', 'base64');
 
 
 //create a onetime function to insert dummy data
@@ -110,6 +113,57 @@ var bitmap_risingSun = fs.readFileSync('./public/img/rising sun tvxq.jpg', 'base
 //     ])
 // }
 // insertHomeData();
+
+// function insertAlbumData(){
+//     Album.insertMany([
+//         {
+//             album_title: "UNFORGIVEN",
+//             song_artist:"LE SSERAFIM",
+//             song_tracklist:"",
+//             song_release:"2023-05-01",
+//             song_genre:"K-Pop",
+//             song_writer:"Nile Rodgers",
+//             song_composers:"Hitman Bang",
+//             song_record_label:"Source Music, a HYBE company",
+//             song_lyrics:"UNFORGIVEN UNFORGIVEN I'M A, UNFORGIVEN UNFORGIVEN",
+//             song_img: bitmap_unforgiven,
+//             song_tags:["new", "catchy", "hype", "party", "4th gen", "kpop"],
+//             song_similar_to_this:["Antifragile", "Fearless", "Unforgiven", "Sour Grapes"],
+//             song_from_the_same_artist:["Rising Sun", "Stadium Arcadium", "I Believe", "Mine"],
+//         },
+//         {
+//             song_title: "Bite Me",
+//             song_artist:"ENHYPEN",
+//             song_album:"DARK BLOOD",
+//             song_release:"2023-05-22",
+//             song_genre:"K-Pop",
+//             song_writer:"David Stewart",
+//             song_composers:"Cirkut",
+//             song_record_label:"BELIFT LAB, a HYBE company",
+//             song_lyrics:"It's you and me in this world, 내게로 다시 와, tie me",
+//             song_img: bitmap_dark_blood,
+//             song_tags:["new", "catchy", "fun", "cool", "4th gen", "kpop"],
+//             song_from_the_same_artist:["Bite Me", "Shalala", "Unforgiven", "Picture Of You"],
+//             song_similar_to_this:["Rising Sun", "Stadium Arcadium", "I Believe", "Mine"],
+//         },
+//         {
+//             song_title: "Hug",
+//             song_artist:"TVXQ!",
+//             song_album:"Hug",
+//             song_release:"2004-01-14",
+//             song_genre:"K-Pop",
+//             song_writer:"Yoon Jung",
+//             song_composers:"Park Chang-hyun",
+//             song_record_label:"SM Entertainment",
+//             song_lyrics:"하루만 니방의 침대가 되고싶어 Oh Baby 더 따스히 포근히 내 품에 감싸 안고 재우고 싶어",
+//             song_img: bitmap_hug,
+//             song_tags:["legendary", "catchy", "2nd gen", "db5k", "mellow", "soft", "kpop"],
+//             song_from_the_same_artist:["'O' Jung-Ban-Hap ", "I Believe", "She", "Picture Of You"],
+//             song_similar_to_this:["Rising Sun", "Stadium Arcadium", "I Believe", "American Idiot", "Mine"],
+//         },
+//     ])
+// }
+// insertAlbumData();
 
 
 

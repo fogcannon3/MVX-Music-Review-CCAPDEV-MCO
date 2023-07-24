@@ -24,7 +24,7 @@ const AlbumSchema = new Schema({
         trim: true
     },
     album_tracklist:{
-        type:array, //NOT SURE
+        type:Array,
         required: true,
         trim: true
     },
@@ -33,7 +33,7 @@ const AlbumSchema = new Schema({
         required: true
     },
     album_genre:{
-        type:String, //NOT SURE
+        type:String,
         required: true,
         trim: true
     },
@@ -43,56 +43,56 @@ const AlbumSchema = new Schema({
         trim: true
     },
     album_listeners:{
-        type: int, //NOT SURE WHICH TYPE OF INT
+        type: Number,
         required: false
     },
     album_rating:{
-        type: float, //NOT SURE WHICH TYPE OF FLOAT
+        type: Number,
         required: false
     },
     album_img:{
-        type: media, //NOT SURE
+        type: String,
         required: false
     },
     album_tags:{
-        type: array, //NOT SURE
+        type: Array,
         required: false
     },
     album_similar_to_this:{
-        type: array, //NOT SURE
+        type: Array,
         required: false
     },
     album_from_the_same_artist:{
-        type: array, //NOT SURE
+        type: Array, 
         required: false
     },
-    album_top_user_img:{
-        required: false
-    },
-    album_top_user_username:{
-        required: false
-    },
-    album_top_user_rating:{
-        required: false
-    },
-    album_top_user_review_title:{
-        required: false
-    },
-    album_top_user_review_body:{
-        required: false
-    },
-    album_rating_danceability:{
-        required: false
-    },
-    album_rating_upbeat:{
-        required: false
-    },
-    album_rating_catchiness:{
-        required: false
-    },
-    album_rating_vocals:{
-        required: false
-    },
+    // album_top_user_img:{
+    //     required: false
+    // },
+    // album_top_user_username:{
+    //     required: false
+    // },
+    // album_top_user_rating:{
+    //     required: false
+    // },
+    // album_top_user_review_title:{
+    //     required: false
+    // },
+    // album_top_user_review_body:{
+    //     required: false
+    // },
+    // album_rating_danceability:{
+    //     required: false
+    // },
+    // album_rating_upbeat:{
+    //     required: false
+    // },
+    // album_rating_catchiness:{
+    //     required: false
+    // },
+    // album_rating_vocals:{
+    //     required: false
+    // },
     
 
     //NOTE: im not sure how to move forward with the reviews here
@@ -100,10 +100,10 @@ const AlbumSchema = new Schema({
     //then the rest will be visible from the "see more" button nalang
     //so yea not sure how to implement
 
-    album_updatedAt:{
-        type:Date,
-        required: Date.now
-    }
+    // album_updatedAt:{
+    //     type:Date,
+    //     required: Date.now
+    // }
 })
 
 /*format is in (name, schemaName) */
