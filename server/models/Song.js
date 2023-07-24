@@ -52,19 +52,19 @@ const SongSchema = new Schema({
         required: true,
         trim: true
     },
-    // song_listeners:{
-    //     type: Int8Array,
-    //     required: false
-    // },
+    song_listeners:{
+        type: Number,
+        required: false
+    },
     song_lyrics:{
         type:String,
         required: true,
         trim: true
     },
-    // song_rating:{
-    //     type: Float32Array,
-    //     required: false
-    // },
+    song_rating:{
+        type: Number,
+        required: false
+    },
     song_img:{
         type: String,
         required: true
