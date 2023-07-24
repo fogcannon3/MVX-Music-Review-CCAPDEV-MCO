@@ -5,8 +5,6 @@ const mongoose = require('mongoose');
 const expressLayout = require('express-ejs-layouts')
 const cookieParser = require('cookie-parser');
 const MongoStore = require('connect-mongo');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
 
 /*adds the connection to the db vid4 (10:56)*/
 const connectDB = require('./server/config/db');
