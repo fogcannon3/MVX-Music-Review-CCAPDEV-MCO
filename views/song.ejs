@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Song Page</title>
-        <link rel = "stylesheet" href = "css/sampledatastyles.css">
+        <link rel = "stylesheet" href = "/css/sampledatastyles.css">
     </head>
 <body>
     <header class="header">
@@ -27,7 +27,7 @@
         <div class="Main-content">
             <div class="Main-details">
                 <div class="Song-Details">
-                    <img class="scroll" src="public/img/rising sun tvxq.jpg"></img>
+                    <img class="scroll" src=<%= songdata.song_img %> >
                     <div class="deets">
                     <p class="deets">4.98 ⭐</p>
                     <p class="deets"><b>Album:</b> <%= songdata.song_album %> </p>
@@ -49,8 +49,8 @@
                         <button class="addTags">Add Tags</button>
                     </div>
                     <div id="items">
-                        <% songdata.forEach(element => { %>
-                            <div class="item">< href="/song/.id">
+                        <% songdata.song_tags.forEach(element => { %>
+                            <div class="item">
                                 <button class = "tags"><%= element.song_tags%></button>
                             </div>
                         <% }) %>

@@ -31,7 +31,7 @@
     <!-- TESTING WITH SONGS ONLY FOR NOW -->
     <div id="items">
         <% songdata.forEach(element => { %>
-            <div class="item"><a href="/song/:id">
+            <div class="item"><a href="/song/<%= element._id %>">
                 <img src = <%= element.song_img%>>
                 <h2><%= element.song_title %></h2>
                 <p><%= element.song_artist %></p>
@@ -55,7 +55,7 @@
 
     <div id="items">
         <% albumdata.forEach(element => { %>
-            <div class="item"><a href="/album/:id">
+            <div class="item"><a href="/album/<%= element._id %>">
                 <img src = <%= element.album_img%>>
                 <h2><%= element.album_title %></h2>
                 <p><%= element.album_artist %></p>
@@ -80,7 +80,7 @@
 
     <div id="items">
         <% artistdata.forEach(element => { %>
-            <div class="item"><a href="/artist/:id">
+            <div class="item"><a href="/artist/<%= element._id %>">
                 <img src = <%= element.artist_img%>>
                 <h2><%= element.artist_name %></h2>
             </a></div>

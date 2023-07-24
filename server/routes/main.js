@@ -71,7 +71,6 @@ router.get('/song/:id', async (req, res) => {
         }
 
         res.render('song', {locals, songdata: songdata});
-        res.redirect('/song/${id}');
     } catch (error){
         console.log(error);
     }
