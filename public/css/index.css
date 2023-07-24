@@ -71,3 +71,36 @@ html, body {
     width: 200px;
     height: 30px;
 }
+
+.footer {
+    background-color: #545454; /* Set the background color */
+    color: white; /* Set the text color */
+    font-family: sans-serif;
+    font-weight: 100;
+    padding: 30px 80px;
+    font-size: 9.5px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.left_footer {
+    text-align: left;
+    margin-right: auto;
+}
+
+.mid_footer {
+    align-items: end;
+    display: flex;
+}
+
+.right_footer {
+    text-align: right;
+    margin-left: auto;
+}
+
+.right_footer a {
+    text-decoration: none; 
+    color: white; 
+}
