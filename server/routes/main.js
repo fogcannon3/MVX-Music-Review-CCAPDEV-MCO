@@ -94,22 +94,22 @@ having an unordered list:
 
 
 
-// function to encode file data to base64 encoded string
-var fs = require('fs');
+// // function to encode file data to base64 encoded string
+// var fs = require('fs');
 
-//for some reason, will require a separate variable for EACH image
-var bitmap_i = fs.readFileSync('./public/img/jaejoong_i.jpg', 'base64');
-var bitmap_risingSun = fs.readFileSync('./public/img/rising sun tvxq.jpg', 'base64');
-var bitmap_hug = fs.readFileSync('./public/img/hug_tvxq.jpg', 'base64');
-var bitmap_unforgiven = fs.readFileSync('./public/img/unforgiven le sserafim.png', 'base64');
-var bitmap_dark_blood = fs.readFileSync('./public/img/dark blood enhypen.jpg', 'base64');
-var bitmap_american_idiot = fs.readFileSync('./public/img/american idiot.png', 'base64');
-var bitmap_mirotic = fs.readFileSync('./public/img/MiroticTVXQ.png', 'base64');
-var bitmap_db5k = fs.readFileSync('./public/img/tvxq5.jpg', 'base64');
-var bitmap_greenday = fs.readFileSync('./public/img/greenday.jpg', 'base64');
-var bitmap_ls = fs.readFileSync('./public/img/le sserafim.png', 'base64');
-var bitmap_jaejoong = fs.readFileSync('./public/img/jaejoong.png', 'base64');
-var bitmap_a7x= fs.readFileSync('./public/img/a7x.jpg', 'base64');
+// //for some reason, will require a separate variable for EACH image
+// var bitmap_i = fs.readFileSync('./public/img/jaejoong_i.jpg', 'base64');
+// var bitmap_risingSun = fs.readFileSync('./public/img/rising sun tvxq.jpg', 'base64');
+// var bitmap_hug = fs.readFileSync('./public/img/hug_tvxq.jpg', 'base64');
+// var bitmap_unforgiven = fs.readFileSync('./public/img/unforgiven le sserafim.png', 'base64');
+// var bitmap_dark_blood = fs.readFileSync('./public/img/dark blood enhypen.jpg', 'base64');
+// var bitmap_american_idiot = fs.readFileSync('./public/img/american idiot.png', 'base64');
+// var bitmap_mirotic = fs.readFileSync('./public/img/MiroticTVXQ.png', 'base64');
+// var bitmap_db5k = fs.readFileSync('./public/img/tvxq5.jpg', 'base64');
+// var bitmap_greenday = fs.readFileSync('./public/img/greenday.jpg', 'base64');
+// var bitmap_ls = fs.readFileSync('./public/img/le sserafim.png', 'base64');
+// var bitmap_jaejoong = fs.readFileSync('./public/img/jaejoong.png', 'base64');
+// var bitmap_a7x= fs.readFileSync('./public/img/a7x.jpg', 'base64');
 
 
 //create a onetime function to insert dummy data
@@ -285,3 +285,60 @@ router.get('/profile', (req, res) => {
 });
 
 module.exports = router;
+
+const { MongoClient, GridFSBucket } = require('mongodb');
+const MONGODB_URI="mongodb+srv://nate:02ghEzm5H0Gmctjr@cluster0.e2fut6v.mongodb.net/mvx";
+const dbName = 'mvx';
+const client = new MongoClient(MONGODB_URI, { useUnifiedTopology: true });
+const fs = require('fs');
+const { Readable } = require('stream');
+
+async function storePhoto(filePath, fileName) {
+    const db = client.db(dbName);
+    const bucket = new GridFSBucket(db);
+  
+    const readableStream = fs.createReadStream(filePath);
+    const uploadStream = bucket.openUploadStream(fileName);
+  
+    const data = await new Promise((resolve, reject) => {
+      readableStream.pipe(uploadStream)
+        .on('finish', resolve)
+        .on('error', reject);
+    });
+  
+    console.log('File stored in MongoDB:', fileName);
+  }
+
+// Usage example:
+const filePath = './public/img/rising sun tvxq.jpg'; // Replace with the path to your photo file
+const fileName = 'rising sun tvxq.jpg'; // Replace with the desired filename in MongoDB
+storePhoto(filePath, fileName);
+
+async function getPhoto(fileName) {
+    const db = client.db(dbName);
+    const bucket = new GridFSBucket(db);
+  
+    const downloadStream = bucket.openDownloadStreamByName(fileName);
+  
+    const data = await new Promise((resolve, reject) => {
+      let chunks = [];
+      downloadStream
+        .on('data', chunk => chunks.push(chunk))
+        .on('error', reject)
+        .on('end', () => resolve(Buffer.concat(chunks)));
+    });
+  
+    return data;
+  }
+
+  const fileNameToRetrieve = 'rising sun tvxq.jpg'; // Replace with the filename you want to retrieve
+  getPhoto(fileNameToRetrieve)
+    .then(photoData => {
+      // Do something with the photo data, e.g., save it to a file or send it in the response
+      // For example:
+      fs.writeFileSync('retrievedPhoto.jpg', photoData);
+      console.log('Photo retrieved and saved as retrievedPhoto.jpg');
+    })
+    .catch(err => {
+      console.error('Error retrieving the photo:', err);
+    });
