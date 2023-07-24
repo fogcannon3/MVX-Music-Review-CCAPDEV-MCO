@@ -47,14 +47,18 @@ router.get('/home', async (req, res) => {
     }
 });
 
-router.get('/song', async (req, res) => {
-    const locals = {
-        title: "MVX - Song", //according to the 2nd video, 5:43
-        description: "Song page for MVX"
-    }
-    
+router.get('/song/:id', async (req, res) => {
     try{
-        const data = await Song.find();
+        let slug = req.params.id;
+
+        const data = await Song.findById({_id: slug});
+
+        const locals = {
+            //title: "MVX - Song", //according to the 2nd video, 5:43
+            song_title: data.song_title,
+            description: "Song page for MVX"
+        }
+
         res.render('song', {locals, data});
     } catch (error){
         console.log(error);

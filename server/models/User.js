@@ -13,28 +13,25 @@ const Schema = mongoose.Schema; /* Schema - database field/s */
   trim: true/false (removese leading and trailing whitespace before saving to the db)
 */
 const UserSchema = new Schema({
-    user_username:{
+    username:{
         type:String,
         required: true,
+        unique: true,
         trim: true
     },
-    user_joined:{
+    password:{
+        type:String,
+        required: true,
+    },
+    joined:{
         type:Date,
         required: true
     },
-    user_followers:{
-        type: int64, //NOT SURE WHICH TYPE OF INT
-        required: false
-    },
-    user_img:{
-        type: media, //NOT SURE
+    img:{
+        type: String,
         required: false
     },
     //Feels empty here sa user page, will definitely add stuff pag may time
-    user_updatedAt:{
-        type:Date,
-        required: Date.now
-    }
 })
 
 /*format is in (name, schemaName) */
