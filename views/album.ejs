@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Song Page</title>
+        <link rel = "stylesheet" href = "/css/sampledatastyles.css">
+    </head>
+<body>
+    <header class="header">
+        <h2 class="header_title"><span>MVX</span></h2>
+        <div class="header_search">
+            <input type="text" placeholder="Search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
+        <nav id="header_navigation" class="header_navigation">
+            <i class="fa fa-bell"></i>
+            <a href="home.html">Home</a>
+            <a href="#">Profile</a>
+        </nav>   
+    </header>
+    <div class="Song-Title">
+        <h1 id="back"><b> <%= albumdata.album_title%> </b></h1>
+        <p class="title"><%= albumdata.album_artist%></p>
+        <div class=push-left>
+    </div>
+    <hr class="c1">
+
+    <div class="Main-Container">
+        <div class="Main-content">
+            <div class="Main-details">
+                <div class="Song-Details">
+                    <img class="scroll" src="public/img/american idiot.png"></img>
+                    <div class="deets">
+                    <p class="deets"><%= albumdata.album_rating%> ⭐</p>
+                    <p class="deets"><b>Artist:</b> <%= albumdata.album_artist%> </p>
+                    <p class="deets"><b>Release:</b> <%= albumdata.album_release%></p>
+                    <p class="deets"><b>Genre:</b> <%= albumdata.album_genre%></p>
+                    <p class="deets"><b>Lyrics:</b> <%= albumdata.album_writer%></p>
+                    <p class="deets"><b>Composers:</b> <%= albumdata.album_composers%></p>
+                    <p class="deets"><b>Publisher:</b> <%= albumdata.album_record_label%></p>
+                    <p class="deets"><b>No. of unique listeners:</b> <%= albumdata.album_listeners%></p>
+                    <button class="send"><img class="send" src="public/img/Youtube1.png"></img></button>
+                    <button class="send"><img class="send" src="public/img/Spotify1.png"></img></button>
+                    </div>
+                </div>
+                <hr>
+                
+                <div class="Popular-Tags">
+                    <div class="Popular-Tag-Button">
+                        <h1>Popular Tags</h1>
+                        <button class="addTags">Add Tags</button>
+                    </div>
+                    <div id="items">
+                        <% albumdata.album_tags.forEach(element => { %>
+                            <div class="item">
+                                <button class = "tags"><%= element.album_tags%></button>
+                            </div>
+                        <% }) %>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="Rate-Review">
+                    <button class="rate-review">RATE</button>
+                    <div class="space">•</div>
+                    <button class="rate-review">REVIEW</button>
+                </div>
+                <hr>
+
+                <h1>Most Upvoted Review</h1>
+                <div class="Most-Upvoted-Review">
+                    <div class="MUR-container">
+                    <img class="user_icon push-center" src="public/img/profilepictureami.jpg"></img>
+                    <h2 class="username push-center">@skry.zz1</h2>
+                    <h2 class="push-left">⭐⭐⭐⭐⭐</h2>
+                    </div>
+                    <h1>Showcase of Green Day's Best Work</h1>
+                    <p>This album is the album I recommend everyone should try listening to, regardless of whether or not you like rock. Heck, i'm gonna recommend you listen to this song even if you don't enjoy listening to music in the first place! It's that good and div...</p>
+                </div>
+                <hr>
+
+                <div class="Criteria-Rating">
+                    <h1>Tracklist</h1> 
+                    <ol>
+                        <% albumdata.album_tracklist.forEach(element => { %>
+                            <li>
+                                <%= element.album_tracklist%>
+                            </li>
+                        <% }) %>
+                    </ol>
+                </div>
+                <hr>
+
+                <div class="Criteria-Rating">
+                    <h1>Criteria Rating</h1>
+                    <h3><em>Danceability</em></h3>
+                    <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                    </svg>
+                    </div>
+
+                    <h3><em>Upbeat</em></h3>
+                    <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    </div>
+
+                    <h3><em>Catchiness</em></h3>
+                    <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-half" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z"/>
+                    </svg>
+                    </div>
+
+                    <h3><em>Vocals</em></h3>
+                    <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-half" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z"/>
+                    </svg>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="Reviews-and-Comments">
+                    <div class="RC-F">
+                        <h1>Reviews & Comments</h1>
+                        <button class="VM push-left">View More</button>
+                    </div>
+                    <div id="items">
+                        <div class="item-review">
+                            <div class="MUR-container">
+                                <img class="user_icon push-center" src="public/img/profilepicami2.jpg"></img>
+                                <h2 class="username push-center">@gdmcrb-182</h2>
+                                <h2 class="push-left">5⭐</h2>
+                            </div>
+                                <h2>Peak Green Day!</h2>
+                                <p>No other album will ever come close <br>
+                                to American Idiot. Even Green Day <br>
+                                themselves have tried but none co...</p>
+                            </div>
+
+                        <div class="item-review">
+                            <div class="MUR-container">
+                                <img class="user_icon push-center" src="public/img/profilepicture.jpg"></img>
+                                <h2 class="username push-center">@db5k.fvr</h2>
+                                <h2 class="push-left">5⭐</h2>
+                            </div>
+                            <div>
+                                <h2>Punk 101 in an album</h2>
+                                <p>Are you a so-called punk fan? Have <br>
+                                you listened to American Idiot in its<br>
+                                entirety? No? Then what the hell a...</p>
+                            </div>
+                        </div>
+                        <div class="item-review">
+                            <div class="MUR-container">
+                                <img class="user_icon push-center" src="public/img/profilepicami3.jpg"></img>
+                                <h2 class="username push-center">@fgss2</h2>
+                                <h2 class="push-left">5⭐</h2>
+                            </div>
+                            <div>
+                                <h2>My childhood music!</h2>
+                                <p>No, I didn't have a bad upbringing,<br>
+                                mind you. My parents just had really<br>
+                                great taste in music! I enjoyed lis...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Similar-Songs">
+                <h1>Similar to this</h1>
+                    <div id="items">
+                        <div class="item">
+                            <img class="scroll" src = "public/img/rising sun tvxq.jpg"></img>
+                                <h2 class="scroll">Rising Sun</h2>
+                                <p>TVXQ! (동방신기)</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "public/img/shalala taeyong.jpg"></img>
+                            <h2 class="scroll">Shalala</h2>
+                            <p>TAEYONG</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "public/img/unforgiven le sserafim.png"></img>
+                            <h2 class="scroll">Unforgiven</h2>
+                            <p>LE SSERAFIM (르세라핌)</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "public/img/tri-angle tvxq.jpg"></img>
+                            <h2 class="scroll">TRI-ANGLE</h2>
+                            <p>TVXQ! (동방신기)</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "public/img/dark blood enhypen.jpg"></img>
+                            <h2 class="scroll">DARK BLOOD</h2>
+                            <p>ENHYPEN</p>
+                        </div>
+                        
+                        <div class="item">
+                            <img class="scroll" src = "public/img/masterpiece misamo.jpeg"></img>
+                            <h2 class="scroll">Masterpiece</h2>
+                            <p>TWICE-MISAMO</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "public/img/MiroticTVXQ.png"></img>
+                            <h2 class="scroll">MIROTIC</h2>
+                            <p>TVXQ! (동방신기)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="Same-Artist">
+                    <h1>From the same artist</h1>
+                    <div id="items">
+                        <div class="item">
+                            <img class="scroll" src = "public/img/rising sun tvxq.jpg"></img>
+                            <h2 class="scroll">Rising Sun</h2>
+                            <p>TVXQ! (동방신기)</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "public/img/shalala taeyong.jpg"></img>
+                            <h2 class="scroll">Shalala</h2>
+                            <p>TAEYONG</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "public/img/unforgiven le sserafim.png"></img>
+                            <h2 class="scroll">Unforgiven</h2>
+                            <p>LE SSERAFIM (르세라핌)</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "public/img/tri-angle tvxq.jpg"></img>
+                            <h2 class="scroll">TRI-ANGLE</h2>
+                            <p>TVXQ! (동방신기)</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "public/img/dark blood enhypen.jpg"></img>
+                            <h2 class="scroll">DARK BLOOD</h2>
+                            <p>ENHYPEN</p>
+                        </div>
+                        
+                        <div class="item">
+                            <img class="scroll" src = "public/img/masterpiece misamo.jpeg"></img>
+                            <h2 class="scroll">Masterpiece</h2>
+                            <p>TWICE-MISAMO</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "public/img/MiroticTVXQ.png">
+                            <h2 class="scroll">MIROTIC</h2>
+                            <p>TVXQ! (동방신기)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Lyrics">
+            <h2>Description</h2>
+                <p>American Idiot is the seventh studio album by American rock band Green Day, released on September 21, 2004, by Reprise Records. As with their previous four albums, it was produced by Rob Cavallo in collaboration with the group. 
+                    Recording sessions for American Idiot took place at Studio 880, in Oakland and Ocean Way Recording in Hollywood, both in California, between 2003 and 2004. 
+                </p>
+                <p>
+                A concept album, dubbed a "punk rock opera" by the band members, American Idiot follows the story of Jesus of Suburbia, a lower-middle-class American adolescent anti-hero. 
+                The album expresses the disillusionment and dissent of a generation that came of age in a period shaped by tumultuous events such as 9/11 and the Iraq War. 
+                In order to accomplish this, the band used unconventional techniques for themselves, including transitions between connected songs and some long, chaptered, creative compositions presenting the album themes.</p>
+                <p>Before the creation of American Idiot, Green Day were cooking up a revolutionary album called "Cigarettes and Valentines". Unfortunately, the master tracks were stolen from the studio and they were never recovered.
+                <br>
+                <p>But this didn't destroy Green Day's urge to push out a new album. Just a few days/months later, they rush to write and compose songs for a replacement album. Little did they know that this replacement album would end up becoming their best, most successful work yet.</p>
+                <p>American Idiot became one of the most anticipated releases of 2004. It marked a career comeback for Green Day, charting in 27 countries, reaching for the first time the top spot on the Billboard 200 for the group and peaking at number one in 18 other countries. It has sold over 16 million copies worldwide, making it the second best-selling album for the band (behind their 1994 major-label debut, Dookie) and one of the best-selling albums of the decade.</p>
+                    <p>It was later certified 6x Platinum by the Recording Industry Association of America in 2013. The album spawned five successful singles: the titular track, "American Idiot", "Holiday", "Wake Me Up When September Ends", "Jesus of Suburbia" and the Grammy Award for Record of the Year winner "Boulevard of Broken Dreams".</p>
+
+                    <p>American Idiot was very well received critically. It was nominated for Album of the Year and won the Award for Best Rock Album at the 2005 Grammy Awards. It was also nominated for Best Album at the Europe Music Awards and the Billboard Music Awards, winning the former. Its success inspired a Broadway musical, a documentary and a planned feature film adaptation. Rolling Stone placed it at 225 on their 2012 list of the "500 Greatest Albums of All Time", and again in 2020, at 248.</p>
+                <br>
+                </p>
+        </div>
+        
+    </div>
+    <div class="Back-To-Top">
+        <a href="#back"><button class="BTT"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+        </svg>
+        </button></a>
+        <p>Back to Top</p>
+    </div>
+    <footer class="footer">
+        <div class="left_footer">
+            <h3>Get in touch with us</h3>
+            <p>Contact Number: #63 908-888-0011<br>
+                Email: customerservice.mvx@gmail.com
+            </p>
+        </div>
+        <div class="mid_footer">
+            <p>MVX Solutions Inc. (c) 2023. All rights reserved.</p>
+        </div>
+        <div class="right_footer">
+            <table>
+                <tr>
+                    <td><a href="about us.html">About Us</a></td>
+                </tr>
+                <tr>
+                    <td><a href="faq.html">Frequently Asked Questions</a></td>
+                </tr>
+                <tr>
+                    <td><a href="privacy policy.html">Privacy Policy</a></td>
+                </tr>
+                <tr>
+                    <td><a href="terms and conditions.html">Terms and Condition</a></td>
+                </tr>
+              </table>
+        </div>
+    </footer>
+</body>
+</html>

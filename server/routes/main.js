@@ -76,6 +76,52 @@ router.get('/song/:id', async (req, res) => {
     }
 });
 
+router.get('/album/:id', async (req, res) => {
+    try{
+        let slug = req.params.id;
+
+        const albumdata = await Album.findById({_id: slug});
+
+        if (!albumdata) {
+            // If no song is found for the provided slug (404 page)
+            return res.status(404).send('Song not found');
+        }
+
+        const locals = {
+            title: "MVX - Album", //according to the 2nd video, 5:43
+            album_title: albumdata.album_title,
+            description: "Album page for MVX"
+        }
+
+        res.render('album', {locals, albumdata: albumdata});
+    } catch (error){
+        console.log(error);
+    }
+});
+
+router.get('/artist/:id', async (req, res) => {
+    try{
+        let slug = req.params.id;
+
+        const artistdata = await Artist.findById({_id: slug});
+
+        if (!artistdata) {
+            // If no song is found for the provided slug (404 page)
+            return res.status(404).send('Song not found');
+        }
+
+        const locals = {
+            title: "MVX - Artist", //according to the 2nd video, 5:43
+            song_title: artistdata.artist_title,
+            description: "Artist page for MVX"
+        }
+
+        res.render('artist', {locals, artistdata: artistdata});
+    } catch (error){
+        console.log(error);
+    }
+});
+
 
 
 /*vid 5 (5:07)

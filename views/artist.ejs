@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Song Page</title>
+        <link rel = "stylesheet" href = "/css/sampledatastyles.css">
+    </head>
+<body>
+    <header class="header">
+        <h2 class="header_title"><span>MVX</span></h2>
+        <div class="header_search">
+            <input type="text" placeholder="Search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
+        <nav id="header_navigation" class="header_navigation">
+            <i class="fa fa-bell"></i>
+            <a href="home.html">Home</a>
+            <a href="#">Profile</a>
+        </nav>   
+    </header>
+    <div class="Song-Title">
+        <h1 id="back"><b> <%= artistdata.artist_name%> </b></h1>
+        <p class="title"></p>
+        <div class=push-left>
+    </div>
+    <hr class="c1">
+
+    <div class="Main-Container">
+        <div class="Main-content">
+            <div class="Main-details">
+                <div class="Song-Details">
+                    <img class="scroll" src=<%= artistdata.artist_img %>>
+                    <div class="deets">
+                    <p class="deets"><%= artistdata.artist_rating %> ⭐</p>
+                    <p class="deets"><b>Debut:</b> <%= artistdata.artist_debut %></p>
+                    <p class="deets"><b>Genre:</b> <%= artistdata.artist_genre %></p>
+                    <p class="deets"><b>Record Label:</b> <%= artistdata.artist_record_label %></p>
+                    <p class="deets"><b>No. of unique listeners:</b> <%= artistdata.artist_listeners %></p>
+                    <button class="send"><img class="send" src="public/img/Youtube1.png"></img></button>
+                    <button class="send"><img class="send" src="public/img/Spotify1.png"></img></button>
+                    </div>
+                </div>
+                <hr>
+                
+                <div class="Popular-Tags">
+                    <div class="Popular-Tag-Button">
+                        <h1>Popular Tags</h1>
+                        <button class="addTags">Add Tags</button>
+                    </div>
+                    <div id="items">
+                        <% artistdata.artist_tags.forEach(element => { %>
+                            <div class="item">
+                                <button class = "tags"><%= element.artist_tags%></button>
+                            </div>
+                        <% }) %>
+                    </div>
+                </div>
+
+                <hr>
+
+                <h1>Most Popular Album</h1>
+                <div class="Most-Upvoted-Review">
+                    <div class="MUR-container">
+                    <img src="rising sun tvxq.jpg" style="width:200px">
+                    <h2 style = "margin-left: 25px; align-self: center;">Rising Sun (2005)</h2>
+                    </div>
+                </div>
+                <br>
+
+                <hr>
+
+                <div class="Rate-Review">
+                    <button class="rate-review">RATE</button>
+                    <div class="space">•</div>
+                    <button class="rate-review">REVIEW</button>
+                </div>
+                <hr>
+
+                <h1>Most Upvoted Review</h1>
+                <div class="Most-Upvoted-Review">
+                    <div class="MUR-container">
+                    <img class="user_icon push-center" src="public/img/profilepicture.jpg"></img>
+                    <h2 class="username push-center">@juandela.c</h2>
+                    <h2 class="push-left">⭐⭐⭐⭐⭐</h2>
+                    </div>
+                    <h1>They're "Rising Gods" for a reason</h1>
+                    <p>The longevity of their discography even until now during the 4th Gen peak of K-Pop is just absolute proof that nothing will ever beat TVXQ's popularity anywhere. Whether it be in Korea, Asia, or the World in general. TVXQ will forver remain leg...</p>
+                </div>
+                <hr>
+
+                <div class="Criteria-Rating">
+                    <h1>Criteria Rating</h1>
+                    <h3><em>Danceability</em></h3>
+                    <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    </div>
+
+                    <h3><em>Upbeat</em></h3>
+                    <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                    </svg>
+                    </div>
+
+                    <h3><em>Catchiness</em></h3>
+                    <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-half" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z"/>
+                    </svg>
+                    </div>
+
+                    <h3><em>Vocals</em></h3>
+                    <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-half" viewBox="0 0 16 16">
+                        <path fill=#FFBD59 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="Reviews-and-Comments">
+                    <div class="RC-F">
+                        <h1>Reviews & Comments</h1>
+                        <button class="VM push-left">View More</button>
+                    </div>
+                    <div id="items">
+                        <div class="item-review">
+                            <div class="MUR-container">
+                                <img class="user_icon push-center" src="public/img/profilepictvxq1.jpg"></img>
+                                <h2 class="username push-center">@jyj.comehome</h2>
+                                <h2 class="push-left">5⭐</h2>
+                            </div>
+                                <h2>DB5K 4EVER!</h2>
+                                <p>Don't get me wrong, I still support <br>
+                                TVXQ with just Yunho and Chang<br>
+                                min, but there's just something...</p>
+                            </div>
+
+                        <div class="item-review">
+                            <div class="MUR-container">
+                                <img class="user_icon push-center" src="public/img/profilepicture.jpg"></img>
+                                <h2 class="username push-center">@db5k.fvr</h2>
+                                <h2 class="push-left">5⭐</h2>
+                            </div>
+                            <div>
+                                <h2>BTS of 2nd-Gen!</h2>
+                                <p>Come at me, ARMY. I am not lying.<br>
+                                Without TVXQ, K-Pop would NOT <br>
+                                have become successful outsid...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Similar-Songs">
+                <h1>Similar to this</h1>
+                    <div id="items">
+                        <div class="item">
+                            <img class="scroll" src = "public/img/rising sun tvxq.jpg"></img>
+                                <h2 class="scroll">Rising Sun</h2>
+                                <p>TVXQ! (동방신기)</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "public/img/shalala taeyong.jpg"></img>
+                            <h2 class="scroll">Shalala</h2>
+                            <p>TAEYONG</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "public/img/unforgiven le sserafim.png"></img>
+                            <h2 class="scroll">Unforgiven</h2>
+                            <p>LE SSERAFIM (르세라핌)</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "public/img/tri-angle tvxq.jpg"></img>
+                            <h2 class="scroll">TRI-ANGLE</h2>
+                            <p>TVXQ! (동방신기)</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "public/img/dark blood enhypen.jpg"></img>
+                            <h2 class="scroll">DARK BLOOD</h2>
+                            <p>ENHYPEN</p>
+                        </div>
+                        
+                        <div class="item">
+                            <img class="scroll" src = "public/img/masterpiece misamo.jpeg"></img>
+                            <h2 class="scroll">Masterpiece</h2>
+                            <p>TWICE-MISAMO</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "public/img/MiroticTVXQ.png"></img>
+                            <h2 class="scroll">MIROTIC</h2>
+                            <p>TVXQ! (동방신기)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="Same-Artist">
+                    <h1>From the same artist</h1>
+                    <div id="items">
+                        <div class="item">
+                            <img class="scroll" src = "public/img/rising sun tvxq.jpg"></img>
+                            <h2 class="scroll">Rising Sun</h2>
+                            <p>TVXQ! (동방신기)</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "public/img/shalala taeyong.jpg"></img>
+                            <h2 class="scroll">Shalala</h2>
+                            <p>TAEYONG</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "public/img/unforgiven le sserafim.png"></img>
+                            <h2 class="scroll">Unforgiven</h2>
+                            <p>LE SSERAFIM (르세라핌)</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "public/img/tri-angle tvxq.jpg"></img>
+                            <h2 class="scroll">TRI-ANGLE</h2>
+                            <p>TVXQ! (동방신기)</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "public/img/dark blood enhypen.jpg"></img>
+                            <h2 class="scroll">DARK BLOOD</h2>
+                            <p>ENHYPEN</p>
+                        </div>
+                        
+                        <div class="item">
+                            <img class="scroll" src = "public/img/masterpiece misamo.jpeg"></img>
+                            <h2 class="scroll">Masterpiece</h2>
+                            <p>TWICE-MISAMO</p>
+                        </div>
+
+                        <div class="item">
+                            <img class="scroll" src = "public/img/MiroticTVXQ.png">
+                            <h2 class="scroll">MIROTIC</h2>
+                            <p>TVXQ! (동방신기)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Lyrics">
+            <h2>Description</h2>
+            <p>TVXQ (stylized as TVXQ!), an initialism for Tong Vfang Xien Qi (Chinese: 東方神起), is a South Korean male pop duo consisting of U-Know Yunho and Max Changmin. They are known as Tohoshinki (東方神起, Tōhōshinki) in Japanese releases, and are sometimes referred to as DBSK, an abbreviation of their Korean name Dong Bang Shin Ki (Korean: 동방신기). Their name roughly translates to "Rising Gods of the East".
+                <br>
+                <br>
+                Formed by SM Entertainment in 2003, TVXQ began as a five-member boy band composed of members U-Know Yunho, Max Changmin, Hero Jaejoong, Micky Yoochun, and Xiah Junsu. They were immediately launched to mainstream recognition following the release of their first physical single "Hug" (2004), which peaked at number four on the MIAK monthly music chart. Their first studio albums Tri-Angle (2004) and Rising Sun (2005) were both top sellers, pushing the band's popularity beyond Korea. Under Avex, TVXQ entered the Japanese market with their first Japanese album Heart, Mind and Soul (2006), but it was met with limited success.
+                <br>
+                <br>
+                TVXQ rose to international prominence in the late 2000s, after the group achieved critical acclaim in the Korean music industry for their best-selling albums "O"-Jung.Ban.Hap. (2006) and Mirotic (2008), both winning the Golden Disk Award for Album of the Year. The latter album also contains the pop hit "Mirotic", touted by international music critics as a staple song of K-pop. With four chart-topping singles, TVXQ gained widespread media attention in Japan following the release of their fourth Japanese album The Secret Code (2009). However, despite their commercial success, the group plunged into legal turmoil and internal conflict when members Jaejoong, Yoochun, and Junsu attempted to split from their Korean agency S.M. Entertainment. Prior to the trio's departure in 2010, TVXQ released their last Japanese album as a quintet, Best Selection 2010, which became the group's first album to top the Oricon Albums Chart. The album spawned two platinum-selling singles, including the long-running hit "Share the World".
+                <br>
+                <br>
+                After a year-long hiatus, TVXQ returned as a duo with remaining members Yunho and Changmin. They released TVXQ's fifth Korean album Keep Your Head Down (2011), topping album charts in most major Asian markets upon release. Their first two Japanese albums as a duo, Tone (2011) and Time (2013), solidified their success in Japan as it forged TVXQ's reputation as one of the top-touring artists in the country. Their eighth Japanese album With (2014) made TVXQ the first foreign music act in Japan to have four number-one albums in a row.
+                </p>
+        </div>
+        
+    </div>
+    <div class="Back-To-Top">
+        <a href="#back"><button class="BTT"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+        </svg>
+        </button></a>
+        <p>Back to Top</p>
+    </div>
+    <footer class="footer">
+        <div class="left_footer">
+            <h3>Get in touch with us</h3>
+            <p>Contact Number: #63 908-888-0011<br>
+                Email: customerservice.mvx@gmail.com
+            </p>
+        </div>
+        <div class="mid_footer">
+            <p>MVX Solutions Inc. (c) 2023. All rights reserved.</p>
+        </div>
+        <div class="right_footer">
+            <table>
+                <tr>
+                    <td><a href="about us.html">About Us</a></td>
+                </tr>
+                <tr>
+                    <td><a href="faq.html">Frequently Asked Questions</a></td>
+                </tr>
+                <tr>
+                    <td><a href="privacy policy.html">Privacy Policy</a></td>
+                </tr>
+                <tr>
+                    <td><a href="terms and conditions.html">Terms and Condition</a></td>
+                </tr>
+              </table>
+        </div>
+    </footer>
+</body>
+</html>
