@@ -202,77 +202,77 @@ var bitmap_a7x= fs.readFileSync('./public/img/a7x.jpg', 'base64');
 // }
 // insertAlbumData();
 
-function insertArtistData(){
-    Artist.insertMany([
-        {
-            artist_name: "TVXQ!",
-            artist_debut: 2004-1-14,
-            artist_discography:["Hug", "Whatever They Say", "Tri-Angle", "Rising Sun", "'O' Jung-Ban-Hap", "Mirotic", "Keep Your Head Down", "Keep Your Head Down Repackage", "Catch Me", "Time", "Tense", "Spellbound", "With", "Rise As God", "The Chance of Love", "The Truth of Love", "Parallel Parallel", "Lime and Lemon"],
-            artist_genre: "K-Pop",
-            artist_record_label: "SM Entertainment",
-            artist_listeners:651342,
-            artist_rating: 4.3,
-            artist_img: bitmap_db5k,
-            artist_tags: ["2nd gen", "boy group", "legendary", "gods", "db5k", "aktf"],
-            artist_similar_to_this:["SHINee", "Super Junior", "H.O.T", "SHINHWA", "EXO", "Girls' Generation", "BIGBANG", "2PM"]
+// function insertArtistData(){
+//     Artist.insertMany([
+//         {
+//             artist_name: "TVXQ!",
+//             artist_debut: 2004-1-14,
+//             artist_discography:["Hug", "Whatever They Say", "Tri-Angle", "Rising Sun", "'O' Jung-Ban-Hap", "Mirotic", "Keep Your Head Down", "Keep Your Head Down Repackage", "Catch Me", "Time", "Tense", "Spellbound", "With", "Rise As God", "The Chance of Love", "The Truth of Love", "Parallel Parallel", "Lime and Lemon"],
+//             artist_genre: "K-Pop",
+//             artist_record_label: "SM Entertainment",
+//             artist_listeners:651342,
+//             artist_rating: 4.3,
+//             artist_img: bitmap_db5k,
+//             artist_tags: ["2nd gen", "boy group", "legendary", "gods", "db5k", "aktf"],
+//             artist_similar_to_this:["SHINee", "Super Junior", "H.O.T", "SHINHWA", "EXO", "Girls' Generation", "BIGBANG", "2PM"]
 
-        },
-        {
-            artist_name: "Green Day",
-            artist_debut: 1991-7-1,
-            artist_discography:["39/Smooth", "Kerplunk", "Dookie", "Insomniac", "Nimrod", "Warning", "Shenanigans", "American Idiot", "21st Century Breakdown", "Uno!", "Dos!", "Tre!", "Revolution Radio", "Father of All"],
-            artist_genre: "Punk Rock",
-            artist_record_label: "Reprise Records",
-            artist_listeners:27005605,
-            artist_rating: 4.6,
-            artist_img: bitmap_greenday,
-            artist_tags: ["punk", "childhood", "legendary", "2000s", "hall of fame", "90s", "rock", "loud"],
-            artist_similar_to_this:["blink-182", "My Chemical Romance", "Panic! At The Disco", "The Network", "Foxboro Hottubs", "Paramore", "Simple Plan"]
+//         },
+//         {
+//             artist_name: "Green Day",
+//             artist_debut: 1991-7-1,
+//             artist_discography:["39/Smooth", "Kerplunk", "Dookie", "Insomniac", "Nimrod", "Warning", "Shenanigans", "American Idiot", "21st Century Breakdown", "Uno!", "Dos!", "Tre!", "Revolution Radio", "Father of All"],
+//             artist_genre: "Punk Rock",
+//             artist_record_label: "Reprise Records",
+//             artist_listeners:27005605,
+//             artist_rating: 4.6,
+//             artist_img: bitmap_greenday,
+//             artist_tags: ["punk", "childhood", "legendary", "2000s", "hall of fame", "90s", "rock", "loud"],
+//             artist_similar_to_this:["blink-182", "My Chemical Romance", "Panic! At The Disco", "The Network", "Foxboro Hottubs", "Paramore", "Simple Plan"]
 
-        },
-        {
-            artist_name: "LE SSERAFIM",
-            artist_debut: 2022-5-2,
-            artist_discography:["FEARLESS", "ANTIFRAGILE", "UNFORGIVEN"],
-            artist_genre: "K-Pop",
-            artist_record_label: "SOURCE MUSIC, a HYBE company",
-            artist_listeners:10169447,
-            artist_rating: 4.6,
-            artist_img: bitmap_ls,
-            artist_tags: ["4th gen", "girl group", "queens", "mommy", "hybe", "ot6"],
-            artist_similar_to_this:["IVE", "NewJeans", "NMIXX", "Kep1er", "STAYC", "aespa", "ITZY"]
+//         },
+//         {
+//             artist_name: "LE SSERAFIM",
+//             artist_debut: 2022-5-2,
+//             artist_discography:["FEARLESS", "ANTIFRAGILE", "UNFORGIVEN"],
+//             artist_genre: "K-Pop",
+//             artist_record_label: "SOURCE MUSIC, a HYBE company",
+//             artist_listeners:10169447,
+//             artist_rating: 4.6,
+//             artist_img: bitmap_ls,
+//             artist_tags: ["4th gen", "girl group", "queens", "mommy", "hybe", "ot6"],
+//             artist_similar_to_this:["IVE", "NewJeans", "NMIXX", "Kep1er", "STAYC", "aespa", "ITZY"]
 
-        },
-        {
-            artist_name: "Kim Jaejoong",
-            artist_debut: 2004-1-14,
-            artist_discography:["I", "Y", "WWW", "NO.X", "Love song", "BORN GENE", "Fallinbow"],
-            artist_genre: "K-Pop",
-            artist_record_label: "iNKODE Entertainment",
-            artist_listeners:38750,
-            artist_rating: 4.3,
-            artist_img: bitmap_jaejoong,
-            artist_tags: ["2nd gen", "tvxq", "dbsk", "legendary", "jyj", "aktf"],
-            artist_similar_to_this:["XIA", "U-KNOW Yunho", "Max Changmin", "Park Yoochun", "TAEYEON", "Taeyang", "JYJ", "TVXQ!"]
+//         },
+//         {
+//             artist_name: "Kim Jaejoong",
+//             artist_debut: 2004-1-14,
+//             artist_discography:["I", "Y", "WWW", "NO.X", "Love song", "BORN GENE", "Fallinbow"],
+//             artist_genre: "K-Pop",
+//             artist_record_label: "iNKODE Entertainment",
+//             artist_listeners:38750,
+//             artist_rating: 4.3,
+//             artist_img: bitmap_jaejoong,
+//             artist_tags: ["2nd gen", "tvxq", "dbsk", "legendary", "jyj", "aktf"],
+//             artist_similar_to_this:["XIA", "U-KNOW Yunho", "Max Changmin", "Park Yoochun", "TAEYEON", "Taeyang", "JYJ", "TVXQ!"]
 
-        },
-        {
-            artist_name: "Avenged Sevenfold",
-            artist_debut: 2002-3-19,
-            artist_discography:["Sounding The Seventh Trumpet", "Waking The Fallen", "City of Evil", "Avenged Sevenfold", "Diamonds in the Rough", "Nightmare", "Hail To The King", "The Stage", "Life Is But A Dream"],
-            artist_genre: "Heavy Metal",
-            artist_record_label: "Warner Records",
-            artist_listeners:9244030,
-            artist_rating: 4.5,
-            artist_img: bitmap_a7x,
-            artist_tags: ["2000s", "metal", "forever", "screamo", "emo", "rock", "solos"],
-            artist_similar_to_this:["Slipknot", "Linkin Park", "Korn", "Bullet For My Valentine", "Black Veil Brides", "Metallica", "Megadeth", "Killswitch Engage"]
+//         },
+//         {
+//             artist_name: "Avenged Sevenfold",
+//             artist_debut: 2002-3-19,
+//             artist_discography:["Sounding The Seventh Trumpet", "Waking The Fallen", "City of Evil", "Avenged Sevenfold", "Diamonds in the Rough", "Nightmare", "Hail To The King", "The Stage", "Life Is But A Dream"],
+//             artist_genre: "Heavy Metal",
+//             artist_record_label: "Warner Records",
+//             artist_listeners:9244030,
+//             artist_rating: 4.5,
+//             artist_img: bitmap_a7x,
+//             artist_tags: ["2000s", "metal", "forever", "screamo", "emo", "rock", "solos"],
+//             artist_similar_to_this:["Slipknot", "Linkin Park", "Korn", "Bullet For My Valentine", "Black Veil Brides", "Metallica", "Megadeth", "Killswitch Engage"]
 
-        },
+//         },
 
-    ])
-}
-insertArtistData();
+//     ])
+// }
+// insertArtistData();
 
 
 
