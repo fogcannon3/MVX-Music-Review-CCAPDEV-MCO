@@ -17,9 +17,7 @@ MCO Phase 1 Features:
 MCO Phase 2 Features:
 - Database using MongoDB
 - JavaScript functionality
-- Search page
 - Connection of pages to each other
-- Proper content recommendations and filtering (tentative)
 
 NOTES:
 - app.js                  --> allows connection to node.js and server
@@ -30,3 +28,11 @@ NOTES:
 - /server/routes/main.js  --> connects express to all pages
                              --> also facilitates routing of different pages, along with the changes in page title and description as needed by diff pages
 - package.json            --> packages all files together into one cohesive package
+
+MCO Phase 3 To-Do:
+- CSS and EJS polishing
+- Proper content recommendations and filtering (tentative)
+- Log-In and Register
+- Rate and Review
+- Deployment (as an actual website)
+- User information hashing (username and password)
