@@ -3,9 +3,32 @@ const router = express.Router();
 const Post = require('../models/Post');
 const User = require('../models/User');
 const bcryptjs = require('bcryptjs'); // Add this line to import bcrypt
+const jwt = require('jsonwebtoken');
 
 const adminLayout = '../views/layouts/admin'
+const jwtSecret = process.env.JWT_SECRET;
 router.use(express.urlencoded({ extended: true }));
+
+/**
+ * 
+ * Check Login
+*/
+const authMiddleware = (req, res, next ) => {
+    const token = req.cookies.token;
+  
+    if(!token) {
+      return res.status(401).json( { message: 'Unauthorized'} );
+    }
+  
+    try {
+      const decoded = jwt.verify(token, jwtSecret);
+      req.userId = decoded.userId;
+      next();
+    } catch(error) {
+      res.status(401).json( { message: 'Unauthorized'} );
+    }
+  }
+
 
 router.get('/login', async (req, res) => {
     try{
@@ -56,21 +79,53 @@ router.post('/register', async (req, res) => {
     }
 });
 
-router.post('/login', async (req, res) => {
-    const {email, password } = req.body;
-    const user = await User.findOne({ email});
+
+
+// router.post('/login', async (req, res) => {
+//     const {email, password } = req.body;
+//     const user = await User.findOne({ email});
   
-    if (user && await bcryptjs.compare(password, user.password)) {
-    //   req.session.userId = user._id;
+//     if (user && await bcryptjs.compare(password, user.password)) {
+//       req.session.userId = user._id;
+//       res.redirect('/home');
+//     } else {
+//       res.redirect('/login');
+//       console.log("wrong password");
+//     }
+//   });
+
+  router.post('/login', async (req, res) => {
+    try {
+      const { email, password } = req.body;
+      
+      const user = await User.findOne( { email } );
+  
+      if(!user) {
+        return res.status(401).json( { message: 'Invalid credentials' } );
+      }
+  
+      const isPasswordValid = await bcryptjs.compare(password, user.password);
+  
+      if(!isPasswordValid) {
+        return res.status(401).json( { message: 'Invalid credentials' } );
+      }
+  
+      const token = jwt.sign({ userId: user._id}, jwtSecret );
+      res.cookie('token', token, { httpOnly: true });
       res.redirect('/home');
-    } else {
-      res.redirect('/login');
-      console.log("wrong password");
+  
+    } catch (error) {
+      console.log(error);
     }
   });
 
 
+router.get('/logout', (req, res) => {
+  res.clearCookie('token');
+  //res.json({ message: 'Logout successful.'});
+  res.redirect('/');
+});
 
-
+  
 
 module.exports = router;
