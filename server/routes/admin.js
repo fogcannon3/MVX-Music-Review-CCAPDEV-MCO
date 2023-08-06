@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Post = require('../models/Post');
 const User = require('../models/User');
-// const bcrypt = require('bcrypt'); // Add this line to import bcrypt
+const bcryptjs = require('bcryptjs'); // Add this line to import bcrypt
 
 const adminLayout = '../views/layouts/admin'
 router.use(express.urlencoded({ extended: true }));
@@ -36,11 +36,11 @@ router.get('/register', async (req, res) => {
 
 router.post('/register', async (req, res) => {
     try{
-        const {username, password} = req.body;
-        // const hashedPassword = await bcrypt.hash(password, 10);
+        const {username, email, password} = req.body;
+        const hashedPassword = await bcryptjs.hash(password, 10);
 
         try {
-            const user = await User.create({ username, password: password});
+            const user = await User.create({ username, email, password: hashedPassword});
             console.log(user);
             res.status(201).json({ message: 'User Created', user}) //for testing purposes
         } catch (error) {
@@ -55,6 +55,19 @@ router.post('/register', async (req, res) => {
         console.log(error);
     }
 });
+
+router.post('/login', async (req, res) => {
+    const {email, password } = req.body;
+    const user = await User.findOne({ email});
+  
+    if (user && await bcryptjs.compare(password, user.password)) {
+    //   req.session.userId = user._id;
+      res.redirect('/home');
+    } else {
+      res.redirect('/login');
+      console.log("wrong password");
+    }
+  });
 
 
 
