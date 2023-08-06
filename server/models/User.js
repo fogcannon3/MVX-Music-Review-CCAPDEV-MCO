@@ -25,7 +25,7 @@ const UserSchema = new Schema({
     },
     joined:{
         type:Date,
-        required: true
+        required: false,
     },
     img:{
         type: String,
