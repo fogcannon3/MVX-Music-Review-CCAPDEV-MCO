@@ -1,32 +1,40 @@
-<h3>Sign In</h3>
-<form action="/admin" method="POST">
 
-    <label for="email"><b>Email Address</b></label>
-    <input  type="email" placeholder="Enter email address" name="email">
+<link rel="stylesheet" href="/css/login.css">
+    <div class="container">
+        <header class="header">
+            <h2 class="header_title"><span>MVX</span></h2>
+            <div class="header_search">
+                <input type="text" placeholder="Search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+            <nav id="header_navigation" class="header_navigation">
+                <i class="fa fa-bell"></i>
+                <a href="/home" class="">Home</a>
+                <a href="/profile" class="">Profile</a>
+            </nav>   
+        </header>
 
-    <label for="password"><b>Password</b></label>
-    <input  type="password" placeholder="Enter password" name="password">
-
-    <input type="submit" value="Login" class ="btn">
-
-</form>
-
-
-<h3>Register</h3>
-<form action="/admin" method="POST">
-
-    <label for="username"><b>Username</b></label>
-    <input  type="text" placeholder="Enter username" name="username">
-
-    <label for="email"><b>Email Address</b></label>
-    <input  type="email" placeholder="Enter email address" name="email">
-
-    <label for="password"><b>Password</b></label>
-    <input  type="password" placeholder="Enter password" name="password">
-
-    <label for="confirm_password"><b>Confirm Password</b></label>
-    <input  type="password" placeholder="Enter password again" name="confirm_password">
-
-    <input type="submit" value="Login" class ="btn">
-
-</form>
+        <div class="main">
+            <img class="picture" src="/img/mvx_bg.png">
+            <div class="login_main">
+                <h1><span class="login_txt">Log-In</span></h1>
+                <!-- Wrap the form elements in a form tag with method and action attributes -->
+                <form method="POST" action="/login"> <!-- Change "/login" to your actual login route -->
+                    <div class="email_main">
+                        <h3>Email:</h3>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div class="password_main">
+                        <h3>Password:</h3>
+                        <input type="password" id="password" name="password">
+                    </div>
+                    <div class="register_main">
+                        <p>Haven't joined? <a href="/register">Register here.</a></p>
+                        <!-- Change the button type to "submit" to trigger the form submission -->
+                        <button type="submit" class="continue_btn">Continue</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</html>

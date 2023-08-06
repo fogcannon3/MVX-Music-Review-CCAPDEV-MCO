@@ -2,10 +2,12 @@ const express = require('express');
 const router = express.Router();
 const Post = require('../models/Post');
 const User = require('../models/User');
+const bcrypt = require('bcrypt'); // Add this line to import bcrypt
 
 const adminLayout = '../views/layouts/admin'
+router.use(express.urlencoded({ extended: true }));
 
-router.get('/admin', async (req, res) => {
+router.get('/login', async (req, res) => {
     try{
         const locals = {
             title: "MVX - Admin", //according to the 2nd video, 5:43
@@ -18,6 +20,18 @@ router.get('/admin', async (req, res) => {
     }
 });
 
+router.get('/register', async (req, res) => {
+    try{
+        const locals = {
+            title: "MVX - Admin", //according to the 2nd video, 5:43
+            description: "Admin page for MVX"
+        }
+
+        res.render('admin/register', {locals, layout: adminLayout});
+    } catch (error){
+        console.log(error);
+    }
+});
 
 
 router.post('/register', async (req, res) => {
@@ -40,6 +54,8 @@ router.post('/register', async (req, res) => {
         console.log(error);
     }
 });
+
+
 
 
 
