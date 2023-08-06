@@ -35,23 +35,23 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/home', async (req, res) => {
-    const locals = {
-        title: "MVX - Home", //according to the 2nd video, 5:43
-        description: "Home page for MVX"
-    }
+// router.get('/home', async (req, res) => {
+//     const locals = {
+//         title: "MVX - Home", //according to the 2nd video, 5:43
+//         description: "Home page for MVX"
+//     }
     
-    try{
-        //THESE CALL THE required .js FILES TO GET THEIR SCHEMAS AND DATABASE DATA
-        const homedata = await Home.find();
-        const songdata = await Song.find();
-        const albumdata = await Album.find();
-        const artistdata = await Artist.find();
-        res.render('home', {locals, homedata, songdata, albumdata, artistdata});
-    } catch (error){
-        console.log(error);
-    }
-});
+//     try{
+//         //THESE CALL THE required .js FILES TO GET THEIR SCHEMAS AND DATABASE DATA
+//         const homedata = await Home.find();
+//         const songdata = await Song.find();
+//         const albumdata = await Album.find();
+//         const artistdata = await Artist.find();
+//         res.render('home', {locals, homedata, songdata, albumdata, artistdata});
+//     } catch (error){
+//         console.log(error);
+//     }
+// });
 
 router.get('/song/:id', async (req, res) => {
     try{

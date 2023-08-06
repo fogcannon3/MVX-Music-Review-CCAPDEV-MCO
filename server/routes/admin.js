@@ -9,6 +9,13 @@ const adminLayout = '../views/layouts/admin'
 const jwtSecret = process.env.JWT_SECRET;
 router.use(express.urlencoded({ extended: true }));
 
+
+
+const Song = require('../models/Song');
+const Home = require('../models/Home');
+const Album = require('../models/Album');
+const Artist = require('../models/Artist');
+
 /**
  * 
  * Check Login
@@ -124,6 +131,26 @@ router.get('/logout', (req, res) => {
   res.clearCookie('token');
   //res.json({ message: 'Logout successful.'});
   res.redirect('/');
+});
+
+
+
+router.get('/home', authMiddleware, async (req, res) => {
+    const locals = {
+        title: "MVX - Home", //according to the 2nd video, 5:43
+        description: "Home page for MVX"
+    }
+    
+    try{
+        //THESE CALL THE required .js FILES TO GET THEIR SCHEMAS AND DATABASE DATA
+        const homedata = await Home.find();
+        const songdata = await Song.find();
+        const albumdata = await Album.find();
+        const artistdata = await Artist.find();
+        res.render('home', {locals, homedata, songdata, albumdata, artistdata});
+    } catch (error){
+        console.log(error);
+    }
 });
 
   
