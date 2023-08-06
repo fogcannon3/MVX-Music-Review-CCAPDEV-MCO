@@ -21,7 +21,7 @@ GET/HOME Route
 //first make sure that the function in the route is async
 //data is what stores all the stuff in the db, 
 //Post.find() finds all data in the db related to Post
-router.get('', async (req, res) => {
+router.get('/', async (req, res) => {
     const locals = {
         title: "MVX - Get Started", //according to the 2nd video, 5:43
         description: "Landing page for MVX"
