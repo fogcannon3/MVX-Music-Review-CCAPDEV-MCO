@@ -74,6 +74,13 @@ const AlbumSchema = new Schema({
         type: String,
         required: true
     },
+<<<<<<< HEAD
+=======
+    album_description:{
+        type: String,
+        required: true
+    },
+>>>>>>> parent of c66549d (Attempt to fix internal server error)
     // album_top_user_img:{
     //     required: false
     // },
