@@ -1,23 +1,18 @@
 # MVX-MCO
 CCAPDEV MCO - Fulcher, Sang, Villamiel
 
-MCO Phase 1 Features:
+WHEN RUNNING ON LOCAL MACHINE:
+1. Download as ZIP from GitHub website
+2. Unzip .zip file
+3. Open folder as workspace on Visual Studio Code
+4. GO TO: Terminal > New Terminal and TYPE: "npm install"
+5. Let the dependencies be installed
+6. Once done, TYPE: "node app.js"
+7. Go to an internet browser
+8. TYPE: localhost:5000
+9. Enjoy
 
-- Landing Page
-- Log-In/Register Page
-- Home Page
-- Song Page
-- Album Page
-- Artist Page
-- Record Label Page
-- Playlist Page
-- Playlist Import/Export Pages
-- Legal Pages (ToC, Privacy Policy, About Us, FAQ, etc.)
-  
-MCO Phase 2 Features:
-- Database using MongoDB
-- JavaScript functionality
-- Connection of pages to each other
+FOR OUR CCAPDEV PROFESSOR: An invite to join our MongoDB database has been sent for you to add your IP address to the list of addresses that may access our database and website
 
 NOTES:
 - app.js                  --> allows connection to node.js and server
@@ -28,11 +23,3 @@ NOTES:
 - /server/routes/main.js  --> connects express to all pages
                              --> also facilitates routing of different pages, along with the changes in page title and description as needed by diff pages
 - package.json            --> packages all files together into one cohesive package
-
-MCO Phase 3 To-Do:
-- CSS and EJS polishing
-- Proper content recommendations and filtering (tentative)
-- Log-In and Register
-- Rate and Review
-- Deployment (as an actual website)
-- User information hashing (username and password)
