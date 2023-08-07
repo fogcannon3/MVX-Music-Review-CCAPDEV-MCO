@@ -12,8 +12,6 @@ WHEN RUNNING ON LOCAL MACHINE:
 8. TYPE: localhost:5000
 9. Enjoy
 
-FOR OUR CCAPDEV PROFESSOR: An invite to join our MongoDB database has been sent for you to add your IP address to the list of addresses that may access our database and website
-
 NOTES:
 - app.js                  --> allows connection to node.js and server
 - /views/_____.ejs        --> the separate .html files converted to .ejs
