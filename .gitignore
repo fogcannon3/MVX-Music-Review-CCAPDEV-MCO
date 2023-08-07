@@ -1,1 +1,17 @@
 node_modules
+
+<!--<div class="Same-Artist">
+                    <h1>From the same artist</h1>
+                    <div id="items">
+                        <% songdataothers.forEach(element => { %>
+                            <% if(element.song_artist === songdata.song_artist) { %>
+                                <div class="item"><a href="/song/<%= element._id %>">
+                                    <img src = "<%= element.song_img %>">
+                                    <h2><%= element.song_title %></h2>
+                                    <p><%= element.song_artist %></p>
+                                </a></div>
+                            <% } %>
+                        <% }) %>
+                    </div>
+                </div>
+                -->

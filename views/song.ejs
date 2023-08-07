@@ -28,7 +28,7 @@
         <div class="Main-content">
             <div class="Main-details">
                 <div class="Song-Details">
-                    <img class="scroll" src=<%= songdata.song_img %> >
+                    <img class="scroll" src=<%= songdata.song_img %>>
                     <div class="deets">
                     <p class="deets">4.98 ⭐</p>
                     <p class="deets"><b>Album:</b> <%= songdata.song_album %> </p>
@@ -38,8 +38,8 @@
                     <p class="deets"><b>Composers:</b> <%= songdata.song_composers %></p>
                     <p class="deets"><b>Publisher:</b> <%= songdata.song_record_label %></p>
                     <p class="deets"><b>No. of unique listeners:</b> <%= songdata.song_listeners %></p>
-                    <button class="send"><img class="send" src="public/img/Youtube1.png"></img></button>
-                    <button class="send"><img class="send" src="public/img/Spotify1.png"></img></button>
+                    <button class="send"><a href="<%= songdata.song_youtube_link%>"><img class="send" src="https://i.imgur.com/N48jNEE.png"></a></button>
+                    <button class="send"><a href="<%= songdata.song_spotify_link%>"><img class="send" src="https://i.imgur.com/1T3tnYZ.png"></a></button>
                     </div>
                 </div>
                 <hr>
@@ -191,100 +191,7 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="Similar-Songs">
-                <h1>Similar to this</h1>
-                    <div id="items">
-                        <div class="item">
-                            <img class="scroll" src = "public/img/rising sun tvxq.jpg"></img>
-                                <h2 class="scroll">Rising Sun</h2>
-                                <p>TVXQ! (동방신기)</p>
-                        </div>
-
-                        <div class="item">
-                            <img class="scroll" src = "public/img/shalala taeyong.jpg"></img>
-                            <h2 class="scroll">Shalala</h2>
-                            <p>TAEYONG</p>
-                        </div>
-
-                        <div class="item">
-                            <img class="scroll" src = "public/img/unforgiven le sserafim.png"></img>
-                            <h2 class="scroll">Unforgiven</h2>
-                            <p>LE SSERAFIM (르세라핌)</p>
-                        </div>
-
-                        <div class="item">
-                            <img class="scroll" src = "public/img/tri-angle tvxq.jpg"></img>
-                            <h2 class="scroll">TRI-ANGLE</h2>
-                            <p>TVXQ! (동방신기)</p>
-                        </div>
-
-                        <div class="item">
-                            <img class="scroll" src = "public/img/dark blood enhypen.jpg"></img>
-                            <h2 class="scroll">DARK BLOOD</h2>
-                            <p>ENHYPEN</p>
-                        </div>
-                        
-                        <div class="item">
-                            <img class="scroll" src = "public/img/masterpiece misamo.jpeg"></img>
-                            <h2 class="scroll">Masterpiece</h2>
-                            <p>TWICE-MISAMO</p>
-                        </div>
-
-                        <div class="item">
-                            <img class="scroll" src = "public/img/MiroticTVXQ.png"></img>
-                            <h2 class="scroll">MIROTIC</h2>
-                            <p>TVXQ! (동방신기)</p>
-                        </div>
-                    </div>
-                </div>
                 
-                <div class="Same-Artist">
-                    <h1>From the same artist</h1>
-                    <div id="items">
-                        <div class="item">
-                            <img class="scroll" src = "public/img/rising sun tvxq.jpg"></img>
-                            <h2 class="scroll">Rising Sun</h2>
-                            <p>TVXQ! (동방신기)</p>
-                        </div>
-
-                        <div class="item">
-                            <img class="scroll" src = "public/img/shalala taeyong.jpg"></img>
-                            <h2 class="scroll">Shalala</h2>
-                            <p>TAEYONG</p>
-                        </div>
-
-                        <div class="item">
-                            <img class="scroll" src = "public/img/unforgiven le sserafim.png"></img>
-                            <h2 class="scroll">Unforgiven</h2>
-                            <p>LE SSERAFIM (르세라핌)</p>
-                        </div>
-
-                        <div class="item">
-                            <img class="scroll" src = "public/img/tri-angle tvxq.jpg"></img>
-                            <h2 class="scroll">TRI-ANGLE</h2>
-                            <p>TVXQ! (동방신기)</p>
-                        </div>
-
-                        <div class="item">
-                            <img class="scroll" src = "public/img/dark blood enhypen.jpg"></img>
-                            <h2 class="scroll">DARK BLOOD</h2>
-                            <p>ENHYPEN</p>
-                        </div>
-                        
-                        <div class="item">
-                            <img class="scroll" src = "public/img/masterpiece misamo.jpeg"></img>
-                            <h2 class="scroll">Masterpiece</h2>
-                            <p>TWICE-MISAMO</p>
-                        </div>
-
-                        <div class="item">
-                            <img class="scroll" src = "public/img/MiroticTVXQ.png">
-                            <h2 class="scroll">MIROTIC</h2>
-                            <p>TVXQ! (동방신기)</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="Lyrics">

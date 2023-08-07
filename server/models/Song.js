@@ -101,6 +101,14 @@ const SongSchema = new Schema({
         type: String,
         required: false
     },
+    song_spotify_link:{
+        type: String,
+        required: true
+    },
+    song_youtube_link:{
+        type: String,
+        required: true
+    },
     // song_rating_danceability:{
     //     type: Float32Array,
     //     required: false

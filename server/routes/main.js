@@ -58,6 +58,7 @@ router.get('/song/:id', async (req, res) => {
         let slug = req.params.id;
 
         const songdata = await Song.findById({_id: slug});
+        const songdataothers = await Song.find();
 
         if (!songdata) {
             // If no song is found for the provided slug (404 page)
@@ -70,7 +71,7 @@ router.get('/song/:id', async (req, res) => {
             description: "Song page for MVX"
         }
 
-        res.render('song', {locals, songdata: songdata});
+        res.render('song', {locals, songdata: songdata, songdataothers: songdataothers});
     } catch (error){
         console.log(error);
     }
