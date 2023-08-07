@@ -74,10 +74,6 @@ const AlbumSchema = new Schema({
         type: String,
         required: true
     },
-    album_description:{
-        type: String,
-        required: false
-    },
     // album_top_user_img:{
     //     required: false
     // },
