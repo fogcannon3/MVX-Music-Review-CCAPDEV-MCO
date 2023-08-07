@@ -29,7 +29,7 @@
         <div class="Main-content">
             <div class="Main-details">
                 <div class="Song-Details">
-                    <img class="scroll" src="public/img/american idiot.png"></img>
+                    <img class="scroll" src=<%= albumdata.album_img %>>
                     <div class="deets">
                     <p class="deets"><%= albumdata.album_rating%> ⭐</p>
                     <p class="deets"><b>Artist:</b> <%= albumdata.album_artist%> </p>
@@ -39,8 +39,8 @@
                     <p class="deets"><b>Composers:</b> <%= albumdata.album_composers%></p>
                     <p class="deets"><b>Publisher:</b> <%= albumdata.album_record_label%></p>
                     <p class="deets"><b>No. of unique listeners:</b> <%= albumdata.album_listeners%></p>
-                    <button class="send"><img class="send" src="public/img/Youtube1.png"></img></button>
-                    <button class="send"><img class="send" src="public/img/Spotify1.png"></img></button>
+                    <button class="send"><a href="<%= albumdata.album_youtube_link%>"><img class="send" src="https://i.imgur.com/N48jNEE.png"></a></button>
+                    <button class="send"><a href="<%= albumdata.album_spotify_link%>"><img class="send" src="https://i.imgur.com/1T3tnYZ.png"></a></button>
                     </div>
                 </div>
                 <hr>

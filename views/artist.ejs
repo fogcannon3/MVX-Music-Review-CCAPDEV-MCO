@@ -36,8 +36,8 @@
                     <p class="deets"><b>Genre:</b> <%= artistdata.artist_genre %></p>
                     <p class="deets"><b>Record Label:</b> <%= artistdata.artist_record_label %></p>
                     <p class="deets"><b>No. of unique listeners:</b> <%= artistdata.artist_listeners %></p>
-                    <button class="send"><img class="send" src="public/img/Youtube1.png"></img></button>
-                    <button class="send"><img class="send" src="public/img/Spotify1.png"></img></button>
+                    <button class="send"><a href="<%= artistdata.artist_youtube_link%>"><img class="send" src="https://i.imgur.com/N48jNEE.png"></a></button>
+                    <button class="send"><a href="<%= artistdata.artist_spotify_link%>"><img class="send" src="https://i.imgur.com/1T3tnYZ.png"></a></button>
                     </div>
                 </div>
                 <hr>

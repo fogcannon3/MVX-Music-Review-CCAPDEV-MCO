@@ -66,6 +66,14 @@ const AlbumSchema = new Schema({
         type: Array, 
         required: false
     },
+    album_youtube_link:{
+        type: String,
+        required: true
+    },
+    album_spotify_link:{
+        type: String,
+        required: true
+    },
     // album_top_user_img:{
     //     required: false
     // },

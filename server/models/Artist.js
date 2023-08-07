@@ -53,6 +53,14 @@ const ArtistSchema = new Schema({
         type: Array,
         required: true
     },
+    artist_youtube_link:{
+        type: String,
+        required: true
+    },
+    artist_spotify_link:{
+        type: String,
+        required: true
+    },
     // artist_top_user_img:{
     //     required: false
     // },
